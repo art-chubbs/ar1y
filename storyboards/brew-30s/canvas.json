@@ -1,0 +1,41 @@
+{
+  "v": 3,
+  "createdOnFiles": { "v": 1, "at": "2026-09-27T14:05:00Z" },
+  "title": "Brew 30s Storyboard",
+  "launch": { "view": "canvas" },
+  "pages": [],
+  "boards": {
+    "Main.dc.html": { "x": 0, "y": 0, "w": 1600, "h": 1000, "title": "Cover · script & timing" },
+    "Style.dc.html": { "x": 1680, "y": 0, "w": 1600, "h": 1000, "title": "Direction · palette, type, motion" },
+    "S01-Hook.dc.html": { "x": 0, "y": 1400, "w": 880, "h": 900, "title": "01 · Hook · 0:00–0:02.5" },
+    "S02-Problem.dc.html": { "x": 960, "y": 1400, "w": 880, "h": 900, "title": "02 · Problem · 0:02.5–0:06" },
+    "S03-Reveal.dc.html": { "x": 1920, "y": 1400, "w": 880, "h": 900, "title": "03 · Reveal · 0:06–0:08" },
+    "S04-Prompt.dc.html": { "x": 2880, "y": 1400, "w": 880, "h": 900, "title": "04 · Prompt · 0:08–0:11" },
+    "S05-Build.dc.html": { "x": 3840, "y": 1400, "w": 880, "h": 900, "title": "05 · Build · 0:11–0:14" },
+    "S06-Audience.dc.html": { "x": 0, "y": 2700, "w": 880, "h": 900, "title": "06 · Audience · 0:14–0:16" },
+    "S07-Render.dc.html": { "x": 960, "y": 2700, "w": 880, "h": 900, "title": "07 · Render · 0:16–0:19" },
+    "S08-Integrations.dc.html": { "x": 1920, "y": 2700, "w": 880, "h": 900, "title": "08 · Integrations · 0:19–0:23" },
+    "S09-Payoff.dc.html": { "x": 2880, "y": 2700, "w": 880, "h": 900, "title": "09 · Payoff · 0:23–0:27" },
+    "S10-EndCard.dc.html": { "x": 3840, "y": 2700, "w": 880, "h": 900, "title": "10 · End card · 0:27–0:30" }
+  },
+  "order": [
+    "Main.dc.html",
+    "Style.dc.html",
+    "S01-Hook.dc.html",
+    "S02-Problem.dc.html",
+    "S03-Reveal.dc.html",
+    "S04-Prompt.dc.html",
+    "S05-Build.dc.html",
+    "S06-Audience.dc.html",
+    "S07-Render.dc.html",
+    "S08-Integrations.dc.html",
+    "S09-Payoff.dc.html",
+    "S10-EndCard.dc.html"
+  ],
+  "notes": {
+    "row0": { "x": 0, "y": -300, "text": "Brew · 30s explainer · direction", "kind": "title1", "maxW": 3280 },
+    "row1": { "x": 0, "y": 1140, "text": "Shots 01–05 · 0:00 → 0:14", "kind": "title1", "maxW": 4720 },
+    "row2": { "x": 0, "y": 2440, "text": "Shots 06–10 · 0:14 → 0:30", "kind": "title1", "maxW": 4720 }
+  },
+  "designSystems": []
+}

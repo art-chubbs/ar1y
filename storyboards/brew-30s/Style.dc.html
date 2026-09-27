@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Direction · palette, type, motion</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=Geist:wght@400..700&amp;family=Geist+Mono:wght@400..600&amp;display=swap">
+<style>
+body{margin:0;background:#FBF7F1}
+</style>
+</helmet>
+<div style="width: 1600px; height: 1000px; box-sizing: border-box; padding: 56px 72px 64px; display: flex; flex-direction: column; justify-content: space-between; gap: 36px; background: #FBF7F1; color: #1B1512; font-family: 'Geist', system-ui, sans-serif;">
+
+  <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 48px;">
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="font-family: 'Geist Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #6B6058;">Direction</div>
+      <div style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 56px; font-weight: 800; letter-spacing: -0.035em; line-height: 1;">Palette, type &amp; motion</div>
+    </div>
+    <div style="max-width: 540px; font-size: 15px; line-height: 1.5; color: #4A3F38; text-align: right;">A new palette built around the one colour we kept: the green. Espresso and crema ground it in “brew”; lilac is the only second accent.</div>
+  </div>
+
+  <div style="display: flex; gap: 40px; align-items: stretch;">
+    <div style="flex-grow: 1; min-width: 0; display: flex; gap: 16px;">
+      <div style="width: 272px; flex-shrink: 0; box-sizing: border-box; padding: 24px; border-radius: 20px; background: {{green}}; color: #1B1512; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="align-self: flex-start; padding: 6px 10px; border-radius: 999px; background: #1B1512; color: {{green}}; font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;">Kept from original</div>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <div style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 34px; font-weight: 800; letter-spacing: -0.03em;">Brew Green</div>
+          <div style="font-family: 'Geist Mono', monospace; font-size: 14px;">{{green}}</div>
+          <div style="font-size: 14px; line-height: 1.45;">The one colour carried over. Solution world, CTAs and The Drop.</div>
+        </div>
+      </div>
+
+      <div style="flex-grow: 1; min-width: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px;">
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <div style="height: 120px; border-radius: 16px; background: #1B1512;"></div>
+          <div style="display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 15px; font-weight: 600;">Espresso</div>
+            <div style="font-family: 'Geist Mono', monospace; font-size: 12px; color: #6B6058;">#1B1512</div>
+            <div style="font-size: 12.5px; line-height: 1.4; color: #4A3F38;">Ink, dark grounds, end card</div>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <div style="height: 120px; border-radius: 16px; background: #F6EFE6; box-shadow: inset 0 0 0 1px #E0D4C4;"></div>
+          <div style="display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 15px; font-weight: 600;">Crema</div>
+            <div style="font-family: 'Geist Mono', monospace; font-size: 12px; color: #6B6058;">#F6EFE6</div>
+            <div style="font-size: 12.5px; line-height: 1.4; color: #4A3F38;">Light ground, type on dark</div>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <div style="height: 120px; border-radius: 16px; background: #E6DACB;"></div>
+          <div style="display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 15px; font-weight: 600;">Oat</div>
+            <div style="font-family: 'Geist Mono', monospace; font-size: 12px; color: #6B6058;">#E6DACB</div>
+            <div style="font-size: 12.5px; line-height: 1.4; color: #4A3F38;">UI skeletons, dividers</div>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <div style="height: 120px; border-radius: 16px; background: #6B6058;"></div>
+          <div style="display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 15px; font-weight: 600;">Roast</div>
+            <div style="font-family: 'Geist Mono', monospace; font-size: 12px; color: #6B6058;">#6B6058</div>
+            <div style="font-size: 12.5px; line-height: 1.4; color: #4A3F38;">Captions, the grey world</div>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <div style="height: 120px; border-radius: 16px; background: #B7A4FF;"></div>
+          <div style="display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 15px; font-weight: 600;">Lilac</div>
+            <div style="font-family: 'Geist Mono', monospace; font-size: 12px; color: #6B6058;">#B7A4FF</div>
+            <div style="font-size: 12.5px; line-height: 1.4; color: #4A3F38;">Second accent: heroes, pills, Act III</div>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <div style="height: 120px; border-radius: 16px; background: {{greenDeep}};"></div>
+          <div style="display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 15px; font-weight: 600;">Deep Green</div>
+            <div style="font-family: 'Geist Mono', monospace; font-size: 12px; color: #6B6058;">{{greenDeep}}</div>
+            <div style="font-size: 12.5px; line-height: 1.4; color: #4A3F38;">Green on light: strokes, charts</div>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <div style="height: 120px; border-radius: 16px; background: {{greenTint}};"></div>
+          <div style="display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 15px; font-weight: 600;">Mint Foam</div>
+            <div style="font-family: 'Geist Mono', monospace; font-size: 12px; color: #6B6058;">{{greenTint}}</div>
+            <div style="font-size: 12.5px; line-height: 1.4; color: #4A3F38;">Calm product grounds</div>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <div style="height: 120px; box-sizing: border-box; border-radius: 16px; background: #FFFFFF; border: 2px dashed #6A4DF4; display: flex; align-items: center; justify-content: center; font-family: 'Geist Mono', monospace; font-size: 12px; color: #6A4DF4;">board notes</div>
+          <div style="display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 15px; font-weight: 600;">Annotation</div>
+            <div style="font-family: 'Geist Mono', monospace; font-size: 12px; color: #6B6058;">#6A4DF4</div>
+            <div style="font-size: 12.5px; line-height: 1.4; color: #4A3F38;">Board-only markup. Never in final frames.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="width: 500px; flex-shrink: 0; box-sizing: border-box; padding: 28px; border-radius: 20px; background: #FFFFFF; box-shadow: 0 0 0 1px #EFE6DA; display: flex; flex-direction: column; justify-content: space-between; gap: 16px;">
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 42px; font-weight: 800; letter-spacing: -0.035em; line-height: 1;">Brewed in seconds.</div>
+        <div style="display: flex; justify-content: space-between; font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #6B6058;">
+          <div>Bricolage Grotesque</div>
+          <div>Display · 700–800</div>
+        </div>
+      </div>
+      <div style="height: 1px; background: #EFE6DA;"></div>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="font-size: 20px; line-height: 1.35;">Describe the campaign in plain English.</div>
+        <div style="display: flex; justify-content: space-between; font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #6B6058;">
+          <div>Geist</div>
+          <div>UI &amp; body · 400–600</div>
+        </div>
+      </div>
+      <div style="height: 1px; background: #EFE6DA;"></div>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="font-family: 'Geist Mono', monospace; font-size: 16px;">SHOT 04 · 0:08.0 → 0:11.0</div>
+        <div style="display: flex; justify-content: space-between; font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #6B6058;">
+          <div>Geist Mono</div>
+          <div>Timecodes, code, labels</div>
+        </div>
+      </div>
+      <div style="height: 1px; background: #EFE6DA;"></div>
+      <div style="font-size: 13.5px; line-height: 1.5; color: #4A3F38;">Kinetic headlines run at 800 weight, −3.5% tracking, one word every 4 frames on the beat. Cards: 18px radius, pill chips, one soft long shadow.</div>
+    </div>
+  </div>
+
+  <div style="display: flex; gap: 16px;">
+    <div style="flex: 1 1 0; min-width: 0; box-sizing: border-box; padding: 22px; border-radius: 18px; background: #FFFFFF; box-shadow: 0 0 0 1px #EFE6DA; display: flex; flex-direction: column; gap: 10px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <div style="width: 28px; height: 28px; flex-shrink: 0; border-radius: 999px; background: #1B1512; color: #F6EFE6; font-family: 'Geist Mono', monospace; font-size: 12px; display: flex; align-items: center; justify-content: center;">1</div>
+        <div style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 18px; font-weight: 700; letter-spacing: -0.01em;">UI is the hero</div>
+      </div>
+      <div style="font-size: 13.5px; line-height: 1.5; color: #3A302A;">Real product surfaces, not metaphors. Cards float in 2.5D and settle flat when they matter.</div>
+    </div>
+    <div style="flex: 1 1 0; min-width: 0; box-sizing: border-box; padding: 22px; border-radius: 18px; background: #FFFFFF; box-shadow: 0 0 0 1px #EFE6DA; display: flex; flex-direction: column; gap: 10px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <div style="width: 28px; height: 28px; flex-shrink: 0; border-radius: 999px; background: #1B1512; color: #F6EFE6; font-family: 'Geist Mono', monospace; font-size: 12px; display: flex; align-items: center; justify-content: center;">2</div>
+        <div style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 18px; font-weight: 700; letter-spacing: -0.01em;">One continuous camera</div>
+      </div>
+      <div style="font-size: 13.5px; line-height: 1.5; color: #3A302A;">No hard cuts. Every shot hands off through a match cut or a morph, noted as “Transition out” on each board.</div>
+    </div>
+    <div style="flex: 1 1 0; min-width: 0; box-sizing: border-box; padding: 22px; border-radius: 18px; background: #FFFFFF; box-shadow: 0 0 0 1px #EFE6DA; display: flex; flex-direction: column; gap: 10px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <div style="width: 28px; height: 28px; flex-shrink: 0; border-radius: 999px; background: #1B1512; color: #F6EFE6; font-family: 'Geist Mono', monospace; font-size: 12px; display: flex; align-items: center; justify-content: center;">3</div>
+        <div style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 18px; font-weight: 700; letter-spacing: -0.01em;">Grey until Brew</div>
+      </div>
+      <div style="font-size: 13.5px; line-height: 1.5; color: #3A302A;">The problem world is desaturated. Green floods in on the reveal and never leaves the frame.</div>
+    </div>
+    <div style="flex: 1 1 0; min-width: 0; box-sizing: border-box; padding: 22px; border-radius: 18px; background: #FFFFFF; box-shadow: 0 0 0 1px #EFE6DA; display: flex; flex-direction: column; gap: 10px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" style="flex-shrink: 0;"><path d="M12 2.5C12 2.5 5 10.2 5 15a7 7 0 0 0 14 0c0-4.8-7-12.5-7-12.5Z" fill="{{green}}" stroke="#1B1512" stroke-width="1.2"></path></svg>
+        <div style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 18px; font-weight: 700; letter-spacing: -0.01em;">The Drop</div>
+      </div>
+      <div style="font-size: 13.5px; line-height: 1.5; color: #3A302A;">A green droplet is the recurring device. It falls, ripples, becomes the send button, and resolves into the logo.</div>
+    </div>
+    <div style="flex: 1 1 0; min-width: 0; box-sizing: border-box; padding: 22px; border-radius: 18px; background: #FFFFFF; box-shadow: 0 0 0 1px #EFE6DA; display: flex; flex-direction: column; gap: 10px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <div style="width: 28px; height: 28px; flex-shrink: 0; border-radius: 999px; background: #1B1512; color: #F6EFE6; font-family: 'Geist Mono', monospace; font-size: 12px; display: flex; align-items: center; justify-content: center;">5</div>
+        <div style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 18px; font-weight: 700; letter-spacing: -0.01em;">Snappy, not bouncy</div>
+      </div>
+      <div style="font-size: 13.5px; line-height: 1.5; color: #3A302A;">Ease cubic-bezier(0.2, 0, 0, 1). Pops overshoot 6%. Staggers of 4–6 frames.</div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"green":{"editor":"color","default":"#1FC977","options":["#1FC977","#12B76A","#2EDB8A","#0EA968"],"section":"Brand"},"$preview":{"width":1600,"height":1000}}'>
+class Component extends DCLogic {
+  mix(a, b, t) {
+    const p = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16));
+    const x = p(a);
+    const y = p(b);
+    return '#' + x.map((v, i) => Math.round(v + (y[i] - v) * t).toString(16).padStart(2, '0')).join('');
+  }
+  renderVals() {
+    const raw = this.props.green ?? '#1FC977';
+    const green = /^#[0-9a-fA-F]{6}$/.test(raw) ? raw : '#1FC977';
+    return { green, greenDeep: this.mix(green, '#0B1F16', 0.62), greenTint: this.mix(green, '#FFFFFF', 0.8) };
+  }
+}
+</script>
+</body>
+</html>
