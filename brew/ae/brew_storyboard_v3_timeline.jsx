@@ -59,8 +59,8 @@
   comp.bgColor = [0.043, 0.043, 0.047];
 
   var missing = [];
-  // Add in reverse so shot 01 sits at the top of the layer stack.
-  for (var i = shots.length - 1; i >= 0; i--) {
+  // Shots added in order: each add() lands on top, so shot 01 ends up at the BOTTOM and 34 at the top (staircase).
+  for (var i = 0; i < shots.length; i++) {
     var s = shots[i];
     var f = new File(framesDir.fsName + "/" + s.file);
     if (!f.exists) { missing.push(s.file); continue; }

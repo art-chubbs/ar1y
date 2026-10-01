@@ -144,7 +144,8 @@ ${dataJs}
   var main = proj.items.addComp("MAIN - brew v3 storyboard timeline", 1920, 1080, 1, DURATION, FPS);
   main.parentFolder = bin; main.bgColor = [0.043, 0.043, 0.047];
   var count = 0;
-  for (var i = SHOTS.length - 1; i >= 0; i--) {
+  // Shots added in order: each add() lands on top, so shot 01 ends up at the BOTTOM and 34 at the top (staircase).
+  for (var i = 0; i < SHOTS.length; i++) {
     var s = SHOTS[i];
     var pc = proj.items.addComp(s.name, 1920, 1080, 1, s.tout - s.tin, FPS);
     pc.parentFolder = shotsBin; pc.bgColor = [0, 0, 0];
