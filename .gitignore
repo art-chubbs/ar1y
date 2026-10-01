@@ -1,0 +1,3 @@
+motion/out/*
+!motion/out/ar1y-motion-web.mp4
+node_modules/
