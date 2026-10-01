@@ -1,6 +1,12 @@
 # brew v3 storyboard -> After Effects
 
-Two scripts, same timing (the 93-second film v3 cut). Neither adds any animation.
+**Easiest: `brew_storyboard_v3_ONE_SCRIPT.jsx`** is a single self-contained file. It has every element
+image, the reference frames and the temp soundtrack packed inside. Run it on its own: it unpacks its
+images into `brew_v3_storyboard_assets/` next to itself and builds the full layered project below.
+(Flat backgrounds become native AE solids; soft glows are stored at 1/4 size and scaled 400%.)
+
+The scripts below do the same from the loose files in this folder. All share the 93-second film v3
+timing, and none adds any animation.
 
 | Script | What you get |
 |---|---|
