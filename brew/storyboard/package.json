@@ -1,0 +1,15 @@
+{
+  "name": "storyboard",
+  "version": "1.0.0",
+  "description": "72-second, 16:9 launch film for brew (Scale With Brew). 29 frames across 6 acts, plus a cover, VO script and style/motion page. Brand research lives in `../research/brand-notes.md`.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fontkit": "^2.0.4"
+  }
+}

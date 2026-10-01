@@ -12,3 +12,4 @@ brew/film/out/stills/
 brew/film/out/*.log
 brew/film/out/soundtrack.wav
 brew/film/out/brew-launch-film.mp4
+brew/storyboard/node_modules/
