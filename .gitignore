@@ -6,3 +6,9 @@ brew/research/full.png
 brew/research/page.html
 brew/research/app.css
 brew/research/info.json
+# film render intermediates
+brew/film/out/frames/
+brew/film/out/stills/
+brew/film/out/*.log
+brew/film/out/soundtrack.wav
+brew/film/out/brew-launch-film.mp4

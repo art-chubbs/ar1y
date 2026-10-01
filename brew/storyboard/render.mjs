@@ -9,7 +9,9 @@ import { fileURLToPath } from 'node:url';
 const require = createRequire(import.meta.url);
 const { chromium } = require(process.env.PLAYWRIGHT || 'playwright');
 const root = path.dirname(fileURLToPath(import.meta.url));
-const outDir = path.join(root, 'out');
+const outDir = path.join(root, process.env.OUT || 'out');
+const PDF = process.env.PDF || 'brew-storyboard-v1.pdf';
+const rel = path.relative(root, outDir).split(path.sep).join('/');
 
 const css = `
 @font-face{font-family:'Bricolage Grotesque';font-weight:200 800;src:url(/fonts/bricolage-grotesque-latin-wght-normal.woff2) format('woff2')}
@@ -39,7 +41,7 @@ const fontsReady = () => page.evaluate(async () => {
 async function shoot(svgFile, pngFile, w, h, scale = 1) {
   await page.setViewportSize({ width: w, height: h });
   fs.writeFileSync(path.join(outDir, '_tmp.html'), `<!doctype html><meta charset="utf-8"><style>${css}</style>${fs.readFileSync(svgFile, 'utf8').replace(/^<\?xml[^>]*>\s*/, '')}`);
-  await page.goto(`${base}/out/_tmp.html`);
+  await page.goto(`${base}/${rel}/_tmp.html`);
   await fontsReady();
   await page.screenshot({ path: pngFile, clip: { x: 0, y: 0, width: w, height: h }, scale: scale < 1 ? 'css' : 'device' });
 }
@@ -54,9 +56,9 @@ for (const f of boards) await shoot(path.join(outDir, 'board', f), path.join(out
 const html = `<!doctype html><meta charset="utf-8"><style>${css} .pg{width:1920px;height:1820px;page-break-after:always;overflow:hidden}</style>` +
   boards.map(f => `<div class="pg">${fs.readFileSync(path.join(outDir, 'board', f), 'utf8').replace(/^<\?xml[^>]*>\s*/, '')}</div>`).join('');
 fs.writeFileSync(path.join(outDir, '_tmp.html'), html);
-await page.goto(`${base}/out/_tmp.html`);
+await page.goto(`${base}/${rel}/_tmp.html`);
 await fontsReady();
-await page.pdf({ path: path.join(outDir, 'brew-storyboard-v1.pdf'), width: '1920px', height: '1820px', printBackground: true });
+await page.pdf({ path: path.join(outDir, PDF), width: '1920px', height: '1820px', printBackground: true });
 fs.unlinkSync(path.join(outDir, '_tmp.html'));
 await browser.close();
 server.close();

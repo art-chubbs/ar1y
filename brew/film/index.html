@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>brew launch film</title>
+<style>
+@font-face{font-family:'Bricolage Grotesque';font-weight:200 800;src:url(../storyboard/fonts/bricolage-grotesque-latin-wght-normal.woff2) format('woff2')}
+@font-face{font-family:'Archivo';font-weight:400;src:url(../storyboard/fonts/archivo-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'Archivo';font-weight:500;src:url(../storyboard/fonts/archivo-latin-500-normal.woff2) format('woff2')}
+@font-face{font-family:'Archivo';font-weight:600;src:url(../storyboard/fonts/archivo-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-weight:400;src:url(../storyboard/fonts/ibm-plex-mono-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-weight:500;src:url(../storyboard/fonts/ibm-plex-mono-latin-500-normal.woff2) format('woff2')}
+html,body{margin:0;background:#000;color:#B4B4B8;font:13px 'IBM Plex Mono',monospace}
+#stage{width:1920px;height:1080px;transform-origin:0 0}
+#ui{position:fixed;left:0;right:0;bottom:0;display:flex;gap:12px;align-items:center;padding:10px 16px;background:#0B0B0Ccc}
+#ui input{flex:1}
+body.render #ui{display:none}
+</style>
+</head>
+<body>
+<div id="stage"></div>
+<div id="ui"><button id="play">Pause</button><input id="scrub" type="range" min="0" max="72" step="0.01" value="0"><span id="tc">0.00</span></div>
+<script type="module">
+import { render, DURATION } from './film.mjs';
+const stage = document.getElementById('stage');
+window.draw = t => { stage.innerHTML = render(t); };
+window.ready = Promise.all(['800 40px "Bricolage Grotesque"', '500 40px "Bricolage Grotesque"', '400 20px Archivo', '500 20px Archivo', '600 20px Archivo', '500 20px "IBM Plex Mono"', '400 20px "IBM Plex Mono"']
+  .map(f => document.fonts.load(f))).then(() => document.fonts.ready);
+window.DURATION = DURATION;
+if (location.search.includes('render')) document.body.classList.add('render');
+else window.ready.then(() => {
+  const fit = () => { const s = Math.min(innerWidth / 1920, (innerHeight - 44) / 1080); stage.style.transform = `scale(${s})`; };
+  fit(); addEventListener('resize', fit);
+  let playing = true, t0 = performance.now(), base = 0;
+  const scrub = document.getElementById('scrub'), tc = document.getElementById('tc');
+  document.getElementById('play').onclick = e => { playing = !playing; e.target.textContent = playing ? 'Pause' : 'Play'; base = +scrub.value; t0 = performance.now(); };
+  scrub.oninput = () => { base = +scrub.value; t0 = performance.now(); draw(base); };
+  const loop = () => { if (playing) { const t = (base + (performance.now() - t0) / 1000) % DURATION; scrub.value = t; tc.textContent = t.toFixed(2); draw(t); } requestAnimationFrame(loop); };
+  loop();
+});
+</script>
+</body>
+</html>
