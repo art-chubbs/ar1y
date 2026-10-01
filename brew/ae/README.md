@@ -1,28 +1,36 @@
-# brew v3 storyboard -> After Effects timeline
+# brew v3 storyboard -> After Effects
 
-Lays the 34 storyboard v3 frames onto an After Effects timeline at their exact times in the
-93-second film v3 cut. **No animation**: every shot is a still layer with an in and out point.
+Two scripts, same timing (the 93-second film v3 cut). Neither adds any animation.
 
-## Contents
-- `frames/`: 34 clean 1920x1080 PNGs (`01_...png` to `34_...png`), no board labels
-- `soundtrack_v3_temp.wav`: the temp sound design from film v3, same timing
-- `brew_storyboard_v3_timeline.jsx`: the script that builds the comp
-- `shots.json`: the shot list (file, in/out seconds, notes) the script was generated from
+| Script | What you get |
+|---|---|
+| `brew_storyboard_v3_LAYERED.jsx` | **Every element as its own layer.** Each shot is a precomp (backgrounds, each gradient glow, each card, each text line, buttons, chips, cursor, brackets, app window parts...) stacked and positioned exactly like the storyboard. The precomps sit on a MAIN timeline at their film times. |
+| `brew_storyboard_v3_timeline.jsx` | One flat image per shot on the timeline (quick reference). |
 
-## Use it
-1. Keep the folder together (the script looks for `frames/` and the WAV next to itself).
-2. After Effects -> **File -> Scripts -> Run Script File...** -> choose `brew_storyboard_v3_timeline.jsx`.
-3. You get a bin **brew v3 storyboard** with a comp **brew v3 - storyboard timeline**
-   (1920x1080, 60 fps, 93 s), and the comp opens.
+## Run
+1. Keep this folder together (the scripts look for `layers/`, `frames/` and the WAV next to themselves).
+2. After Effects -> **File -> Scripts -> Run Script File...** -> pick a script.
 
-## What's in the comp
-- One still layer per shot, named `01 - Typed: "The same video."` etc., trimmed to its slot.
-  Shot 01 is the top layer; the shots sit end to end with no gaps or overlaps.
-- Layer label colours by act: red = The problem, green = Meet brew, blue = We make it,
-  cyan = You drive it, orange = Close.
-- A comp marker at each shot start, spanning the shot, with the full notes
-  (visual, motion, VO, SFX). The layer comment holds the visual description.
-- The temp soundtrack as the bottom layer.
+## The layered project
+```
+brew v3 storyboard (layered)/
+  MAIN - brew v3 storyboard timeline   1920x1080 · 60 fps · 93 s
+  Shots/              34 precomps, one per shot (double-click to see its layers)
+  Elements/           285 unique element PNGs, imported once and reused
+  Reference frames/   the 34 flat frames
+```
+- 401 element layers in total. `LAYERS.txt` lists every layer of every shot with its position and size.
+- Each element is a tightly cropped transparent PNG, positioned with its anchor at its own centre,
+  so it's ready to animate (scale/rotate from the middle of the card, not the comp).
+- Each precomp also has a hidden **REFERENCE** guide layer (the flat frame). Switch it on to check alignment.
+- Shot precomps on MAIN are colour-labelled by act and have a marker with the shot notes.
+- Re-stacking the layers was checked against the flat frames: average difference under 0.6 of 255 on every shot.
 
-To change the frame rate, edit `var FPS = 60;` at the top of the script (30, 25 and 24 all work;
-the shot times are in seconds).
+## Notes
+- Blurred elements (far "mess" cards, the faded app behind the lifted card) keep their blur baked in.
+  The faded app in shot 12 is one plate on purpose.
+- Text is rasterised (PNG) so it looks exactly like the storyboard on any machine. If you want live,
+  editable AE text layers instead, ask and I'll generate them (needs Archivo, Bricolage Grotesque
+  and IBM Plex Mono installed, all free on Google Fonts).
+- To change the frame rate, edit `var FPS = 60;` at the top of the script.
+- `export_layers.mjs` regenerates `layers/` + `layers.json` from the storyboard source.

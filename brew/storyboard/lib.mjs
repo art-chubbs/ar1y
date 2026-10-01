@@ -43,6 +43,7 @@ export const Ci = (x, y, r, o = {}) =>
 export const P = (d, o = {}) =>
   `<path d="${d}" fill="${o.fill || 'none'}"` + (o.stroke ? ` stroke="${o.stroke}" stroke-width="${o.sw || 1}"` : '') +
   a('stroke-linecap', o.cap) + a('stroke-linejoin', o.join) + a('stroke-dasharray', o.dash) + a('opacity', o.op) + a('transform', o.tr) + '/>';
+export const LAYER = (name, svg) => `<g data-layer="${esc(String(name).slice(0, 60))}">${svg}</g>`;
 export const G = (tr, inner, o = {}) => `<g${a('transform', tr)}${a('opacity', o.op)}${a('clip-path', o.clip)}>${inner}</g>`;
 
 export const monoW = (s, size, ls = 0) => s.length * (size * 0.6 + ls);
@@ -70,7 +71,7 @@ export function pill(x, y, label, o = {}) {
   return { svg: out, w, h };
 }
 
-export function tag(x, y, label, color, filled = false, size = 13) {
+function tag__raw(x, y, label, color, filled = false, size = 13) {
   const ls = 1.5, pad = 10, w = monoW(label, size, ls) + pad * 2 - ls, h = size + 13;
   return R(x, y, w, h, { r: 4, fill: filled ? color : 'none', stroke: color, sw: 1.2 }) +
     T(x + pad, y + h / 2 + size * 0.36, label.toUpperCase(), { f: M, size, ls, fill: filled ? C.bg : color, w: 500 });
@@ -85,18 +86,18 @@ export function stepper(active, y = 96, cx = W / 2) {
   return items.map((it, i) => { const p = pill(x, y, it.s, { state: it.st }); x += widths[i] + gap; return p.svg; }).join('');
 }
 
-export function brackets(x, y, w, h, o = {}) {
+function brackets__raw(x, y, w, h, o = {}) {
   const l = o.len || 48, col = o.color || C.green;
   const d = `M${x} ${y + l}V${y}H${x + l}M${x + w - l} ${y}H${x + w}V${y + l}M${x + w} ${y + h - l}V${y + h}H${x + w - l}M${x + l} ${y + h}H${x}V${y + h - l}`;
   return P(d, { stroke: col, sw: o.sw || 6, cap: 'square', op: o.op });
 }
 
-export const cursor = (x, y, s = 1, op) =>
+const cursor__raw = (x, y, s = 1, op) =>
   P('M0 0L0 30L8 23L13.5 35L18.5 32.8L13 21L23 21Z', { fill: C.text, stroke: C.bg, sw: 1.6, join: 'round', tr: `translate(${x} ${y}) scale(${s})`, op });
 
-export const check = (x, y, r = 14, col = C.green) =>
+const check__raw = (x, y, r = 14, col = C.green) =>
   Ci(x, y, r, { fill: col }) + P(`M${x - r * 0.42} ${y + r * 0.02}L${x - r * 0.1} ${y + r * 0.34}L${x + r * 0.45} ${y - r * 0.3}`, { stroke: C.bg, sw: r * 0.2, cap: 'round', join: 'round' });
-export const cross = (x, y, r = 14, col = C.coral) =>
+const cross__raw = (x, y, r = 14, col = C.coral) =>
   Ci(x, y, r, { fill: col }) + P(`M${x - r * 0.35} ${y - r * 0.35}L${x + r * 0.35} ${y + r * 0.35}M${x + r * 0.35} ${y - r * 0.35}L${x - r * 0.35} ${y + r * 0.35}`, { stroke: C.bg, sw: r * 0.2, cap: 'round' });
 
 export function waveform(x, cy, w, h, n, seed, col = C.green, o = {}) {
@@ -165,3 +166,10 @@ export function wrap(text, max) {
   if (cur) lines.push(cur);
   return lines;
 }
+
+// Named layers (data-layer) so the After Effects exporter can split frames into elements.
+export const brackets = (...a) => LAYER('Brackets', brackets__raw(...a));
+export const cursor = (...a) => LAYER('Cursor', cursor__raw(...a));
+export const check = (...a) => LAYER('Check', check__raw(...a));
+export const cross = (...a) => LAYER('Cross', cross__raw(...a));
+export const tag = (...a) => LAYER(`Tag · ${a[2]}`, tag__raw(...a));

@@ -1,0 +1,470 @@
+brew v3 storyboard: every element layer per shot (top of the list = bottom of the AE stack)
+
+01  Typed: "The same video."   [0s to 2s, 6 layers]
+      Background · paper                                   at 0,0  1920x1080
+      Glow · green                                         at 260,554  1660x526
+      Glow · teal                                          at 0,797  1207x283
+      Glow · white                                         at 0,0  1849x875
+      Text · The same video                                at 734,513  450x48
+      Caret                                                at 1193,508  4x64
+
+02  The mess, in depth   [2s to 4.5s, 14 layers]
+      Background · paper                                   at 0,0  1920x1080
+      Glow · green                                         at 251,550  1669x530
+      Glow · teal                                          at 0,791  1222x289
+      Glow · white                                         at 0,0  1849x875
+      Card · Editor message (blurred)                      at 103,126  299x126
+      Card · script_v7_notes.docx (blurred)                at 1363,107  314x120
+      Card · invoice (blurred)                             at 1543,625  334x244
+      Card · broll_maybe.zip (blurred)                     at 63,807  314x120
+      Card · edit timeline                                 at 135,317  570x212
+      Card · Client message                                at 1215,325  310x120
+      Card · v3_FINAL_final.mp4                            at 1155,467  330x112
+      Card · Freelancer message                            at 275,685  310x120
+      Shape · rectangle #F4F4F1                            at 560,500  800x90
+      Text · The same video, a different editor.           at 555,522  805x49
+
+03  Selection highlight   [4.5s to 6.3s, 17 layers]
+      Background · paper                                   at 0,0  1920x1080
+      Glow · green                                         at 251,550  1669x530
+      Glow · teal                                          at 0,791  1222x289
+      Glow · white                                         at 0,0  1849x875
+      Card · Editor message (blurred)                      at 103,126  299x126
+      Card · script_v7_notes.docx (blurred)                at 1363,107  314x120
+      Card · invoice (blurred)                             at 1543,625  334x244
+      Card · broll_maybe.zip (blurred)                     at 63,807  314x120
+      Card · edit timeline                                 at 135,317  570x212
+      Card · Client message                                at 1215,325  310x120
+      Card · v3_FINAL_final.mp4                            at 1155,467  330x112
+      Card · Freelancer message                            at 275,685  310x120
+      Shape · rectangle #F4F4F1                            at 560,500  800x90
+      Text · The same video,                               at 555,523  393x48
+      Selection highlight                                  at 960,515  401x61
+      Text · a different editor                            at 965,522  390x41
+      Text · .                                             at 1360,555  7x7
+
+04  Same brief… again?   [6.3s to 8.2s, 9 layers]
+      Background · paper                                   at 0,0  1920x1080
+      Glow · green                                         at 251,550  1669x530
+      Glow · teal                                          at 0,791  1222x289
+      Glow · white                                         at 0,0  1849x875
+      Card · Editor message (blurred)                      at 103,126  299x126
+      Card · script_v7_notes.docx (blurred)                at 1363,107  314x120
+      Card · invoice (blurred)                             at 1543,625  334x244
+      Card · broll_maybe.zip (blurred)                     at 63,807  314x120
+      Text · Same brief… again?                            at 675,515  567x59
+
+05  "Stop"   [8.2s to 9.4s, 5 layers]
+      Background · paper                                   at 0,0  1920x1080
+      Glow · green                                         at 237,544  1683x536
+      Glow · teal                                          at 0,782  1242x298
+      Glow · white                                         at 0,0  1849x875
+      Text · Stop                                          at 519,372  895x337
+
+06  "Stop assembling videos."   [9.4s to 11s, 8 layers]
+      Background · paper                                   at 0,0  1920x1080
+      Glow · green                                         at 237,544  1683x536
+      Glow · teal                                          at 0,782  1242x298
+      Glow · white                                         at 0,0  1849x875
+      Text · Stop                                          at 566,509  148x64
+      Text · assembling                                    at 733,507  374x66
+      Text · videos.                                       at 1121,508  231x53
+      Shape · path                                         at 259,299  1502x602
+
+07  "Meet" focus pull   [11s to 12.3s, 6 layers]
+      Background · paper                                   at 0,0  1920x1080
+      Glow · green                                         at 214,467  1706x613
+      Glow · teal                                          at 0,706  1283x374
+      Glow · white                                         at 0,0  1849x875
+      Text · Me                                            at 584,484  376x210
+      Text · et (blurred)                                  at 953,467  270x247
+
+08  Meet [mark] brew   [12.3s to 14.3s, 9 layers]
+      Background · paper                                   at 0,0  1920x1080
+      Glow · green                                         at 214,467  1706x613
+      Glow · teal                                          at 0,706  1283x374
+      Glow · white                                         at 0,0  1849x875
+      Text · Meet                                          at 568,517  250x85
+      Shape · rectangle #FFFFFF                            at 870,482  151x150
+      Brackets                                             at 888,500  114x114
+      Text · e                                             at 920,536  51x54
+      Text · brew                                          at 1067,513  288x89
+
+09  Positioning line   [14.3s to 17.3s, 6 layers]
+      Background · paper                                   at 0,0  1920x1080
+      Glow · green                                         at 214,467  1706x613
+      Glow · teal                                          at 0,706  1283x374
+      Glow · white                                         at 0,0  1849x875
+      Text · The AI-powered video studio,                  at 344,519  726x51
+      Text · watched by people.                            at 1090,519  481x52
+
+10  Product reveal in perspective   [17.3s to 20.3s, 30 layers]
+      Background · paper                                   at 0,0  1920x1080
+      Glow · green                                         at 16,506  1904x574
+      Glow · teal                                          at 0,745  1072x335
+      Glow · white                                         at 0,0  1849x875
+      Window · frame + shadow                              at 263,232  1402x784
+      Window · surface                                     at 282,241  1359x735
+      Window · title bar                                   at 282,241  1252x119
+      Window · sidebar (New video)                         at 286,342  347x634
+      Text · NEW VIDEO                                     at 567,374  72x11
+      Text · What should we make?                          at 572,383  341x42
+      Text · A finished script, or one line about the      at 580,418  340x32
+      Shape · rectangle #FBFBF9                            at 584,411  950x146
+      Text · Why the Panama Canal ran short of water       at 614,482  421x42
+      Shape · rectangle #3EAF75                            at 1037,473  8x26
+      Shape · rectangle #F7F7F5                            at 603,562  231x70
+      Text · LENGTH                                        at 619,588  40x9
+      Text · 10 min                                        at 623,609  46x12
+      Shape · rectangle #F7F7F5 2                          at 837,546  231x71
+      Text · STYLE                                         at 852,572  34x9
+      Text · Visual explainer                              at 855,589  114x16
+      Shape · rectangle #F7F7F5 3                          at 1070,530  232x71
+      Text · VOICE                                         at 1086,557  34x8
+      Text · Ours                                          at 1090,579  34x10
+      Shape · rectangle #F7F7F5 4                          at 1304,515  232x70
+      Text · LANGUAGES                                     at 1321,539  61x11
+      Text · 9                                             at 1324,564  9x10
+      Button · Send to brew  →                             at 1412,593  145x42
+      Text · First video free · up to ten minutes          at 619,654  261x24
+      Text · For channels that                             at 1534,111  306x30
+      Text · post every week                               at 1552,161  288x37
+
+11  One line in   [20.3s to 23.3s, 30 layers]
+      Background · paper                                   at 0,0  1920x1080
+      Glow · green                                         at 227,539  1693x541
+      Glow · teal                                          at 0,778  1250x302
+      Glow · white                                         at 0,0  1849x875
+      Window · frame + shadow                              at 135,97  1650x922
+      Window · surface                                     at 160,110  1600x860
+      Window · title bar                                   at 160,110  1600x41
+      Window · sidebar (New video)                         at 160,150  251x820
+      Text · NEW VIDEO                                     at 450,194  79x8
+      Text · What should we make?                          at 450,223  361x26
+      Text · A finished script, or one line about the      at 450,267  351x14
+      Shape · rectangle #FBFBF9                            at 449,305  1272x98
+      Text · Why the Panama Canal ran short of water       at 476,346  443x23
+      Shape · rectangle #3EAF75                            at 924,340  3x30
+      Shape · rectangle #F7F7F5                            at 449,425  307x66
+      Text · LENGTH                                        at 465,443  45x7
+      Text · 10 min                                        at 465,466  47x13
+      Shape · rectangle #F7F7F5 2                          at 767,425  307x66
+      Text · STYLE                                         at 782,443  38x7
+      Text · Visual explainer                              at 782,466  117x15
+      Shape · rectangle #F7F7F5 3                          at 1084,425  307x66
+      Text · VOICE                                         at 1099,443  38x7
+      Text · Ours                                          at 1099,466  37x13
+      Shape · rectangle #F7F7F5 4                          at 1402,425  307x66
+      Text · LANGUAGES                                     at 1418,443  69x7
+      Text · 9                                             at 1417,466  9x13
+      Button · Send to brew  →                             at 1571,518  149x38
+      Text · First video free · up to ten minutes          at 451,535  251x11
+      Cursor                                               at 1628,588  40x60
+      Shape · dot                                          at 1569,534  82x82
+
+12  The card isolates   [23.3s to 25s, 6 layers]
+      Background · paper                                   at 0,0  1920x1080
+      Glow · green                                         at 227,539  1693x541
+      Glow · teal                                          at 0,778  1250x302
+      Glow · white                                         at 0,0  1849x875
+      App window (blurred plate)                           at 127,79  1666x936
+      Card · project                                       at 372,402  1176x288
+
+13  HERO: the production panel   [25s to 31.5s, 17 layers]
+      Fill #F4F4F1                                         at 0,0  1920x1080
+      Background · paper                                   at 0,0  1920x1080
+      Glow · green                                         at 0,547  1755x533
+      Glow · teal                                          at 0,900  232x180
+      Glow · white                                         at 0,0  1849x875
+      Card · project                                       at 95,457  810x198
+      Shape · rectangle #0B0B0C                            at 1000,0  920x1080
+      Glow                                                 at 1297,672  623x408
+      Shape · line                                         at 880,537  160x2
+      Shape · arrowhead                                    at 1040,530  16x16
+      Log · Topic received                                 at 1079,149  742x56
+      Log · Researching · 14 sources                       at 1079,215  742x76
+      Log · Verified source found                          at 1079,301  742x94
+      Log · Script v1 · 6 beats · your voice               at 1079,405  742x56
+      Log · Voice recorded · 00:54                         at 1079,471  742x56
+      Log · Edit assembled · ready for review              at 1079,537  742x56
+      Log · placeholder rows                               at 1080,604  740x44
+
+14  A person reviews it { frame by frame }   [31.5s to 33.5s, 6 layers]
+      Background · paper                                   at 0,0  1920x1080
+      Glow · green                                         at 273,560  1647x520
+      Glow · teal                                          at 0,797  1207x283
+      Glow · white                                         at 0,0  1849x875
+      Text · A person reviews it                           at 458,516  504x55
+      Text · { frame by frame }                            at 993,516  466x55
+
+15  Shape morph: phrase → bar   [33.5s to 35s, 8 layers]
+      Background · paper                                   at 0,0  1920x1080
+      Glow · green                                         at 273,560  1647x520
+      Glow · teal                                          at 0,797  1207x283
+      Glow · white                                         at 0,0  1849x875
+      Shape · rectangle #3EAF75                            at 110,470  1700x120
+      Text · reviewing…                                    at 163,512  256x42
+      Shape · rectangle #FFFFFF                            at 160,566  1600x6
+      Shape · rectangle                                    at 160,566  140x6
+
+16  Review card + scan line   [35s to 38.5s, 20 layers]
+      Background · paper                                   at 0,0  1920x1080
+      Glow · green                                         at 436,0  1484x803
+      Glow · teal                                          at 0,0  1471x646
+      Glow · white                                         at 0,0  1849x875
+      Card                                                 at 635,237  650x642
+      Shape · rectangle #3EAF75                            at 660,250  600x46
+      Shape · rectangle #3EAF75 2                          at 660,280  600x16
+      Text · reviewing… 15 / 15                            at 685,269  161x14
+      Shape · rectangle #E9E1CE                            at 684,316  552x300
+      Image · archive photo                                at 860,326  200x280
+      Shape · rectangle #3FB8C4                            at 684,450  552x3
+      Shape · rectangle                                    at 684,421  552x29
+      Check                                                at 691,647  18x18
+      Text · Named people match the narration              at 721,651  286x14
+      Check 2                                              at 691,687  18x18
+      Text · Places dated and sourced                      at 721,691  214x11
+      Check 3                                              at 691,727  18x18
+      Text · Numbers legible on pause                      at 721,731  214x14
+      Check 4                                              at 691,767  18x18
+      Text · Watched start to finish                       at 720,771  206x11
+
+17  Review complete   [38.5s to 40.5s, 13 layers]
+      Background · paper                                   at 0,0  1920x1080
+      Glow · green                                         at 436,0  1484x803
+      Glow · teal                                          at 0,0  1471x646
+      Glow · white                                         at 0,0  1849x875
+      Card                                                 at 635,407  650x262
+      Shape · rectangle #3EAF75                            at 660,420  600x46
+      Shape · rectangle #3EAF75 2                          at 660,450  600x16
+      Text · Review complete                               at 685,439  134x14
+      Check                                                at 692,504  32x32
+      Text · Approved for delivery                         at 740,510  235x23
+      Shape · dot #D9A441                                  at 696,564  32x32
+      Text · MK                                            at 704,577  17x8
+      Text · Watched by Maya K. · all 54 seconds           at 740,574  256x15
+
+18  it turns your idea into…   [40.5s to 41.7s, 4 layers]
+      Background · dark                                    at 0,0  1920x1080
+      Light leak · green                                   at 0,471  863x609
+      Light leak · teal                                    at 1160,0  760x507
+      Text · it turns your idea into                       at 721,522  481x48
+
+19  [ A finished file ]   [41.7s to 44s, 5 layers]
+      Background · dark                                    at 0,0  1920x1080
+      Light leak · green                                   at 0,471  863x609
+      Light leak · teal                                    at 1160,0  760x507
+      Brackets                                             at 536,446  848x178
+      Text · A finished file                               at 739,507  439x54
+
+20  Delivered, in the Library   [44s to 47.5s, 46 layers]
+      Background · paper                                   at 0,0  1920x1080
+      Glow · green                                         at 319,508  1601x572
+      Glow · teal                                          at 0,747  1368x333
+      Glow · white                                         at 0,0  1849x875
+      Window · frame + shadow                              at 188,152  1549x869
+      Window · surface                                     at 210,163  1502x813
+      Window · title bar                                   at 210,163  1445x82
+      Shape · rectangle #F8F8F6                            at 212,237  302x739
+      Shape · line                                         at 455,237  59x732
+      Text · brew                                          at 282,270  56x17
+      Shape · dot #D2D2CC                                  at 247,364  8x8
+      Text · New video                                     at 265,362  67x12
+      Shape · dot #D2D2CC 2                                at 250,402  8x8
+      Text · In production                                 at 268,399  83x15
+      Shape · dot #D2D2CC 3                                at 253,439  8x8
+      Text · Review                                        at 271,438  47x11
+      Shape · rectangle #3EAF75                            at 241,459  223x38
+      Shape · dot #3EAF75                                  at 255,477  9x8
+      Text · Library                                       at 274,476  48x13
+      Shape · dot #D2D2CC 4                                at 258,514  9x8
+      Text · Languages                                     at 277,514  72x13
+      Shape · dot #D2D2CC 5                                at 261,552  9x8
+      Text · AI b-roll                                     at 280,550  50x12
+      Shape · dot #D2D2CC 6                                at 264,589  9x8
+      Text · UGC ads                                       at 283,587  59x12
+      Text · LIBRARY · 11 DELIVERED                        at 487,250  197x14
+      Shape · rectangle                                    at 483,275  376x294
+      Thumbnail · map                                      at 490,282  355x195
+      Text · Why the Panama Canal Ran Short of Water       at 505,490  285x20
+      Chip · Delivered · Day 3                             at 508,520  145x27
+      Thumbnail · archive                                  at 869,270  357x196
+      Text · The 1919 Boston Molasses Tank                 at 886,479  219x17
+      Text · Delivered                                     at 888,510  54x11
+      Thumbnail · paper                                    at 1250,259  355x195
+      Text · Why You Still Get Goosebumps                  at 1266,469  213x18
+      Text · Delivered 2                                   at 1269,499  54x10
+      Thumbnail · cartoon                                  at 514,591  355x196
+      Text · Why Your Diet Starts on Monday                at 530,801  218x19
+      Text · Delivered 3                                   at 533,831  53x11
+      Thumbnail · archive 2                                at 894,580  356x195
+      Text · The 1904 Olympic Marathon                     at 910,790  189x16
+      Text · Delivered 4                                   at 913,820  54x10
+      Thumbnail · meme                                     at 1275,568  355x195
+      Text · Switzerland in meme format                    at 1291,779  186x15
+      Text · Delivered 5                                   at 1293,808  54x11
+      Cursor                                               at 858,418  38x56
+
+21  "Delivered."   [47.5s to 49s, 5 layers]
+      Background · paper                                   at 0,0  1920x1080
+      Glow · green                                         at 214,467  1706x613
+      Glow · teal                                          at 0,706  1283x374
+      Glow · white                                         at 0,0  1849x875
+      Text · Delivered.                                    at 540,455  845x148
+
+22  "And"   [49s to 50.3s, 4 layers]
+      Background · dark                                    at 0,0  1920x1080
+      Light leak · green                                   at 957,491  963x589
+      Light leak · teal                                    at 0,0  880x527
+      Text · And                                           at 338,417  836x269
+
+23  You can type the shot   [50.3s to 53.8s, 7 layers]
+      Background · dark                                    at 0,0  1920x1080
+      Light leak · green                                   at 957,491  963x589
+      Light leak · teal                                    at 0,0  880x527
+      Text · when you need one exact shot                  at 662,468  592x40
+      Text · you can                                       at 673,570  195x41
+      Text · type                                          at 882,562  107x49
+      Text · it yourself                                   at 1006,559  241x52
+
+24  Glass menu → AI b-roll   [53.8s to 56s, 16 layers]
+      Background · paper                                   at 0,0  1920x1080
+      Glow · green                                         at 226,492  1694x588
+      Glow · teal                                          at 0,724  1282x356
+      Glow · white                                         at 0,0  1849x875
+      Card                                                 at 735,287  450x502
+      Brackets                                             at 782,322  32x32
+      Text · e                                             at 793,335  10x11
+      Text · brew                                          at 829,332  51x16
+      Text · WORKSPACE                                     at 784,393  70x7
+      Text · New video                                     at 801,435  82x14
+      Text · Library                                       at 801,491  54x17
+      Text · Languages                                     at 801,547  88x17
+      Shape · rectangle #3FB8C4                            at 772,586  376x44
+      Text · AI b-roll                                     at 800,603  66x14
+      Text · UGC ads                                       at 801,659  72x14
+      Cursor                                               at 1018,588  38x56
+
+25  Macro: filling the shot   [56s to 59.5s, 11 layers]
+      Background · paper                                   at 0,0  1920x1080
+      Glow · green                                         at 233,495  1687x585
+      Glow · teal                                          at 0,724  1282x356
+      Glow · white                                         at 0,0  1849x875
+      Text · Describe the shot                             at 224,293  390x38
+      Shape · rectangle #FFFFFF                            at 200,370  1720x130
+      Text · Our serum bottle, in a hand, on wet marb      at 253,413  1074x51
+      Shape · rectangle #3FB8C4                            at 1333,405  5x64
+      Text · Length                                        at 224,603  151x46
+      Shape · rectangle #FFFFFF 2                          at 200,680  600x130
+      Text · 10 s                                          at 253,724  100x42
+
+26  Four takes, keep one   [59.5s to 63s, 14 layers]
+      Background · paper                                   at 0,0  1920x1080
+      Glow · green                                         at 233,495  1687x585
+      Glow · teal                                          at 0,725  1281x355
+      Glow · white                                         at 0,0  1849x875
+      Card                                                 at 335,137  1250x842
+      Text · AI B-ROLL · 4 TAKES                           at 400,192  168x8
+      Text · CREDITS 240                                   at 1421,192  97x8
+      Image · serum shot                                   at 400,230  550x310
+      Image · serum shot 2                                 at 970,230  550x310
+      Shape · rectangle                                    at 964,224  562x322
+      Button · Keep                                        at 1428,484  72x37
+      Image · serum shot 3                                 at 400,570  550x310
+      Image · serum shot 4                                 at 970,570  550x310
+      Cursor                                               at 1458,518  38x56
+
+27  UGC ad, step by step   [63s to 68.5s, 21 layers]
+      Background · paper                                   at 0,0  1920x1080
+      Glow · green                                         at 0,500  1557x580
+      Glow · teal                                          at 0,980  61x100
+      Glow · white                                         at 0,0  1849x875
+      Phone · Hook 01                                      at 259,159  402x713
+      Shape · line                                         at 819,330  2x430
+      Shape · dot #FFFFFF                                  at 797,317  46x46
+      Text · 1                                             at 815,334  11x13
+      Card                                                 at 855,292  950x136
+      Chip · Hook                                          at 910,328  49x23
+      Text · — I was so wrong about serums                 at 1010,334  309x20
+      Shape · dot #FFFFFF 2                                at 797,517  46x46
+      Text · 2                                             at 816,534  9x13
+      Card 2                                               at 855,492  950x136
+      Chip · Demo                                          at 910,528  49x23
+      Text · — 30 seconds, morning light                   at 1010,534  276x20
+      Shape · dot #FFFFFF 3                                at 797,717  46x46
+      Text · 3                                             at 815,734  10x13
+      Card 3                                               at 855,692  950x136
+      Chip · Payoff                                        at 910,728  64x23
+      Text · — okay this actually worked                   at 1010,734  267x20
+
+28  One edit, nine voices   [68.5s to 72.5s, 22 layers]
+      Background · paper                                   at 0,0  1920x1080
+      Glow · green                                         at 230,540  1690x540
+      Glow · teal                                          at 0,780  1245x300
+      Glow · white                                         at 0,0  1849x875
+      Card                                                 at 235,207  1010x622
+      Image · map                                          at 280,240  920x518
+      Card 2                                               at 1255,207  430x622
+      Text · English                                       at 1317,253  57x17
+      Check                                                at 1619,251  18x18
+      Text · German                                        at 1317,311  63x14
+      Check 2                                              at 1619,309  18x18
+      Shape · rectangle #3EAF75                            at 1292,352  356x46
+      Text · French                                        at 1317,369  58x14
+      Check 3                                              at 1619,367  18x18
+      Text · Spanish                                       at 1316,427  64x16
+      Text · Portuguese                                    at 1317,485  91x17
+      Text · Italian                                       at 1317,543  46x14
+      Text · Polish                                        at 1317,601  47x14
+      Text · Indonesian                                    at 1317,659  86x14
+      Text · Danish                                        at 1317,717  54x14
+      Shape · rectangle #FFFFFF                            at 559,829  802x66
+      Text · Upload it nine times, not once.               at 796,855  327x23
+
+29  The channel keeps posting   [72.5s to 75s, 6 layers]
+      Background · paper                                   at 0,0  1920x1080
+      Glow · green                                         at 0,286  1920x794
+      Glow · teal                                          at 0,530  750x550
+      Glow · white                                         at 0,0  1849x875
+      Text · The channel keeps posting.                    at 457,519  681x52
+      Text · Every week.                                   at 1161,519  298x52
+
+30  Others hand you a tool.   [75s to 77s, 6 layers]
+      Background · paper                                   at 0,0  1920x1080
+      Glow · green                                         at 245,547  1675x533
+      Glow · teal                                          at 0,784  1238x296
+      Glow · white                                         at 0,0  1849x875
+      Text · Others hand you a                             at 661,508  589x65
+      Text · tool. (blurred)                               at 1259,499  153x71
+
+31  We hand you the video.   [77s to 79.5s, 5 layers]
+      Background · paper                                   at 0,0  1920x1080
+      Glow · green                                         at 214,467  1706x613
+      Glow · teal                                          at 0,706  1283x374
+      Glow · white                                         at 0,0  1849x875
+      Text · We hand you the video.                        at 586,508  745x65
+
+32  Logo   [79.5s to 82.5s, 8 layers]
+      Background · paper                                   at 0,0  1920x1080
+      Glow · green                                         at 219,489  1701x591
+      Glow · teal                                          at 0,727  1276x353
+      Glow · white                                         at 0,0  1849x875
+      Shape · rectangle #FFFFFF                            at 690,450  150x150
+      Brackets                                             at 708,468  114x114
+      Text · e                                             at 740,512  51x54
+      Text · brew                                          at 878,475  334x103
+
+33  Tagline on black   [82.5s to 87.5s, 5 layers]
+      Background · dark                                    at 0,0  1920x1080
+      Light leak · green                                   at 0,471  863x609
+      Light leak · teal                                    at 1160,0  760x507
+      Text · Every frame watched by a person.              at 570,522  783x48
+      Caret                                                at 1359,518  4x52
+
+34  CTA   [87.5s to 93s, 6 layers]
+      Background · dark                                    at 0,0  1920x1080
+      Light leak · green                                   at 1097,0  823x509
+      Light leak · teal                                    at 0,633  760x447
+      Text · Your first video is free.                     at 637,473  641x48
+      Button · Send us a script  →                         at 816,590  288x52
+      Text · scalewithbrew.com                             at 851,745  218x15

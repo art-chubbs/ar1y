@@ -1,6 +1,6 @@
 // brew Studio — an imagined product UI for the cinematic launch storyboard (v2).
 // Built from the site's tokens; every screen is plain SVG so it imports into Figma.
-import { C, D, S, M, W, H, T, TS, R, Ln, Ci, P, G, ML, pill, tag, brackets, cursor, check, waveform, grad, rgrad, clipRect, STEPS } from '../lib.mjs';
+import { C, D, S, M, W, H, T, TS, R, Ln, Ci, P, G, ML, pill, tag, brackets, cursor, check, waveform, grad, rgrad, clipRect, STEPS, LAYER } from '../lib.mjs';
 import { panamaMap, archivePhoto, skyline, serumShot, phone, player } from '../art.mjs';
 
 export const glow = (c, cx, cy, rx, ry, col = C.green, op = 0.35) =>
@@ -89,7 +89,7 @@ export function screenReview(c, x, y, w, h, o = {}) {
 const LIB = [['Why the Panama Canal Ran Short of Water', 'Visual Explainer', '0:53', 'map'], ['The 1919 Boston Molasses Tank Collapse', 'Archive Documentary', '0:50', 'archive'],
   ['Why You Still Get Goosebumps', 'Stick Explainer', '0:56', 'paper'], ['Why Your Diet Starts on Monday', 'Character Cartoon', '1:01', 'cartoon'],
   ['The 1904 Olympic Marathon in St Louis', 'Paper Archive', '0:49', 'archive'], ['Switzerland explained in meme format', 'Brainrot', '0:54', 'meme']];
-export function thumb(c, x, y, w, h, kind) {
+function thumb__raw(c, x, y, w, h, kind) {
   if (kind === 'map') return panamaMap(c, x, y, w, h, { quiet: true, r: 10 });
   if (kind === 'archive') return archivePhoto(c, x, y, w, h);
   const bgs = { paper: ['#E9DFC8', '#D3C29F'], cartoon: ['#6B4F3A', '#2E2219'], meme: ['#1B1B1F', '#000'] }[kind];
@@ -142,3 +142,6 @@ export function statement(c, lines, o = {}) {
 
 // Pseudo-3D tilt (CSS-like perspective approximation using skew + scale).
 export const tilt = (cx, cy, k = 1) => `translate(${cx} ${cy}) skewY(${-4 * k}) skewX(${10 * k}) scale(${1 - 0.06 * k} ${1 - 0.14 * k}) translate(${-cx} ${-cy})`;
+
+// Named layers (data-layer) so the After Effects exporter can split frames into elements.
+export const thumb = (...a) => LAYER(`Thumbnail · ${a[5]}`, thumb__raw(...a));

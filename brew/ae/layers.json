@@ -1,0 +1,3550 @@
+[
+ {
+  "n": 1,
+  "title": "Typed: \"The same video.\"",
+  "tin": 0,
+  "tout": 2,
+  "act": "1",
+  "flat": "01_typed-the-same-video.png",
+  "layers": [
+   {
+    "name": "Background · paper",
+    "file": "background-paper_1c7889dee2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 1080
+   },
+   {
+    "name": "Glow · green",
+    "file": "glow-green_0c68733b96.png",
+    "x": 260,
+    "y": 554,
+    "w": 1660,
+    "h": 526
+   },
+   {
+    "name": "Glow · teal",
+    "file": "glow-teal_22aa5dbf9f.png",
+    "x": 0,
+    "y": 797,
+    "w": 1207,
+    "h": 283
+   },
+   {
+    "name": "Glow · white",
+    "file": "glow-white_d67dd114d2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1849,
+    "h": 875
+   },
+   {
+    "name": "Text · The same video",
+    "file": "text-the-same-video_ab8ef5d5c0.png",
+    "x": 734,
+    "y": 513,
+    "w": 450,
+    "h": 48
+   },
+   {
+    "name": "Caret",
+    "file": "caret_12d3f71078.png",
+    "x": 1193,
+    "y": 508,
+    "w": 4,
+    "h": 64
+   }
+  ]
+ },
+ {
+  "n": 2,
+  "title": "The mess, in depth",
+  "tin": 2,
+  "tout": 4.5,
+  "act": "1",
+  "flat": "02_the-mess-in-depth.png",
+  "layers": [
+   {
+    "name": "Background · paper",
+    "file": "background-paper_1c7889dee2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 1080
+   },
+   {
+    "name": "Glow · green",
+    "file": "glow-green_1f2763ca01.png",
+    "x": 251,
+    "y": 550,
+    "w": 1669,
+    "h": 530
+   },
+   {
+    "name": "Glow · teal",
+    "file": "glow-teal_6f1aeb5608.png",
+    "x": 0,
+    "y": 791,
+    "w": 1222,
+    "h": 289
+   },
+   {
+    "name": "Glow · white",
+    "file": "glow-white_d67dd114d2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1849,
+    "h": 875
+   },
+   {
+    "name": "Card · Editor message (blurred)",
+    "file": "card-editor-message-blurred_97dd32d13f.png",
+    "x": 103,
+    "y": 126,
+    "w": 299,
+    "h": 126
+   },
+   {
+    "name": "Card · script_v7_notes.docx (blurred)",
+    "file": "card-script-v7-notes-docx-blurred_06f653260a.png",
+    "x": 1363,
+    "y": 107,
+    "w": 314,
+    "h": 120
+   },
+   {
+    "name": "Card · invoice (blurred)",
+    "file": "card-invoice-blurred_b9c6470548.png",
+    "x": 1543,
+    "y": 625,
+    "w": 334,
+    "h": 244
+   },
+   {
+    "name": "Card · broll_maybe.zip (blurred)",
+    "file": "card-broll-maybe-zip-blurred_c115574412.png",
+    "x": 63,
+    "y": 807,
+    "w": 314,
+    "h": 120
+   },
+   {
+    "name": "Card · edit timeline",
+    "file": "card-edit-timeline_50483700f6.png",
+    "x": 135,
+    "y": 317,
+    "w": 570,
+    "h": 212
+   },
+   {
+    "name": "Card · Client message",
+    "file": "card-client-message_5e77276c8f.png",
+    "x": 1215,
+    "y": 325,
+    "w": 310,
+    "h": 120
+   },
+   {
+    "name": "Card · v3_FINAL_final.mp4",
+    "file": "card-v3-final-final-mp4_a9dc48cbfc.png",
+    "x": 1155,
+    "y": 467,
+    "w": 330,
+    "h": 112
+   },
+   {
+    "name": "Card · Freelancer message",
+    "file": "card-freelancer-message_a4cc1e6756.png",
+    "x": 275,
+    "y": 685,
+    "w": 310,
+    "h": 120
+   },
+   {
+    "name": "Shape · rectangle #F4F4F1",
+    "file": "shape-rectangle-f4f4f1_9829de6a00.png",
+    "x": 560,
+    "y": 500,
+    "w": 800,
+    "h": 90
+   },
+   {
+    "name": "Text · The same video, a different editor.",
+    "file": "text-the-same-video-a-different-editor_681486a75a.png",
+    "x": 555,
+    "y": 522,
+    "w": 805,
+    "h": 49
+   }
+  ]
+ },
+ {
+  "n": 3,
+  "title": "Selection highlight",
+  "tin": 4.5,
+  "tout": 6.3,
+  "act": "1",
+  "flat": "03_selection-highlight.png",
+  "layers": [
+   {
+    "name": "Background · paper",
+    "file": "background-paper_1c7889dee2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 1080
+   },
+   {
+    "name": "Glow · green",
+    "file": "glow-green_1f2763ca01.png",
+    "x": 251,
+    "y": 550,
+    "w": 1669,
+    "h": 530
+   },
+   {
+    "name": "Glow · teal",
+    "file": "glow-teal_6f1aeb5608.png",
+    "x": 0,
+    "y": 791,
+    "w": 1222,
+    "h": 289
+   },
+   {
+    "name": "Glow · white",
+    "file": "glow-white_d67dd114d2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1849,
+    "h": 875
+   },
+   {
+    "name": "Card · Editor message (blurred)",
+    "file": "card-editor-message-blurred_97dd32d13f.png",
+    "x": 103,
+    "y": 126,
+    "w": 299,
+    "h": 126
+   },
+   {
+    "name": "Card · script_v7_notes.docx (blurred)",
+    "file": "card-script-v7-notes-docx-blurred_06f653260a.png",
+    "x": 1363,
+    "y": 107,
+    "w": 314,
+    "h": 120
+   },
+   {
+    "name": "Card · invoice (blurred)",
+    "file": "card-invoice-blurred_b9c6470548.png",
+    "x": 1543,
+    "y": 625,
+    "w": 334,
+    "h": 244
+   },
+   {
+    "name": "Card · broll_maybe.zip (blurred)",
+    "file": "card-broll-maybe-zip-blurred_c115574412.png",
+    "x": 63,
+    "y": 807,
+    "w": 314,
+    "h": 120
+   },
+   {
+    "name": "Card · edit timeline",
+    "file": "card-edit-timeline_50483700f6.png",
+    "x": 135,
+    "y": 317,
+    "w": 570,
+    "h": 212
+   },
+   {
+    "name": "Card · Client message",
+    "file": "card-client-message_5e77276c8f.png",
+    "x": 1215,
+    "y": 325,
+    "w": 310,
+    "h": 120
+   },
+   {
+    "name": "Card · v3_FINAL_final.mp4",
+    "file": "card-v3-final-final-mp4_a9dc48cbfc.png",
+    "x": 1155,
+    "y": 467,
+    "w": 330,
+    "h": 112
+   },
+   {
+    "name": "Card · Freelancer message",
+    "file": "card-freelancer-message_a4cc1e6756.png",
+    "x": 275,
+    "y": 685,
+    "w": 310,
+    "h": 120
+   },
+   {
+    "name": "Shape · rectangle #F4F4F1",
+    "file": "shape-rectangle-f4f4f1_9829de6a00.png",
+    "x": 560,
+    "y": 500,
+    "w": 800,
+    "h": 90
+   },
+   {
+    "name": "Text · The same video,",
+    "file": "text-the-same-video_62f9514147.png",
+    "x": 555,
+    "y": 523,
+    "w": 393,
+    "h": 48
+   },
+   {
+    "name": "Selection highlight",
+    "file": "selection-highlight_05237d0bd4.png",
+    "x": 960,
+    "y": 515,
+    "w": 401,
+    "h": 61
+   },
+   {
+    "name": "Text · a different editor",
+    "file": "text-a-different-editor_2fe9089ff6.png",
+    "x": 965,
+    "y": 522,
+    "w": 390,
+    "h": 41
+   },
+   {
+    "name": "Text · .",
+    "file": "text_804a9357da.png",
+    "x": 1360,
+    "y": 555,
+    "w": 7,
+    "h": 7
+   }
+  ]
+ },
+ {
+  "n": 4,
+  "title": "Same brief… again?",
+  "tin": 6.3,
+  "tout": 8.2,
+  "act": "1",
+  "flat": "04_same-brief-again.png",
+  "layers": [
+   {
+    "name": "Background · paper",
+    "file": "background-paper_1c7889dee2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 1080
+   },
+   {
+    "name": "Glow · green",
+    "file": "glow-green_1f2763ca01.png",
+    "x": 251,
+    "y": 550,
+    "w": 1669,
+    "h": 530
+   },
+   {
+    "name": "Glow · teal",
+    "file": "glow-teal_6f1aeb5608.png",
+    "x": 0,
+    "y": 791,
+    "w": 1222,
+    "h": 289
+   },
+   {
+    "name": "Glow · white",
+    "file": "glow-white_d67dd114d2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1849,
+    "h": 875
+   },
+   {
+    "name": "Card · Editor message (blurred)",
+    "file": "card-editor-message-blurred_97dd32d13f.png",
+    "x": 103,
+    "y": 126,
+    "w": 299,
+    "h": 126
+   },
+   {
+    "name": "Card · script_v7_notes.docx (blurred)",
+    "file": "card-script-v7-notes-docx-blurred_06f653260a.png",
+    "x": 1363,
+    "y": 107,
+    "w": 314,
+    "h": 120
+   },
+   {
+    "name": "Card · invoice (blurred)",
+    "file": "card-invoice-blurred_b9c6470548.png",
+    "x": 1543,
+    "y": 625,
+    "w": 334,
+    "h": 244
+   },
+   {
+    "name": "Card · broll_maybe.zip (blurred)",
+    "file": "card-broll-maybe-zip-blurred_c115574412.png",
+    "x": 63,
+    "y": 807,
+    "w": 314,
+    "h": 120
+   },
+   {
+    "name": "Text · Same brief… again?",
+    "file": "text-same-brief-again_8dafc81810.png",
+    "x": 675,
+    "y": 515,
+    "w": 567,
+    "h": 59
+   }
+  ]
+ },
+ {
+  "n": 5,
+  "title": "\"Stop\"",
+  "tin": 8.2,
+  "tout": 9.4,
+  "act": "1",
+  "flat": "05_stop.png",
+  "layers": [
+   {
+    "name": "Background · paper",
+    "file": "background-paper_1c7889dee2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 1080
+   },
+   {
+    "name": "Glow · green",
+    "file": "glow-green_4770b3912c.png",
+    "x": 237,
+    "y": 544,
+    "w": 1683,
+    "h": 536
+   },
+   {
+    "name": "Glow · teal",
+    "file": "glow-teal_d765f7f102.png",
+    "x": 0,
+    "y": 782,
+    "w": 1242,
+    "h": 298
+   },
+   {
+    "name": "Glow · white",
+    "file": "glow-white_d67dd114d2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1849,
+    "h": 875
+   },
+   {
+    "name": "Text · Stop",
+    "file": "text-stop_c3b890bae9.png",
+    "x": 519,
+    "y": 372,
+    "w": 895,
+    "h": 337
+   }
+  ]
+ },
+ {
+  "n": 6,
+  "title": "\"Stop assembling videos.\"",
+  "tin": 9.4,
+  "tout": 11,
+  "act": "1",
+  "flat": "06_stop-assembling-videos.png",
+  "layers": [
+   {
+    "name": "Background · paper",
+    "file": "background-paper_1c7889dee2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 1080
+   },
+   {
+    "name": "Glow · green",
+    "file": "glow-green_4770b3912c.png",
+    "x": 237,
+    "y": 544,
+    "w": 1683,
+    "h": 536
+   },
+   {
+    "name": "Glow · teal",
+    "file": "glow-teal_d765f7f102.png",
+    "x": 0,
+    "y": 782,
+    "w": 1242,
+    "h": 298
+   },
+   {
+    "name": "Glow · white",
+    "file": "glow-white_d67dd114d2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1849,
+    "h": 875
+   },
+   {
+    "name": "Text · Stop",
+    "file": "text-stop_57f945b694.png",
+    "x": 566,
+    "y": 509,
+    "w": 148,
+    "h": 64
+   },
+   {
+    "name": "Text · assembling",
+    "file": "text-assembling_cb07743be5.png",
+    "x": 733,
+    "y": 507,
+    "w": 374,
+    "h": 66
+   },
+   {
+    "name": "Text · videos.",
+    "file": "text-videos_f31d430576.png",
+    "x": 1121,
+    "y": 508,
+    "w": 231,
+    "h": 53
+   },
+   {
+    "name": "Shape · path",
+    "file": "shape-path_08f000c5ae.png",
+    "x": 259,
+    "y": 299,
+    "w": 1502,
+    "h": 602
+   }
+  ]
+ },
+ {
+  "n": 7,
+  "title": "\"Meet\" focus pull",
+  "tin": 11,
+  "tout": 12.3,
+  "act": "2",
+  "flat": "07_meet-focus-pull.png",
+  "layers": [
+   {
+    "name": "Background · paper",
+    "file": "background-paper_1c7889dee2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 1080
+   },
+   {
+    "name": "Glow · green",
+    "file": "glow-green_f27670c3ea.png",
+    "x": 214,
+    "y": 467,
+    "w": 1706,
+    "h": 613
+   },
+   {
+    "name": "Glow · teal",
+    "file": "glow-teal_7dd0fff221.png",
+    "x": 0,
+    "y": 706,
+    "w": 1283,
+    "h": 374
+   },
+   {
+    "name": "Glow · white",
+    "file": "glow-white_d67dd114d2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1849,
+    "h": 875
+   },
+   {
+    "name": "Text · Me",
+    "file": "text-me_c041e9007f.png",
+    "x": 584,
+    "y": 484,
+    "w": 376,
+    "h": 210
+   },
+   {
+    "name": "Text · et (blurred)",
+    "file": "text-et-blurred_ecf76968a6.png",
+    "x": 953,
+    "y": 467,
+    "w": 270,
+    "h": 247
+   }
+  ]
+ },
+ {
+  "n": 8,
+  "title": "Meet [mark] brew",
+  "tin": 12.3,
+  "tout": 14.3,
+  "act": "2",
+  "flat": "08_meet-mark-brew.png",
+  "layers": [
+   {
+    "name": "Background · paper",
+    "file": "background-paper_1c7889dee2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 1080
+   },
+   {
+    "name": "Glow · green",
+    "file": "glow-green_f27670c3ea.png",
+    "x": 214,
+    "y": 467,
+    "w": 1706,
+    "h": 613
+   },
+   {
+    "name": "Glow · teal",
+    "file": "glow-teal_7dd0fff221.png",
+    "x": 0,
+    "y": 706,
+    "w": 1283,
+    "h": 374
+   },
+   {
+    "name": "Glow · white",
+    "file": "glow-white_d67dd114d2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1849,
+    "h": 875
+   },
+   {
+    "name": "Text · Meet",
+    "file": "text-meet_8cb031c590.png",
+    "x": 568,
+    "y": 517,
+    "w": 250,
+    "h": 85
+   },
+   {
+    "name": "Shape · rectangle #FFFFFF",
+    "file": "shape-rectangle-ffffff_026e7218f6.png",
+    "x": 870,
+    "y": 482,
+    "w": 151,
+    "h": 150
+   },
+   {
+    "name": "Brackets",
+    "file": "brackets_09a0f6d716.png",
+    "x": 888,
+    "y": 500,
+    "w": 114,
+    "h": 114
+   },
+   {
+    "name": "Text · e",
+    "file": "text-e_b54825d579.png",
+    "x": 920,
+    "y": 536,
+    "w": 51,
+    "h": 54
+   },
+   {
+    "name": "Text · brew",
+    "file": "text-brew_40072087fb.png",
+    "x": 1067,
+    "y": 513,
+    "w": 288,
+    "h": 89
+   }
+  ]
+ },
+ {
+  "n": 9,
+  "title": "Positioning line",
+  "tin": 14.3,
+  "tout": 17.3,
+  "act": "2",
+  "flat": "09_positioning-line.png",
+  "layers": [
+   {
+    "name": "Background · paper",
+    "file": "background-paper_1c7889dee2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 1080
+   },
+   {
+    "name": "Glow · green",
+    "file": "glow-green_f27670c3ea.png",
+    "x": 214,
+    "y": 467,
+    "w": 1706,
+    "h": 613
+   },
+   {
+    "name": "Glow · teal",
+    "file": "glow-teal_7dd0fff221.png",
+    "x": 0,
+    "y": 706,
+    "w": 1283,
+    "h": 374
+   },
+   {
+    "name": "Glow · white",
+    "file": "glow-white_d67dd114d2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1849,
+    "h": 875
+   },
+   {
+    "name": "Text · The AI-powered video studio,",
+    "file": "text-the-ai-powered-video-studio_c192d62dbf.png",
+    "x": 344,
+    "y": 519,
+    "w": 726,
+    "h": 51
+   },
+   {
+    "name": "Text · watched by people.",
+    "file": "text-watched-by-people_aa80350c28.png",
+    "x": 1090,
+    "y": 519,
+    "w": 481,
+    "h": 52
+   }
+  ]
+ },
+ {
+  "n": 10,
+  "title": "Product reveal in perspective",
+  "tin": 17.3,
+  "tout": 20.3,
+  "act": "2",
+  "flat": "10_product-reveal-in-perspective.png",
+  "layers": [
+   {
+    "name": "Background · paper",
+    "file": "background-paper_1c7889dee2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 1080
+   },
+   {
+    "name": "Glow · green",
+    "file": "glow-green_9e2d198e0e.png",
+    "x": 16,
+    "y": 506,
+    "w": 1904,
+    "h": 574
+   },
+   {
+    "name": "Glow · teal",
+    "file": "glow-teal_fd3f9b39c8.png",
+    "x": 0,
+    "y": 745,
+    "w": 1072,
+    "h": 335
+   },
+   {
+    "name": "Glow · white",
+    "file": "glow-white_d67dd114d2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1849,
+    "h": 875
+   },
+   {
+    "name": "Window · frame + shadow",
+    "file": "window-frame-shadow_1025a12a2a.png",
+    "x": 263,
+    "y": 232,
+    "w": 1402,
+    "h": 784
+   },
+   {
+    "name": "Window · surface",
+    "file": "window-surface_7135866d69.png",
+    "x": 282,
+    "y": 241,
+    "w": 1359,
+    "h": 735
+   },
+   {
+    "name": "Window · title bar",
+    "file": "window-title-bar_70ef061b22.png",
+    "x": 282,
+    "y": 241,
+    "w": 1252,
+    "h": 119
+   },
+   {
+    "name": "Window · sidebar (New video)",
+    "file": "window-sidebar-new-video_63a7d27ed6.png",
+    "x": 286,
+    "y": 342,
+    "w": 347,
+    "h": 634
+   },
+   {
+    "name": "Text · NEW VIDEO",
+    "file": "text-new-video_96f216b2e6.png",
+    "x": 567,
+    "y": 374,
+    "w": 72,
+    "h": 11
+   },
+   {
+    "name": "Text · What should we make?",
+    "file": "text-what-should-we-make_3fc2498305.png",
+    "x": 572,
+    "y": 383,
+    "w": 341,
+    "h": 42
+   },
+   {
+    "name": "Text · A finished script, or one line about the",
+    "file": "text-a-finished-script-or-one-line-about_71c3add8a9.png",
+    "x": 580,
+    "y": 418,
+    "w": 340,
+    "h": 32
+   },
+   {
+    "name": "Shape · rectangle #FBFBF9",
+    "file": "shape-rectangle-fbfbf9_084273db03.png",
+    "x": 584,
+    "y": 411,
+    "w": 950,
+    "h": 146
+   },
+   {
+    "name": "Text · Why the Panama Canal ran short of water",
+    "file": "text-why-the-panama-canal-ran-short-of-w_7c05f0feba.png",
+    "x": 614,
+    "y": 482,
+    "w": 421,
+    "h": 42
+   },
+   {
+    "name": "Shape · rectangle #3EAF75",
+    "file": "shape-rectangle-3eaf75_a0b4ad713e.png",
+    "x": 1037,
+    "y": 473,
+    "w": 8,
+    "h": 26
+   },
+   {
+    "name": "Shape · rectangle #F7F7F5",
+    "file": "shape-rectangle-f7f7f5_1d352b7897.png",
+    "x": 603,
+    "y": 562,
+    "w": 231,
+    "h": 70
+   },
+   {
+    "name": "Text · LENGTH",
+    "file": "text-length_0238876346.png",
+    "x": 619,
+    "y": 588,
+    "w": 40,
+    "h": 9
+   },
+   {
+    "name": "Text · 10 min",
+    "file": "text-10-min_4cca22514b.png",
+    "x": 623,
+    "y": 609,
+    "w": 46,
+    "h": 12
+   },
+   {
+    "name": "Shape · rectangle #F7F7F5 2",
+    "file": "shape-rectangle-f7f7f5-2_9d0a3e2876.png",
+    "x": 837,
+    "y": 546,
+    "w": 231,
+    "h": 71
+   },
+   {
+    "name": "Text · STYLE",
+    "file": "text-style_427a0ae4fd.png",
+    "x": 852,
+    "y": 572,
+    "w": 34,
+    "h": 9
+   },
+   {
+    "name": "Text · Visual explainer",
+    "file": "text-visual-explainer_08b055f95c.png",
+    "x": 855,
+    "y": 589,
+    "w": 114,
+    "h": 16
+   },
+   {
+    "name": "Shape · rectangle #F7F7F5 3",
+    "file": "shape-rectangle-f7f7f5-3_3d8dc804af.png",
+    "x": 1070,
+    "y": 530,
+    "w": 232,
+    "h": 71
+   },
+   {
+    "name": "Text · VOICE",
+    "file": "text-voice_3b9128060f.png",
+    "x": 1086,
+    "y": 557,
+    "w": 34,
+    "h": 8
+   },
+   {
+    "name": "Text · Ours",
+    "file": "text-ours_7bf5a55d3e.png",
+    "x": 1090,
+    "y": 579,
+    "w": 34,
+    "h": 10
+   },
+   {
+    "name": "Shape · rectangle #F7F7F5 4",
+    "file": "shape-rectangle-f7f7f5-4_e477b7d431.png",
+    "x": 1304,
+    "y": 515,
+    "w": 232,
+    "h": 70
+   },
+   {
+    "name": "Text · LANGUAGES",
+    "file": "text-languages_87c7d10bbc.png",
+    "x": 1321,
+    "y": 539,
+    "w": 61,
+    "h": 11
+   },
+   {
+    "name": "Text · 9",
+    "file": "text-9_7a1a9b51f2.png",
+    "x": 1324,
+    "y": 564,
+    "w": 9,
+    "h": 10
+   },
+   {
+    "name": "Button · Send to brew  →",
+    "file": "button-send-to-brew_b8af1e668c.png",
+    "x": 1412,
+    "y": 593,
+    "w": 145,
+    "h": 42
+   },
+   {
+    "name": "Text · First video free · up to ten minutes",
+    "file": "text-first-video-free-up-to-ten-minutes_6749c0abdb.png",
+    "x": 619,
+    "y": 654,
+    "w": 261,
+    "h": 24
+   },
+   {
+    "name": "Text · For channels that",
+    "file": "text-for-channels-that_57db5628b4.png",
+    "x": 1534,
+    "y": 111,
+    "w": 306,
+    "h": 30
+   },
+   {
+    "name": "Text · post every week",
+    "file": "text-post-every-week_f24b3a8e10.png",
+    "x": 1552,
+    "y": 161,
+    "w": 288,
+    "h": 37
+   }
+  ]
+ },
+ {
+  "n": 11,
+  "title": "One line in",
+  "tin": 20.3,
+  "tout": 23.3,
+  "act": "3",
+  "flat": "11_one-line-in.png",
+  "layers": [
+   {
+    "name": "Background · paper",
+    "file": "background-paper_1c7889dee2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 1080
+   },
+   {
+    "name": "Glow · green",
+    "file": "glow-green_4f78e8bb19.png",
+    "x": 227,
+    "y": 539,
+    "w": 1693,
+    "h": 541
+   },
+   {
+    "name": "Glow · teal",
+    "file": "glow-teal_67e491ecdb.png",
+    "x": 0,
+    "y": 778,
+    "w": 1250,
+    "h": 302
+   },
+   {
+    "name": "Glow · white",
+    "file": "glow-white_d67dd114d2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1849,
+    "h": 875
+   },
+   {
+    "name": "Window · frame + shadow",
+    "file": "window-frame-shadow_fac528362b.png",
+    "x": 135,
+    "y": 97,
+    "w": 1650,
+    "h": 922
+   },
+   {
+    "name": "Window · surface",
+    "file": "window-surface_79cb36c148.png",
+    "x": 160,
+    "y": 110,
+    "w": 1600,
+    "h": 860
+   },
+   {
+    "name": "Window · title bar",
+    "file": "window-title-bar_c79cbe7044.png",
+    "x": 160,
+    "y": 110,
+    "w": 1600,
+    "h": 41
+   },
+   {
+    "name": "Window · sidebar (New video)",
+    "file": "window-sidebar-new-video_d5c69fe7e0.png",
+    "x": 160,
+    "y": 150,
+    "w": 251,
+    "h": 820
+   },
+   {
+    "name": "Text · NEW VIDEO",
+    "file": "text-new-video_8ea889ee46.png",
+    "x": 450,
+    "y": 194,
+    "w": 79,
+    "h": 8
+   },
+   {
+    "name": "Text · What should we make?",
+    "file": "text-what-should-we-make_0105ad5702.png",
+    "x": 450,
+    "y": 223,
+    "w": 361,
+    "h": 26
+   },
+   {
+    "name": "Text · A finished script, or one line about the",
+    "file": "text-a-finished-script-or-one-line-about_09ebd397f3.png",
+    "x": 450,
+    "y": 267,
+    "w": 351,
+    "h": 14
+   },
+   {
+    "name": "Shape · rectangle #FBFBF9",
+    "file": "shape-rectangle-fbfbf9_a14ee6763d.png",
+    "x": 449,
+    "y": 305,
+    "w": 1272,
+    "h": 98
+   },
+   {
+    "name": "Text · Why the Panama Canal ran short of water",
+    "file": "text-why-the-panama-canal-ran-short-of-w_80cfbd3341.png",
+    "x": 476,
+    "y": 346,
+    "w": 443,
+    "h": 23
+   },
+   {
+    "name": "Shape · rectangle #3EAF75",
+    "file": "shape-rectangle-3eaf75_cd4eea5ac2.png",
+    "x": 924,
+    "y": 340,
+    "w": 3,
+    "h": 30
+   },
+   {
+    "name": "Shape · rectangle #F7F7F5",
+    "file": "shape-rectangle-f7f7f5_d5c8175393.png",
+    "x": 449,
+    "y": 425,
+    "w": 307,
+    "h": 66
+   },
+   {
+    "name": "Text · LENGTH",
+    "file": "text-length_3ea881fd1d.png",
+    "x": 465,
+    "y": 443,
+    "w": 45,
+    "h": 7
+   },
+   {
+    "name": "Text · 10 min",
+    "file": "text-10-min_4bda962876.png",
+    "x": 465,
+    "y": 466,
+    "w": 47,
+    "h": 13
+   },
+   {
+    "name": "Shape · rectangle #F7F7F5 2",
+    "file": "shape-rectangle-f7f7f5-2_5851899cfc.png",
+    "x": 767,
+    "y": 425,
+    "w": 307,
+    "h": 66
+   },
+   {
+    "name": "Text · STYLE",
+    "file": "text-style_5c2cb6e4f5.png",
+    "x": 782,
+    "y": 443,
+    "w": 38,
+    "h": 7
+   },
+   {
+    "name": "Text · Visual explainer",
+    "file": "text-visual-explainer_da1c0bbac8.png",
+    "x": 782,
+    "y": 466,
+    "w": 117,
+    "h": 15
+   },
+   {
+    "name": "Shape · rectangle #F7F7F5 3",
+    "file": "shape-rectangle-f7f7f5_d5c8175393.png",
+    "x": 1084,
+    "y": 425,
+    "w": 307,
+    "h": 66
+   },
+   {
+    "name": "Text · VOICE",
+    "file": "text-voice_f0f21e8242.png",
+    "x": 1099,
+    "y": 443,
+    "w": 38,
+    "h": 7
+   },
+   {
+    "name": "Text · Ours",
+    "file": "text-ours_89119e89b6.png",
+    "x": 1099,
+    "y": 466,
+    "w": 37,
+    "h": 13
+   },
+   {
+    "name": "Shape · rectangle #F7F7F5 4",
+    "file": "shape-rectangle-f7f7f5-2_5851899cfc.png",
+    "x": 1402,
+    "y": 425,
+    "w": 307,
+    "h": 66
+   },
+   {
+    "name": "Text · LANGUAGES",
+    "file": "text-languages_cf3a316d30.png",
+    "x": 1418,
+    "y": 443,
+    "w": 69,
+    "h": 7
+   },
+   {
+    "name": "Text · 9",
+    "file": "text-9_914d9ed519.png",
+    "x": 1417,
+    "y": 466,
+    "w": 9,
+    "h": 13
+   },
+   {
+    "name": "Button · Send to brew  →",
+    "file": "button-send-to-brew_e80022e6ae.png",
+    "x": 1571,
+    "y": 518,
+    "w": 149,
+    "h": 38
+   },
+   {
+    "name": "Text · First video free · up to ten minutes",
+    "file": "text-first-video-free-up-to-ten-minutes_44a8a83374.png",
+    "x": 451,
+    "y": 535,
+    "w": 251,
+    "h": 11
+   },
+   {
+    "name": "Cursor",
+    "file": "cursor_53ed79cd22.png",
+    "x": 1628,
+    "y": 588,
+    "w": 40,
+    "h": 60
+   },
+   {
+    "name": "Shape · dot",
+    "file": "shape-dot_4526bbb991.png",
+    "x": 1569,
+    "y": 534,
+    "w": 82,
+    "h": 82
+   }
+  ]
+ },
+ {
+  "n": 12,
+  "title": "The card isolates",
+  "tin": 23.3,
+  "tout": 25,
+  "act": "3",
+  "flat": "12_the-card-isolates.png",
+  "layers": [
+   {
+    "name": "Background · paper",
+    "file": "background-paper_1c7889dee2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 1080
+   },
+   {
+    "name": "Glow · green",
+    "file": "glow-green_4f78e8bb19.png",
+    "x": 227,
+    "y": 539,
+    "w": 1693,
+    "h": 541
+   },
+   {
+    "name": "Glow · teal",
+    "file": "glow-teal_67e491ecdb.png",
+    "x": 0,
+    "y": 778,
+    "w": 1250,
+    "h": 302
+   },
+   {
+    "name": "Glow · white",
+    "file": "glow-white_d67dd114d2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1849,
+    "h": 875
+   },
+   {
+    "name": "App window (blurred plate)",
+    "file": "app-window-blurred-plate_63c4d82fbd.png",
+    "x": 127,
+    "y": 79,
+    "w": 1666,
+    "h": 936
+   },
+   {
+    "name": "Card · project",
+    "file": "card-project_58e7394bcb.png",
+    "x": 372,
+    "y": 402,
+    "w": 1176,
+    "h": 288
+   }
+  ]
+ },
+ {
+  "n": 13,
+  "title": "HERO: the production panel",
+  "tin": 25,
+  "tout": 31.5,
+  "act": "3",
+  "flat": "13_hero-the-production-panel.png",
+  "layers": [
+   {
+    "name": "Fill #F4F4F1",
+    "file": "background-paper_1c7889dee2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 1080
+   },
+   {
+    "name": "Background · paper",
+    "file": "background-paper_1c7889dee2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 1080
+   },
+   {
+    "name": "Glow · green",
+    "file": "glow-green_2db441e5f1.png",
+    "x": 0,
+    "y": 547,
+    "w": 1755,
+    "h": 533
+   },
+   {
+    "name": "Glow · teal",
+    "file": "glow-teal_ab1c83d3e0.png",
+    "x": 0,
+    "y": 900,
+    "w": 232,
+    "h": 180
+   },
+   {
+    "name": "Glow · white",
+    "file": "glow-white_d67dd114d2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1849,
+    "h": 875
+   },
+   {
+    "name": "Card · project",
+    "file": "card-project_834422e951.png",
+    "x": 95,
+    "y": 457,
+    "w": 810,
+    "h": 198
+   },
+   {
+    "name": "Shape · rectangle #0B0B0C",
+    "file": "shape-rectangle-0b0b0c_92b33a7aac.png",
+    "x": 1000,
+    "y": 0,
+    "w": 920,
+    "h": 1080
+   },
+   {
+    "name": "Glow",
+    "file": "glow_18d6f04a71.png",
+    "x": 1297,
+    "y": 672,
+    "w": 623,
+    "h": 408
+   },
+   {
+    "name": "Shape · line",
+    "file": "shape-line_97d1d9cb03.png",
+    "x": 880,
+    "y": 537,
+    "w": 160,
+    "h": 2
+   },
+   {
+    "name": "Shape · arrowhead",
+    "file": "shape-arrowhead_73883c9ed9.png",
+    "x": 1040,
+    "y": 530,
+    "w": 16,
+    "h": 16
+   },
+   {
+    "name": "Log · Topic received",
+    "file": "log-topic-received_6a2b0d395d.png",
+    "x": 1079,
+    "y": 149,
+    "w": 742,
+    "h": 56
+   },
+   {
+    "name": "Log · Researching · 14 sources",
+    "file": "log-researching-14-sources_ba75c22603.png",
+    "x": 1079,
+    "y": 215,
+    "w": 742,
+    "h": 76
+   },
+   {
+    "name": "Log · Verified source found",
+    "file": "log-verified-source-found_7abef831b4.png",
+    "x": 1079,
+    "y": 301,
+    "w": 742,
+    "h": 94
+   },
+   {
+    "name": "Log · Script v1 · 6 beats · your voice",
+    "file": "log-script-v1-6-beats-your-voice_f0bd88cb21.png",
+    "x": 1079,
+    "y": 405,
+    "w": 742,
+    "h": 56
+   },
+   {
+    "name": "Log · Voice recorded · 00:54",
+    "file": "log-voice-recorded-00-54_e96dc11ef6.png",
+    "x": 1079,
+    "y": 471,
+    "w": 742,
+    "h": 56
+   },
+   {
+    "name": "Log · Edit assembled · ready for review",
+    "file": "log-edit-assembled-ready-for-review_667e238eaa.png",
+    "x": 1079,
+    "y": 537,
+    "w": 742,
+    "h": 56
+   },
+   {
+    "name": "Log · placeholder rows",
+    "file": "log-placeholder-rows_131d9a2b7a.png",
+    "x": 1080,
+    "y": 604,
+    "w": 740,
+    "h": 44
+   }
+  ]
+ },
+ {
+  "n": 14,
+  "title": "A person reviews it { frame by frame }",
+  "tin": 31.5,
+  "tout": 33.5,
+  "act": "3",
+  "flat": "14_a-person-reviews-it-frame-by-frame.png",
+  "layers": [
+   {
+    "name": "Background · paper",
+    "file": "background-paper_1c7889dee2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 1080
+   },
+   {
+    "name": "Glow · green",
+    "file": "glow-green_68040d4658.png",
+    "x": 273,
+    "y": 560,
+    "w": 1647,
+    "h": 520
+   },
+   {
+    "name": "Glow · teal",
+    "file": "glow-teal_22aa5dbf9f.png",
+    "x": 0,
+    "y": 797,
+    "w": 1207,
+    "h": 283
+   },
+   {
+    "name": "Glow · white",
+    "file": "glow-white_d67dd114d2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1849,
+    "h": 875
+   },
+   {
+    "name": "Text · A person reviews it",
+    "file": "text-a-person-reviews-it_8bb2e9febf.png",
+    "x": 458,
+    "y": 516,
+    "w": 504,
+    "h": 55
+   },
+   {
+    "name": "Text · { frame by frame }",
+    "file": "text-frame-by-frame_8a1867c9a4.png",
+    "x": 993,
+    "y": 516,
+    "w": 466,
+    "h": 55
+   }
+  ]
+ },
+ {
+  "n": 15,
+  "title": "Shape morph: phrase → bar",
+  "tin": 33.5,
+  "tout": 35,
+  "act": "3",
+  "flat": "15_shape-morph-phrase-bar.png",
+  "layers": [
+   {
+    "name": "Background · paper",
+    "file": "background-paper_1c7889dee2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 1080
+   },
+   {
+    "name": "Glow · green",
+    "file": "glow-green_68040d4658.png",
+    "x": 273,
+    "y": 560,
+    "w": 1647,
+    "h": 520
+   },
+   {
+    "name": "Glow · teal",
+    "file": "glow-teal_22aa5dbf9f.png",
+    "x": 0,
+    "y": 797,
+    "w": 1207,
+    "h": 283
+   },
+   {
+    "name": "Glow · white",
+    "file": "glow-white_d67dd114d2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1849,
+    "h": 875
+   },
+   {
+    "name": "Shape · rectangle #3EAF75",
+    "file": "shape-rectangle-3eaf75_629d3fa0bb.png",
+    "x": 110,
+    "y": 470,
+    "w": 1700,
+    "h": 120
+   },
+   {
+    "name": "Text · reviewing…",
+    "file": "text-reviewing_5d6ee094dd.png",
+    "x": 163,
+    "y": 512,
+    "w": 256,
+    "h": 42
+   },
+   {
+    "name": "Shape · rectangle #FFFFFF",
+    "file": "shape-rectangle-ffffff_6d188d4226.png",
+    "x": 160,
+    "y": 566,
+    "w": 1600,
+    "h": 6
+   },
+   {
+    "name": "Shape · rectangle",
+    "file": "shape-rectangle_4e7e972e9a.png",
+    "x": 160,
+    "y": 566,
+    "w": 140,
+    "h": 6
+   }
+  ]
+ },
+ {
+  "n": 16,
+  "title": "Review card + scan line",
+  "tin": 35,
+  "tout": 38.5,
+  "act": "3",
+  "flat": "16_review-card-scan-line.png",
+  "layers": [
+   {
+    "name": "Background · paper",
+    "file": "background-paper_1c7889dee2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 1080
+   },
+   {
+    "name": "Glow · green",
+    "file": "glow-green_5457f0268b.png",
+    "x": 436,
+    "y": 0,
+    "w": 1484,
+    "h": 803
+   },
+   {
+    "name": "Glow · teal",
+    "file": "glow-teal_57d7ce97df.png",
+    "x": 0,
+    "y": 0,
+    "w": 1471,
+    "h": 646
+   },
+   {
+    "name": "Glow · white",
+    "file": "glow-white_d67dd114d2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1849,
+    "h": 875
+   },
+   {
+    "name": "Card",
+    "file": "card_2850c5e483.png",
+    "x": 635,
+    "y": 237,
+    "w": 650,
+    "h": 642
+   },
+   {
+    "name": "Shape · rectangle #3EAF75",
+    "file": "shape-rectangle-3eaf75_26a68a138f.png",
+    "x": 660,
+    "y": 250,
+    "w": 600,
+    "h": 46
+   },
+   {
+    "name": "Shape · rectangle #3EAF75 2",
+    "file": "shape-rectangle-3eaf75-2_20be96a370.png",
+    "x": 660,
+    "y": 280,
+    "w": 600,
+    "h": 16
+   },
+   {
+    "name": "Text · reviewing… 15 / 15",
+    "file": "text-reviewing-15-15_e413cef441.png",
+    "x": 685,
+    "y": 269,
+    "w": 161,
+    "h": 14
+   },
+   {
+    "name": "Shape · rectangle #E9E1CE",
+    "file": "shape-rectangle-e9e1ce_84786fc914.png",
+    "x": 684,
+    "y": 316,
+    "w": 552,
+    "h": 300
+   },
+   {
+    "name": "Image · archive photo",
+    "file": "image-archive-photo_ffc0cb4ff8.png",
+    "x": 860,
+    "y": 326,
+    "w": 200,
+    "h": 280
+   },
+   {
+    "name": "Shape · rectangle #3FB8C4",
+    "file": "shape-rectangle-3fb8c4_0560bdd4c7.png",
+    "x": 684,
+    "y": 450,
+    "w": 552,
+    "h": 3
+   },
+   {
+    "name": "Shape · rectangle",
+    "file": "shape-rectangle_fa7f400eb4.png",
+    "x": 684,
+    "y": 421,
+    "w": 552,
+    "h": 29
+   },
+   {
+    "name": "Check",
+    "file": "check_3e61a62971.png",
+    "x": 691,
+    "y": 647,
+    "w": 18,
+    "h": 18
+   },
+   {
+    "name": "Text · Named people match the narration",
+    "file": "text-named-people-match-the-narration_b5c9704d34.png",
+    "x": 721,
+    "y": 651,
+    "w": 286,
+    "h": 14
+   },
+   {
+    "name": "Check 2",
+    "file": "check_3e61a62971.png",
+    "x": 691,
+    "y": 687,
+    "w": 18,
+    "h": 18
+   },
+   {
+    "name": "Text · Places dated and sourced",
+    "file": "text-places-dated-and-sourced_efcad79ba9.png",
+    "x": 721,
+    "y": 691,
+    "w": 214,
+    "h": 11
+   },
+   {
+    "name": "Check 3",
+    "file": "check_3e61a62971.png",
+    "x": 691,
+    "y": 727,
+    "w": 18,
+    "h": 18
+   },
+   {
+    "name": "Text · Numbers legible on pause",
+    "file": "text-numbers-legible-on-pause_416ed06378.png",
+    "x": 721,
+    "y": 731,
+    "w": 214,
+    "h": 14
+   },
+   {
+    "name": "Check 4",
+    "file": "check_3e61a62971.png",
+    "x": 691,
+    "y": 767,
+    "w": 18,
+    "h": 18
+   },
+   {
+    "name": "Text · Watched start to finish",
+    "file": "text-watched-start-to-finish_5d7c705454.png",
+    "x": 720,
+    "y": 771,
+    "w": 206,
+    "h": 11
+   }
+  ]
+ },
+ {
+  "n": 17,
+  "title": "Review complete",
+  "tin": 38.5,
+  "tout": 40.5,
+  "act": "3",
+  "flat": "17_review-complete.png",
+  "layers": [
+   {
+    "name": "Background · paper",
+    "file": "background-paper_1c7889dee2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 1080
+   },
+   {
+    "name": "Glow · green",
+    "file": "glow-green_5457f0268b.png",
+    "x": 436,
+    "y": 0,
+    "w": 1484,
+    "h": 803
+   },
+   {
+    "name": "Glow · teal",
+    "file": "glow-teal_57d7ce97df.png",
+    "x": 0,
+    "y": 0,
+    "w": 1471,
+    "h": 646
+   },
+   {
+    "name": "Glow · white",
+    "file": "glow-white_d67dd114d2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1849,
+    "h": 875
+   },
+   {
+    "name": "Card",
+    "file": "card_0011f9ce01.png",
+    "x": 635,
+    "y": 407,
+    "w": 650,
+    "h": 262
+   },
+   {
+    "name": "Shape · rectangle #3EAF75",
+    "file": "shape-rectangle-3eaf75_61615200d7.png",
+    "x": 660,
+    "y": 420,
+    "w": 600,
+    "h": 46
+   },
+   {
+    "name": "Shape · rectangle #3EAF75 2",
+    "file": "shape-rectangle-3eaf75-2_20be96a370.png",
+    "x": 660,
+    "y": 450,
+    "w": 600,
+    "h": 16
+   },
+   {
+    "name": "Text · Review complete",
+    "file": "text-review-complete_4271fee3a1.png",
+    "x": 685,
+    "y": 439,
+    "w": 134,
+    "h": 14
+   },
+   {
+    "name": "Check",
+    "file": "check_590c7baaea.png",
+    "x": 692,
+    "y": 504,
+    "w": 32,
+    "h": 32
+   },
+   {
+    "name": "Text · Approved for delivery",
+    "file": "text-approved-for-delivery_9c8fea2dcc.png",
+    "x": 740,
+    "y": 510,
+    "w": 235,
+    "h": 23
+   },
+   {
+    "name": "Shape · dot #D9A441",
+    "file": "shape-dot-d9a441_e42ef8e532.png",
+    "x": 696,
+    "y": 564,
+    "w": 32,
+    "h": 32
+   },
+   {
+    "name": "Text · MK",
+    "file": "text-mk_4ccbac28de.png",
+    "x": 704,
+    "y": 577,
+    "w": 17,
+    "h": 8
+   },
+   {
+    "name": "Text · Watched by Maya K. · all 54 seconds",
+    "file": "text-watched-by-maya-k-all-54-seconds_e59f696fff.png",
+    "x": 740,
+    "y": 574,
+    "w": 256,
+    "h": 15
+   }
+  ]
+ },
+ {
+  "n": 18,
+  "title": "it turns your idea into…",
+  "tin": 40.5,
+  "tout": 41.7,
+  "act": "3",
+  "flat": "18_it-turns-your-idea-into.png",
+  "layers": [
+   {
+    "name": "Background · dark",
+    "file": "background-dark_7f0a2e5e19.png",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 1080
+   },
+   {
+    "name": "Light leak · green",
+    "file": "light-leak-green_5c709f23f4.png",
+    "x": 0,
+    "y": 471,
+    "w": 863,
+    "h": 609
+   },
+   {
+    "name": "Light leak · teal",
+    "file": "light-leak-teal_c7c29a6948.png",
+    "x": 1160,
+    "y": 0,
+    "w": 760,
+    "h": 507
+   },
+   {
+    "name": "Text · it turns your idea into",
+    "file": "text-it-turns-your-idea-into_d415cbecc6.png",
+    "x": 721,
+    "y": 522,
+    "w": 481,
+    "h": 48
+   }
+  ]
+ },
+ {
+  "n": 19,
+  "title": "[ A finished file ]",
+  "tin": 41.7,
+  "tout": 44,
+  "act": "3",
+  "flat": "19_a-finished-file.png",
+  "layers": [
+   {
+    "name": "Background · dark",
+    "file": "background-dark_7f0a2e5e19.png",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 1080
+   },
+   {
+    "name": "Light leak · green",
+    "file": "light-leak-green_5c709f23f4.png",
+    "x": 0,
+    "y": 471,
+    "w": 863,
+    "h": 609
+   },
+   {
+    "name": "Light leak · teal",
+    "file": "light-leak-teal_c7c29a6948.png",
+    "x": 1160,
+    "y": 0,
+    "w": 760,
+    "h": 507
+   },
+   {
+    "name": "Brackets",
+    "file": "brackets_da956cacc5.png",
+    "x": 536,
+    "y": 446,
+    "w": 848,
+    "h": 178
+   },
+   {
+    "name": "Text · A finished file",
+    "file": "text-a-finished-file_f33d05c7e5.png",
+    "x": 739,
+    "y": 507,
+    "w": 439,
+    "h": 54
+   }
+  ]
+ },
+ {
+  "n": 20,
+  "title": "Delivered, in the Library",
+  "tin": 44,
+  "tout": 47.5,
+  "act": "3",
+  "flat": "20_delivered-in-the-library.png",
+  "layers": [
+   {
+    "name": "Background · paper",
+    "file": "background-paper_1c7889dee2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 1080
+   },
+   {
+    "name": "Glow · green",
+    "file": "glow-green_97e72ac2e8.png",
+    "x": 319,
+    "y": 508,
+    "w": 1601,
+    "h": 572
+   },
+   {
+    "name": "Glow · teal",
+    "file": "glow-teal_c6b28c8178.png",
+    "x": 0,
+    "y": 747,
+    "w": 1368,
+    "h": 333
+   },
+   {
+    "name": "Glow · white",
+    "file": "glow-white_d67dd114d2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1849,
+    "h": 875
+   },
+   {
+    "name": "Window · frame + shadow",
+    "file": "window-frame-shadow_3008cbdc1d.png",
+    "x": 188,
+    "y": 152,
+    "w": 1549,
+    "h": 869
+   },
+   {
+    "name": "Window · surface",
+    "file": "window-surface_e5df4cebf7.png",
+    "x": 210,
+    "y": 163,
+    "w": 1502,
+    "h": 813
+   },
+   {
+    "name": "Window · title bar",
+    "file": "window-title-bar_3d1d32f51a.png",
+    "x": 210,
+    "y": 163,
+    "w": 1445,
+    "h": 82
+   },
+   {
+    "name": "Shape · rectangle #F8F8F6",
+    "file": "shape-rectangle-f8f8f6_05dd49a2a5.png",
+    "x": 212,
+    "y": 237,
+    "w": 302,
+    "h": 739
+   },
+   {
+    "name": "Shape · line",
+    "file": "shape-line_f5a2ee988b.png",
+    "x": 455,
+    "y": 237,
+    "w": 59,
+    "h": 732
+   },
+   {
+    "name": "Text · brew",
+    "file": "text-brew_d2d71c87d0.png",
+    "x": 282,
+    "y": 270,
+    "w": 56,
+    "h": 17
+   },
+   {
+    "name": "Shape · dot #D2D2CC",
+    "file": "shape-dot-d2d2cc_cf77a03573.png",
+    "x": 247,
+    "y": 364,
+    "w": 8,
+    "h": 8
+   },
+   {
+    "name": "Text · New video",
+    "file": "text-new-video_5c766506da.png",
+    "x": 265,
+    "y": 362,
+    "w": 67,
+    "h": 12
+   },
+   {
+    "name": "Shape · dot #D2D2CC 2",
+    "file": "shape-dot-d2d2cc-2_098e397760.png",
+    "x": 250,
+    "y": 402,
+    "w": 8,
+    "h": 8
+   },
+   {
+    "name": "Text · In production",
+    "file": "text-in-production_71f7b6ed76.png",
+    "x": 268,
+    "y": 399,
+    "w": 83,
+    "h": 15
+   },
+   {
+    "name": "Shape · dot #D2D2CC 3",
+    "file": "shape-dot-d2d2cc-3_65baa1c594.png",
+    "x": 253,
+    "y": 439,
+    "w": 8,
+    "h": 8
+   },
+   {
+    "name": "Text · Review",
+    "file": "text-review_51f486b799.png",
+    "x": 271,
+    "y": 438,
+    "w": 47,
+    "h": 11
+   },
+   {
+    "name": "Shape · rectangle #3EAF75",
+    "file": "shape-rectangle-3eaf75_a0c00312bb.png",
+    "x": 241,
+    "y": 459,
+    "w": 223,
+    "h": 38
+   },
+   {
+    "name": "Shape · dot #3EAF75",
+    "file": "shape-dot-3eaf75_d50074b206.png",
+    "x": 255,
+    "y": 477,
+    "w": 9,
+    "h": 8
+   },
+   {
+    "name": "Text · Library",
+    "file": "text-library_015cae25a8.png",
+    "x": 274,
+    "y": 476,
+    "w": 48,
+    "h": 13
+   },
+   {
+    "name": "Shape · dot #D2D2CC 4",
+    "file": "shape-dot-d2d2cc-4_4166c0fc21.png",
+    "x": 258,
+    "y": 514,
+    "w": 9,
+    "h": 8
+   },
+   {
+    "name": "Text · Languages",
+    "file": "text-languages_93dfd1b72e.png",
+    "x": 277,
+    "y": 514,
+    "w": 72,
+    "h": 13
+   },
+   {
+    "name": "Shape · dot #D2D2CC 5",
+    "file": "shape-dot-d2d2cc-5_3086008d8f.png",
+    "x": 261,
+    "y": 552,
+    "w": 9,
+    "h": 8
+   },
+   {
+    "name": "Text · AI b-roll",
+    "file": "text-ai-b-roll_5780cf5e36.png",
+    "x": 280,
+    "y": 550,
+    "w": 50,
+    "h": 12
+   },
+   {
+    "name": "Shape · dot #D2D2CC 6",
+    "file": "shape-dot-d2d2cc-6_a364a869b6.png",
+    "x": 264,
+    "y": 589,
+    "w": 9,
+    "h": 8
+   },
+   {
+    "name": "Text · UGC ads",
+    "file": "text-ugc-ads_374ba64b35.png",
+    "x": 283,
+    "y": 587,
+    "w": 59,
+    "h": 12
+   },
+   {
+    "name": "Text · LIBRARY · 11 DELIVERED",
+    "file": "text-library-11-delivered_50252da04f.png",
+    "x": 487,
+    "y": 250,
+    "w": 197,
+    "h": 14
+   },
+   {
+    "name": "Shape · rectangle",
+    "file": "shape-rectangle_dca64c5bb7.png",
+    "x": 483,
+    "y": 275,
+    "w": 376,
+    "h": 294
+   },
+   {
+    "name": "Thumbnail · map",
+    "file": "thumbnail-map_94952b6037.png",
+    "x": 490,
+    "y": 282,
+    "w": 355,
+    "h": 195
+   },
+   {
+    "name": "Text · Why the Panama Canal Ran Short of Water",
+    "file": "text-why-the-panama-canal-ran-short-of-w_ab16238955.png",
+    "x": 505,
+    "y": 490,
+    "w": 285,
+    "h": 20
+   },
+   {
+    "name": "Chip · Delivered · Day 3",
+    "file": "chip-delivered-day-3_09a032c992.png",
+    "x": 508,
+    "y": 520,
+    "w": 145,
+    "h": 27
+   },
+   {
+    "name": "Thumbnail · archive",
+    "file": "thumbnail-archive_fd8d90fe0f.png",
+    "x": 869,
+    "y": 270,
+    "w": 357,
+    "h": 196
+   },
+   {
+    "name": "Text · The 1919 Boston Molasses Tank",
+    "file": "text-the-1919-boston-molasses-tank_2472becc99.png",
+    "x": 886,
+    "y": 479,
+    "w": 219,
+    "h": 17
+   },
+   {
+    "name": "Text · Delivered",
+    "file": "text-delivered_4d6073f766.png",
+    "x": 888,
+    "y": 510,
+    "w": 54,
+    "h": 11
+   },
+   {
+    "name": "Thumbnail · paper",
+    "file": "thumbnail-paper_6c14e1f5cf.png",
+    "x": 1250,
+    "y": 259,
+    "w": 355,
+    "h": 195
+   },
+   {
+    "name": "Text · Why You Still Get Goosebumps",
+    "file": "text-why-you-still-get-goosebumps_6a1367403d.png",
+    "x": 1266,
+    "y": 469,
+    "w": 213,
+    "h": 18
+   },
+   {
+    "name": "Text · Delivered 2",
+    "file": "text-delivered-2_d1588a09e0.png",
+    "x": 1269,
+    "y": 499,
+    "w": 54,
+    "h": 10
+   },
+   {
+    "name": "Thumbnail · cartoon",
+    "file": "thumbnail-cartoon_f0039d30a1.png",
+    "x": 514,
+    "y": 591,
+    "w": 355,
+    "h": 196
+   },
+   {
+    "name": "Text · Why Your Diet Starts on Monday",
+    "file": "text-why-your-diet-starts-on-monday_2cf50ce61d.png",
+    "x": 530,
+    "y": 801,
+    "w": 218,
+    "h": 19
+   },
+   {
+    "name": "Text · Delivered 3",
+    "file": "text-delivered-3_fa5e38ab4d.png",
+    "x": 533,
+    "y": 831,
+    "w": 53,
+    "h": 11
+   },
+   {
+    "name": "Thumbnail · archive 2",
+    "file": "thumbnail-archive-2_15fc8a9f66.png",
+    "x": 894,
+    "y": 580,
+    "w": 356,
+    "h": 195
+   },
+   {
+    "name": "Text · The 1904 Olympic Marathon",
+    "file": "text-the-1904-olympic-marathon_dfe2629ec1.png",
+    "x": 910,
+    "y": 790,
+    "w": 189,
+    "h": 16
+   },
+   {
+    "name": "Text · Delivered 4",
+    "file": "text-delivered-4_6a8f074332.png",
+    "x": 913,
+    "y": 820,
+    "w": 54,
+    "h": 10
+   },
+   {
+    "name": "Thumbnail · meme",
+    "file": "thumbnail-meme_388a5b3f92.png",
+    "x": 1275,
+    "y": 568,
+    "w": 355,
+    "h": 195
+   },
+   {
+    "name": "Text · Switzerland in meme format",
+    "file": "text-switzerland-in-meme-format_932d2e3574.png",
+    "x": 1291,
+    "y": 779,
+    "w": 186,
+    "h": 15
+   },
+   {
+    "name": "Text · Delivered 5",
+    "file": "text-delivered-5_f7e421aef7.png",
+    "x": 1293,
+    "y": 808,
+    "w": 54,
+    "h": 11
+   },
+   {
+    "name": "Cursor",
+    "file": "cursor_c72485c30a.png",
+    "x": 858,
+    "y": 418,
+    "w": 38,
+    "h": 56
+   }
+  ]
+ },
+ {
+  "n": 21,
+  "title": "\"Delivered.\"",
+  "tin": 47.5,
+  "tout": 49,
+  "act": "3",
+  "flat": "21_delivered.png",
+  "layers": [
+   {
+    "name": "Background · paper",
+    "file": "background-paper_1c7889dee2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 1080
+   },
+   {
+    "name": "Glow · green",
+    "file": "glow-green_f27670c3ea.png",
+    "x": 214,
+    "y": 467,
+    "w": 1706,
+    "h": 613
+   },
+   {
+    "name": "Glow · teal",
+    "file": "glow-teal_7dd0fff221.png",
+    "x": 0,
+    "y": 706,
+    "w": 1283,
+    "h": 374
+   },
+   {
+    "name": "Glow · white",
+    "file": "glow-white_d67dd114d2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1849,
+    "h": 875
+   },
+   {
+    "name": "Text · Delivered.",
+    "file": "text-delivered_b13f6e704b.png",
+    "x": 540,
+    "y": 455,
+    "w": 845,
+    "h": 148
+   }
+  ]
+ },
+ {
+  "n": 22,
+  "title": "\"And\"",
+  "tin": 49,
+  "tout": 50.3,
+  "act": "3",
+  "flat": "22_and.png",
+  "layers": [
+   {
+    "name": "Background · dark",
+    "file": "background-dark_7f0a2e5e19.png",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 1080
+   },
+   {
+    "name": "Light leak · green",
+    "file": "light-leak-green_b4be87efaf.png",
+    "x": 957,
+    "y": 491,
+    "w": 963,
+    "h": 589
+   },
+   {
+    "name": "Light leak · teal",
+    "file": "light-leak-teal_e07389d5b7.png",
+    "x": 0,
+    "y": 0,
+    "w": 880,
+    "h": 527
+   },
+   {
+    "name": "Text · And",
+    "file": "text-and_a3150963e0.png",
+    "x": 338,
+    "y": 417,
+    "w": 836,
+    "h": 269
+   }
+  ]
+ },
+ {
+  "n": 23,
+  "title": "You can type the shot",
+  "tin": 50.3,
+  "tout": 53.8,
+  "act": "4",
+  "flat": "23_you-can-type-the-shot.png",
+  "layers": [
+   {
+    "name": "Background · dark",
+    "file": "background-dark_7f0a2e5e19.png",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 1080
+   },
+   {
+    "name": "Light leak · green",
+    "file": "light-leak-green_b4be87efaf.png",
+    "x": 957,
+    "y": 491,
+    "w": 963,
+    "h": 589
+   },
+   {
+    "name": "Light leak · teal",
+    "file": "light-leak-teal_e07389d5b7.png",
+    "x": 0,
+    "y": 0,
+    "w": 880,
+    "h": 527
+   },
+   {
+    "name": "Text · when you need one exact shot",
+    "file": "text-when-you-need-one-exact-shot_803fa32eda.png",
+    "x": 662,
+    "y": 468,
+    "w": 592,
+    "h": 40
+   },
+   {
+    "name": "Text · you can",
+    "file": "text-you-can_ef2c0b07d2.png",
+    "x": 673,
+    "y": 570,
+    "w": 195,
+    "h": 41
+   },
+   {
+    "name": "Text · type",
+    "file": "text-type_dfd09a0ff6.png",
+    "x": 882,
+    "y": 562,
+    "w": 107,
+    "h": 49
+   },
+   {
+    "name": "Text · it yourself",
+    "file": "text-it-yourself_0ae0e3ef94.png",
+    "x": 1006,
+    "y": 559,
+    "w": 241,
+    "h": 52
+   }
+  ]
+ },
+ {
+  "n": 24,
+  "title": "Glass menu → AI b-roll",
+  "tin": 53.8,
+  "tout": 56,
+  "act": "4",
+  "flat": "24_glass-menu-ai-b-roll.png",
+  "layers": [
+   {
+    "name": "Background · paper",
+    "file": "background-paper_1c7889dee2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 1080
+   },
+   {
+    "name": "Glow · green",
+    "file": "glow-green_765259a45f.png",
+    "x": 226,
+    "y": 492,
+    "w": 1694,
+    "h": 588
+   },
+   {
+    "name": "Glow · teal",
+    "file": "glow-teal_f79fa5003f.png",
+    "x": 0,
+    "y": 724,
+    "w": 1282,
+    "h": 356
+   },
+   {
+    "name": "Glow · white",
+    "file": "glow-white_d67dd114d2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1849,
+    "h": 875
+   },
+   {
+    "name": "Card",
+    "file": "card_6d63eb67b8.png",
+    "x": 735,
+    "y": 287,
+    "w": 450,
+    "h": 502
+   },
+   {
+    "name": "Brackets",
+    "file": "brackets_c5a394df52.png",
+    "x": 782,
+    "y": 322,
+    "w": 32,
+    "h": 32
+   },
+   {
+    "name": "Text · e",
+    "file": "text-e_091db0ee03.png",
+    "x": 793,
+    "y": 335,
+    "w": 10,
+    "h": 11
+   },
+   {
+    "name": "Text · brew",
+    "file": "text-brew_ce1096d233.png",
+    "x": 829,
+    "y": 332,
+    "w": 51,
+    "h": 16
+   },
+   {
+    "name": "Text · WORKSPACE",
+    "file": "text-workspace_8fbf36c009.png",
+    "x": 784,
+    "y": 393,
+    "w": 70,
+    "h": 7
+   },
+   {
+    "name": "Text · New video",
+    "file": "text-new-video_62e91c1517.png",
+    "x": 801,
+    "y": 435,
+    "w": 82,
+    "h": 14
+   },
+   {
+    "name": "Text · Library",
+    "file": "text-library_b50639ad79.png",
+    "x": 801,
+    "y": 491,
+    "w": 54,
+    "h": 17
+   },
+   {
+    "name": "Text · Languages",
+    "file": "text-languages_5fba029096.png",
+    "x": 801,
+    "y": 547,
+    "w": 88,
+    "h": 17
+   },
+   {
+    "name": "Shape · rectangle #3FB8C4",
+    "file": "shape-rectangle-3fb8c4_bbec74452b.png",
+    "x": 772,
+    "y": 586,
+    "w": 376,
+    "h": 44
+   },
+   {
+    "name": "Text · AI b-roll",
+    "file": "text-ai-b-roll_411e3f5d9e.png",
+    "x": 800,
+    "y": 603,
+    "w": 66,
+    "h": 14
+   },
+   {
+    "name": "Text · UGC ads",
+    "file": "text-ugc-ads_924e4537d1.png",
+    "x": 801,
+    "y": 659,
+    "w": 72,
+    "h": 14
+   },
+   {
+    "name": "Cursor",
+    "file": "cursor_c72485c30a.png",
+    "x": 1018,
+    "y": 588,
+    "w": 38,
+    "h": 56
+   }
+  ]
+ },
+ {
+  "n": 25,
+  "title": "Macro: filling the shot",
+  "tin": 56,
+  "tout": 59.5,
+  "act": "4",
+  "flat": "25_macro-filling-the-shot.png",
+  "layers": [
+   {
+    "name": "Background · paper",
+    "file": "background-paper_1c7889dee2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 1080
+   },
+   {
+    "name": "Glow · green",
+    "file": "glow-green_3e542f35aa.png",
+    "x": 233,
+    "y": 495,
+    "w": 1687,
+    "h": 585
+   },
+   {
+    "name": "Glow · teal",
+    "file": "glow-teal_f79fa5003f.png",
+    "x": 0,
+    "y": 724,
+    "w": 1282,
+    "h": 356
+   },
+   {
+    "name": "Glow · white",
+    "file": "glow-white_d67dd114d2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1849,
+    "h": 875
+   },
+   {
+    "name": "Text · Describe the shot",
+    "file": "text-describe-the-shot_09335dcf0e.png",
+    "x": 224,
+    "y": 293,
+    "w": 390,
+    "h": 38
+   },
+   {
+    "name": "Shape · rectangle #FFFFFF",
+    "file": "shape-rectangle-ffffff_a942e55c46.png",
+    "x": 200,
+    "y": 370,
+    "w": 1720,
+    "h": 130
+   },
+   {
+    "name": "Text · Our serum bottle, in a hand, on wet marb",
+    "file": "text-our-serum-bottle-in-a-hand-on-wet-m_f468898f5b.png",
+    "x": 253,
+    "y": 413,
+    "w": 1074,
+    "h": 51
+   },
+   {
+    "name": "Shape · rectangle #3FB8C4",
+    "file": "shape-rectangle-3fb8c4_c9c46f8f0d.png",
+    "x": 1333,
+    "y": 405,
+    "w": 5,
+    "h": 64
+   },
+   {
+    "name": "Text · Length",
+    "file": "text-length_b17cad4cc0.png",
+    "x": 224,
+    "y": 603,
+    "w": 151,
+    "h": 46
+   },
+   {
+    "name": "Shape · rectangle #FFFFFF 2",
+    "file": "shape-rectangle-ffffff-2_25726e2ce4.png",
+    "x": 200,
+    "y": 680,
+    "w": 600,
+    "h": 130
+   },
+   {
+    "name": "Text · 10 s",
+    "file": "text-10-s_a616618d38.png",
+    "x": 253,
+    "y": 724,
+    "w": 100,
+    "h": 42
+   }
+  ]
+ },
+ {
+  "n": 26,
+  "title": "Four takes, keep one",
+  "tin": 59.5,
+  "tout": 63,
+  "act": "4",
+  "flat": "26_four-takes-keep-one.png",
+  "layers": [
+   {
+    "name": "Background · paper",
+    "file": "background-paper_1c7889dee2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 1080
+   },
+   {
+    "name": "Glow · green",
+    "file": "glow-green_3e542f35aa.png",
+    "x": 233,
+    "y": 495,
+    "w": 1687,
+    "h": 585
+   },
+   {
+    "name": "Glow · teal",
+    "file": "glow-teal_eb521ca2b2.png",
+    "x": 0,
+    "y": 725,
+    "w": 1281,
+    "h": 355
+   },
+   {
+    "name": "Glow · white",
+    "file": "glow-white_d67dd114d2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1849,
+    "h": 875
+   },
+   {
+    "name": "Card",
+    "file": "card_528a2e9cdb.png",
+    "x": 335,
+    "y": 137,
+    "w": 1250,
+    "h": 842
+   },
+   {
+    "name": "Text · AI B-ROLL · 4 TAKES",
+    "file": "text-ai-b-roll-4-takes_716fe3e37c.png",
+    "x": 400,
+    "y": 192,
+    "w": 168,
+    "h": 8
+   },
+   {
+    "name": "Text · CREDITS 240",
+    "file": "text-credits-240_12ea720427.png",
+    "x": 1421,
+    "y": 192,
+    "w": 97,
+    "h": 8
+   },
+   {
+    "name": "Image · serum shot",
+    "file": "image-serum-shot_529eb1fcc2.png",
+    "x": 400,
+    "y": 230,
+    "w": 550,
+    "h": 310
+   },
+   {
+    "name": "Image · serum shot 2",
+    "file": "image-serum-shot-2_5e8705705e.png",
+    "x": 970,
+    "y": 230,
+    "w": 550,
+    "h": 310
+   },
+   {
+    "name": "Shape · rectangle",
+    "file": "shape-rectangle_652d0553fb.png",
+    "x": 964,
+    "y": 224,
+    "w": 562,
+    "h": 322
+   },
+   {
+    "name": "Button · Keep",
+    "file": "button-keep_24484b4b0b.png",
+    "x": 1428,
+    "y": 484,
+    "w": 72,
+    "h": 37
+   },
+   {
+    "name": "Image · serum shot 3",
+    "file": "image-serum-shot-3_fa3985e3f4.png",
+    "x": 400,
+    "y": 570,
+    "w": 550,
+    "h": 310
+   },
+   {
+    "name": "Image · serum shot 4",
+    "file": "image-serum-shot-4_d99558b49e.png",
+    "x": 970,
+    "y": 570,
+    "w": 550,
+    "h": 310
+   },
+   {
+    "name": "Cursor",
+    "file": "cursor_c72485c30a.png",
+    "x": 1458,
+    "y": 518,
+    "w": 38,
+    "h": 56
+   }
+  ]
+ },
+ {
+  "n": 27,
+  "title": "UGC ad, step by step",
+  "tin": 63,
+  "tout": 68.5,
+  "act": "4",
+  "flat": "27_ugc-ad-step-by-step.png",
+  "layers": [
+   {
+    "name": "Background · paper",
+    "file": "background-paper_1c7889dee2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 1080
+   },
+   {
+    "name": "Glow · green",
+    "file": "glow-green_f699937a8a.png",
+    "x": 0,
+    "y": 500,
+    "w": 1557,
+    "h": 580
+   },
+   {
+    "name": "Glow · teal",
+    "file": "glow-teal_3f52c43364.png",
+    "x": 0,
+    "y": 980,
+    "w": 61,
+    "h": 100
+   },
+   {
+    "name": "Glow · white",
+    "file": "glow-white_d67dd114d2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1849,
+    "h": 875
+   },
+   {
+    "name": "Phone · Hook 01",
+    "file": "phone-hook-01_6f152ebeb3.png",
+    "x": 259,
+    "y": 159,
+    "w": 402,
+    "h": 713
+   },
+   {
+    "name": "Shape · line",
+    "file": "shape-line_a547f47f2d.png",
+    "x": 819,
+    "y": 330,
+    "w": 2,
+    "h": 430
+   },
+   {
+    "name": "Shape · dot #FFFFFF",
+    "file": "shape-dot-ffffff_8683cde20d.png",
+    "x": 797,
+    "y": 317,
+    "w": 46,
+    "h": 46
+   },
+   {
+    "name": "Text · 1",
+    "file": "text-1_d5747165b9.png",
+    "x": 815,
+    "y": 334,
+    "w": 11,
+    "h": 13
+   },
+   {
+    "name": "Card",
+    "file": "card_0c2181f9d3.png",
+    "x": 855,
+    "y": 292,
+    "w": 950,
+    "h": 136
+   },
+   {
+    "name": "Chip · Hook",
+    "file": "chip-hook_3d7592bcc5.png",
+    "x": 910,
+    "y": 328,
+    "w": 49,
+    "h": 23
+   },
+   {
+    "name": "Text · — I was so wrong about serums",
+    "file": "text-i-was-so-wrong-about-serums_9f743f15a9.png",
+    "x": 1010,
+    "y": 334,
+    "w": 309,
+    "h": 20
+   },
+   {
+    "name": "Shape · dot #FFFFFF 2",
+    "file": "shape-dot-ffffff_8683cde20d.png",
+    "x": 797,
+    "y": 517,
+    "w": 46,
+    "h": 46
+   },
+   {
+    "name": "Text · 2",
+    "file": "text-2_9c7d3f17e5.png",
+    "x": 816,
+    "y": 534,
+    "w": 9,
+    "h": 13
+   },
+   {
+    "name": "Card 2",
+    "file": "card-2_ce43c77f37.png",
+    "x": 855,
+    "y": 492,
+    "w": 950,
+    "h": 136
+   },
+   {
+    "name": "Chip · Demo",
+    "file": "chip-demo_f4187e9fdd.png",
+    "x": 910,
+    "y": 528,
+    "w": 49,
+    "h": 23
+   },
+   {
+    "name": "Text · — 30 seconds, morning light",
+    "file": "text-30-seconds-morning-light_c7dbdb2a82.png",
+    "x": 1010,
+    "y": 534,
+    "w": 276,
+    "h": 20
+   },
+   {
+    "name": "Shape · dot #FFFFFF 3",
+    "file": "shape-dot-ffffff_8683cde20d.png",
+    "x": 797,
+    "y": 717,
+    "w": 46,
+    "h": 46
+   },
+   {
+    "name": "Text · 3",
+    "file": "text-3_8a054bb6f6.png",
+    "x": 815,
+    "y": 734,
+    "w": 10,
+    "h": 13
+   },
+   {
+    "name": "Card 3",
+    "file": "card_0c2181f9d3.png",
+    "x": 855,
+    "y": 692,
+    "w": 950,
+    "h": 136
+   },
+   {
+    "name": "Chip · Payoff",
+    "file": "chip-payoff_c8c690901c.png",
+    "x": 910,
+    "y": 728,
+    "w": 64,
+    "h": 23
+   },
+   {
+    "name": "Text · — okay this actually worked",
+    "file": "text-okay-this-actually-worked_bb21f0810c.png",
+    "x": 1010,
+    "y": 734,
+    "w": 267,
+    "h": 20
+   }
+  ]
+ },
+ {
+  "n": 28,
+  "title": "One edit, nine voices",
+  "tin": 68.5,
+  "tout": 72.5,
+  "act": "4",
+  "flat": "28_one-edit-nine-voices.png",
+  "layers": [
+   {
+    "name": "Background · paper",
+    "file": "background-paper_1c7889dee2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 1080
+   },
+   {
+    "name": "Glow · green",
+    "file": "glow-green_6d110c6378.png",
+    "x": 230,
+    "y": 540,
+    "w": 1690,
+    "h": 540
+   },
+   {
+    "name": "Glow · teal",
+    "file": "glow-teal_9bc369c3ed.png",
+    "x": 0,
+    "y": 780,
+    "w": 1245,
+    "h": 300
+   },
+   {
+    "name": "Glow · white",
+    "file": "glow-white_d67dd114d2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1849,
+    "h": 875
+   },
+   {
+    "name": "Card",
+    "file": "card_001bd7abc4.png",
+    "x": 235,
+    "y": 207,
+    "w": 1010,
+    "h": 622
+   },
+   {
+    "name": "Image · map",
+    "file": "image-map_e7dc9cb96e.png",
+    "x": 280,
+    "y": 240,
+    "w": 920,
+    "h": 518
+   },
+   {
+    "name": "Card 2",
+    "file": "card-2_60698b8a37.png",
+    "x": 1255,
+    "y": 207,
+    "w": 430,
+    "h": 622
+   },
+   {
+    "name": "Text · English",
+    "file": "text-english_b835a93551.png",
+    "x": 1317,
+    "y": 253,
+    "w": 57,
+    "h": 17
+   },
+   {
+    "name": "Check",
+    "file": "check_2e5ae41c22.png",
+    "x": 1619,
+    "y": 251,
+    "w": 18,
+    "h": 18
+   },
+   {
+    "name": "Text · German",
+    "file": "text-german_1e69c66dfb.png",
+    "x": 1317,
+    "y": 311,
+    "w": 63,
+    "h": 14
+   },
+   {
+    "name": "Check 2",
+    "file": "check_3e61a62971.png",
+    "x": 1619,
+    "y": 309,
+    "w": 18,
+    "h": 18
+   },
+   {
+    "name": "Shape · rectangle #3EAF75",
+    "file": "shape-rectangle-3eaf75_6167e3a7c9.png",
+    "x": 1292,
+    "y": 352,
+    "w": 356,
+    "h": 46
+   },
+   {
+    "name": "Text · French",
+    "file": "text-french_3ce18098ef.png",
+    "x": 1317,
+    "y": 369,
+    "w": 58,
+    "h": 14
+   },
+   {
+    "name": "Check 3",
+    "file": "check_3e61a62971.png",
+    "x": 1619,
+    "y": 367,
+    "w": 18,
+    "h": 18
+   },
+   {
+    "name": "Text · Spanish",
+    "file": "text-spanish_bfe82076d4.png",
+    "x": 1316,
+    "y": 427,
+    "w": 64,
+    "h": 16
+   },
+   {
+    "name": "Text · Portuguese",
+    "file": "text-portuguese_ae77c77393.png",
+    "x": 1317,
+    "y": 485,
+    "w": 91,
+    "h": 17
+   },
+   {
+    "name": "Text · Italian",
+    "file": "text-italian_07e64f1e11.png",
+    "x": 1317,
+    "y": 543,
+    "w": 46,
+    "h": 14
+   },
+   {
+    "name": "Text · Polish",
+    "file": "text-polish_a7b5a2fa11.png",
+    "x": 1317,
+    "y": 601,
+    "w": 47,
+    "h": 14
+   },
+   {
+    "name": "Text · Indonesian",
+    "file": "text-indonesian_3ba5108923.png",
+    "x": 1317,
+    "y": 659,
+    "w": 86,
+    "h": 14
+   },
+   {
+    "name": "Text · Danish",
+    "file": "text-danish_44a9c8a0aa.png",
+    "x": 1317,
+    "y": 717,
+    "w": 54,
+    "h": 14
+   },
+   {
+    "name": "Shape · rectangle #FFFFFF",
+    "file": "shape-rectangle-ffffff_82075c8ea4.png",
+    "x": 559,
+    "y": 829,
+    "w": 802,
+    "h": 66
+   },
+   {
+    "name": "Text · Upload it nine times, not once.",
+    "file": "text-upload-it-nine-times-not-once_52745d9f55.png",
+    "x": 796,
+    "y": 855,
+    "w": 327,
+    "h": 23
+   }
+  ]
+ },
+ {
+  "n": 29,
+  "title": "The channel keeps posting",
+  "tin": 72.5,
+  "tout": 75,
+  "act": "5",
+  "flat": "29_the-channel-keeps-posting.png",
+  "layers": [
+   {
+    "name": "Background · paper",
+    "file": "background-paper_1c7889dee2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 1080
+   },
+   {
+    "name": "Glow · green",
+    "file": "glow-green_148f5ef908.png",
+    "x": 0,
+    "y": 286,
+    "w": 1920,
+    "h": 794
+   },
+   {
+    "name": "Glow · teal",
+    "file": "glow-teal_3b0c0e0ed1.png",
+    "x": 0,
+    "y": 530,
+    "w": 750,
+    "h": 550
+   },
+   {
+    "name": "Glow · white",
+    "file": "glow-white_d67dd114d2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1849,
+    "h": 875
+   },
+   {
+    "name": "Text · The channel keeps posting.",
+    "file": "text-the-channel-keeps-posting_3fc6a0de78.png",
+    "x": 457,
+    "y": 519,
+    "w": 681,
+    "h": 52
+   },
+   {
+    "name": "Text · Every week.",
+    "file": "text-every-week_621d8bfe6f.png",
+    "x": 1161,
+    "y": 519,
+    "w": 298,
+    "h": 52
+   }
+  ]
+ },
+ {
+  "n": 30,
+  "title": "Others hand you a tool.",
+  "tin": 75,
+  "tout": 77,
+  "act": "5",
+  "flat": "30_others-hand-you-a-tool.png",
+  "layers": [
+   {
+    "name": "Background · paper",
+    "file": "background-paper_1c7889dee2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 1080
+   },
+   {
+    "name": "Glow · green",
+    "file": "glow-green_62bb762756.png",
+    "x": 245,
+    "y": 547,
+    "w": 1675,
+    "h": 533
+   },
+   {
+    "name": "Glow · teal",
+    "file": "glow-teal_d366607b44.png",
+    "x": 0,
+    "y": 784,
+    "w": 1238,
+    "h": 296
+   },
+   {
+    "name": "Glow · white",
+    "file": "glow-white_d67dd114d2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1849,
+    "h": 875
+   },
+   {
+    "name": "Text · Others hand you a",
+    "file": "text-others-hand-you-a_76c38a699f.png",
+    "x": 661,
+    "y": 508,
+    "w": 589,
+    "h": 65
+   },
+   {
+    "name": "Text · tool. (blurred)",
+    "file": "text-tool-blurred_64f831a74b.png",
+    "x": 1259,
+    "y": 499,
+    "w": 153,
+    "h": 71
+   }
+  ]
+ },
+ {
+  "n": 31,
+  "title": "We hand you the video.",
+  "tin": 77,
+  "tout": 79.5,
+  "act": "5",
+  "flat": "31_we-hand-you-the-video.png",
+  "layers": [
+   {
+    "name": "Background · paper",
+    "file": "background-paper_1c7889dee2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 1080
+   },
+   {
+    "name": "Glow · green",
+    "file": "glow-green_f27670c3ea.png",
+    "x": 214,
+    "y": 467,
+    "w": 1706,
+    "h": 613
+   },
+   {
+    "name": "Glow · teal",
+    "file": "glow-teal_7dd0fff221.png",
+    "x": 0,
+    "y": 706,
+    "w": 1283,
+    "h": 374
+   },
+   {
+    "name": "Glow · white",
+    "file": "glow-white_d67dd114d2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1849,
+    "h": 875
+   },
+   {
+    "name": "Text · We hand you the video.",
+    "file": "text-we-hand-you-the-video_c94d99e154.png",
+    "x": 586,
+    "y": 508,
+    "w": 745,
+    "h": 65
+   }
+  ]
+ },
+ {
+  "n": 32,
+  "title": "Logo",
+  "tin": 79.5,
+  "tout": 82.5,
+  "act": "5",
+  "flat": "32_logo.png",
+  "layers": [
+   {
+    "name": "Background · paper",
+    "file": "background-paper_1c7889dee2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 1080
+   },
+   {
+    "name": "Glow · green",
+    "file": "glow-green_89633e4c81.png",
+    "x": 219,
+    "y": 489,
+    "w": 1701,
+    "h": 591
+   },
+   {
+    "name": "Glow · teal",
+    "file": "glow-teal_170d665e8d.png",
+    "x": 0,
+    "y": 727,
+    "w": 1276,
+    "h": 353
+   },
+   {
+    "name": "Glow · white",
+    "file": "glow-white_d67dd114d2.png",
+    "x": 0,
+    "y": 0,
+    "w": 1849,
+    "h": 875
+   },
+   {
+    "name": "Shape · rectangle #FFFFFF",
+    "file": "shape-rectangle-ffffff_3419a4afba.png",
+    "x": 690,
+    "y": 450,
+    "w": 150,
+    "h": 150
+   },
+   {
+    "name": "Brackets",
+    "file": "brackets_447872e3b0.png",
+    "x": 708,
+    "y": 468,
+    "w": 114,
+    "h": 114
+   },
+   {
+    "name": "Text · e",
+    "file": "text-e_b54825d579.png",
+    "x": 740,
+    "y": 512,
+    "w": 51,
+    "h": 54
+   },
+   {
+    "name": "Text · brew",
+    "file": "text-brew_97f45721b4.png",
+    "x": 878,
+    "y": 475,
+    "w": 334,
+    "h": 103
+   }
+  ]
+ },
+ {
+  "n": 33,
+  "title": "Tagline on black",
+  "tin": 82.5,
+  "tout": 87.5,
+  "act": "5",
+  "flat": "33_tagline-on-black.png",
+  "layers": [
+   {
+    "name": "Background · dark",
+    "file": "background-dark_7f0a2e5e19.png",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 1080
+   },
+   {
+    "name": "Light leak · green",
+    "file": "light-leak-green_5c709f23f4.png",
+    "x": 0,
+    "y": 471,
+    "w": 863,
+    "h": 609
+   },
+   {
+    "name": "Light leak · teal",
+    "file": "light-leak-teal_c7c29a6948.png",
+    "x": 1160,
+    "y": 0,
+    "w": 760,
+    "h": 507
+   },
+   {
+    "name": "Text · Every frame watched by a person.",
+    "file": "text-every-frame-watched-by-a-person_c363e67240.png",
+    "x": 570,
+    "y": 522,
+    "w": 783,
+    "h": 48
+   },
+   {
+    "name": "Caret",
+    "file": "caret_838025364c.png",
+    "x": 1359,
+    "y": 518,
+    "w": 4,
+    "h": 52
+   }
+  ]
+ },
+ {
+  "n": 34,
+  "title": "CTA",
+  "tin": 87.5,
+  "tout": 93,
+  "act": "5",
+  "flat": "34_cta.png",
+  "layers": [
+   {
+    "name": "Background · dark",
+    "file": "background-dark_7f0a2e5e19.png",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 1080
+   },
+   {
+    "name": "Light leak · green",
+    "file": "light-leak-green_1effdc4a8d.png",
+    "x": 1097,
+    "y": 0,
+    "w": 823,
+    "h": 509
+   },
+   {
+    "name": "Light leak · teal",
+    "file": "light-leak-teal_15759253a9.png",
+    "x": 0,
+    "y": 633,
+    "w": 760,
+    "h": 447
+   },
+   {
+    "name": "Text · Your first video is free.",
+    "file": "text-your-first-video-is-free_1266e67fd3.png",
+    "x": 637,
+    "y": 473,
+    "w": 641,
+    "h": 48
+   },
+   {
+    "name": "Button · Send us a script  →",
+    "file": "button-send-us-a-script_3d531b319e.png",
+    "x": 816,
+    "y": 590,
+    "w": 288,
+    "h": 52
+   },
+   {
+    "name": "Text · scalewithbrew.com",
+    "file": "text-scalewithbrew-com_b298f39c50.png",
+    "x": 851,
+    "y": 745,
+    "w": 218,
+    "h": 15
+   }
+  ]
+ }
+]

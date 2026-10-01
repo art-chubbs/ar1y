@@ -1,8 +1,8 @@
 // Illustrated building blocks used across frames.
-import { C, D, S, M, T, TS, R, Ln, Ci, P, G, ML, rng, waveform, clipRect, grad, rgrad, check, cross, tag } from './lib.mjs';
+import { C, D, S, M, T, TS, R, Ln, Ci, P, G, ML, rng, waveform, clipRect, grad, rgrad, check, cross, tag, LAYER } from './lib.mjs';
 
 // ---------- the old workflow ----------
-export function loopCard(x, y, label, step, o = {}) {
+function loopCard__raw(x, y, label, step, o = {}) {
   const w = o.w || 360, h = o.h || 116, g = o.grey;
   const dot = g ? C.t3 : (o.dot || C.amber);
   const inner =
@@ -14,7 +14,7 @@ export function loopCard(x, y, label, step, o = {}) {
   return G(`translate(${x} ${y}) rotate(${o.rot || 0}) scale(${o.s || 1})`, inner, { op: o.op });
 }
 
-export function bubble(x, y, text, o = {}) {
+function bubble__raw(x, y, text, o = {}) {
   const w = text.length * 10.5 + 84, g = o.grey;
   return G(`translate(${x} ${y}) rotate(${o.rot || 0})`,
     R(0, 0, w, 56, { r: 18, fill: C.s2, stroke: C.line2 }) +
@@ -22,7 +22,7 @@ export function bubble(x, y, text, o = {}) {
     T(56, 35, text, { f: S, size: 20, fill: g ? C.t3 : C.text }), { op: o.op });
 }
 
-export function fileChip(x, y, name, o = {}) {
+function fileChip__raw(x, y, name, o = {}) {
   const w = name.length * 9.6 + 76, g = o.grey;
   return G(`translate(${x} ${y}) rotate(${o.rot || 0})`,
     R(0, 0, w, 48, { r: 10, fill: C.s2, stroke: C.line2 }) +
@@ -30,7 +30,7 @@ export function fileChip(x, y, name, o = {}) {
     T(48, 30, name, { f: M, size: 16, fill: g ? C.t3 : C.t2 }), { op: o.op });
 }
 
-export const badge = (x, y, n, grey) =>
+const badge__raw = (x, y, n, grey) =>
   Ci(x, y, 16, { fill: grey ? C.line2 : C.coral }) + T(x, y + 6, n, { f: S, w: 600, size: 16, fill: grey ? C.t3 : C.text, anchor: 'middle' });
 
 export function chaos(grey = false, o = {}) {
@@ -54,7 +54,7 @@ export function chaos(grey = false, o = {}) {
 }
 
 // ---------- research / film content ----------
-export function panamaMap(c, x, y, w, h, o = {}) {
+function panamaMap__raw(c, x, y, w, h, o = {}) {
   const px = (u, v) => `${(x + u * w).toFixed(1)},${(y + v * h).toFixed(1)}`;
   const up = [[0, .55], [.15, .48], [.3, .42], [.42, .36], [.5, .33], [.58, .36], [.7, .30], [.85, .26], [1, .30]];
   const lo = [[1, .62], [.85, .58], [.72, .66], [.62, .74], [.55, .78], [.48, .70], [.40, .72], [.30, .80], [.15, .76], [0, .85]];
@@ -76,7 +76,7 @@ export function panamaMap(c, x, y, w, h, o = {}) {
   return G(null, inner, { clip });
 }
 
-export function archivePhoto(c, x, y, w, h, o = {}) {
+function archivePhoto__raw(c, x, y, w, h, o = {}) {
   const pad = w * 0.05, cap = h * 0.12;
   const sep = grad(c, [[0, '#A68B68'], [1, '#4A3B2C']]);
   const vig = rgrad(c, [[0.55, '#000', 0], [1, '#1A130C', 0.55]]);
@@ -96,7 +96,7 @@ export function archivePhoto(c, x, y, w, h, o = {}) {
     T(x + pad, y + h - cap * 0.38, o.caption || 'R. FREEDMAN · 1911', { f: M, w: 500, size: cap * 0.32, fill: '#5A4A38', ls: 2 }), { op: o.op });
 }
 
-export function skyline(c, x, y, w, h, o = {}) {
+function skyline__raw(c, x, y, w, h, o = {}) {
   const sky = grad(c, [[0, '#6E8FB8'], [0.65, '#E7B48A'], [1, '#F2C79A']]);
   const clip = clipRect(c, x, y, w, h, o.r || 0);
   const r = rng(11);
@@ -113,7 +113,7 @@ export function skyline(c, x, y, w, h, o = {}) {
     T(x + w / 2, y + h * 0.5, 'stock', { f: D, w: 800, size: h * 0.3, fill: '#FFFFFF', op: 0.16, anchor: 'middle' }), { clip, op: o.op });
 }
 
-export function serumShot(c, x, y, w, h, o = {}) {
+function serumShot__raw(c, x, y, w, h, o = {}) {
   const clip = clipRect(c, x, y, w, h, o.r || 0);
   const marble = grad(c, [[0, '#EEECE7'], [1, '#C9C4BB']], { dir: [0, 0, 1, 1] });
   const light = rgrad(c, [[0, '#FFF6E0', 0.55], [1, '#FFF6E0', 0]], { cx: 0.2, cy: 0.1, r: 0.8 });
@@ -144,7 +144,7 @@ export function serumShot(c, x, y, w, h, o = {}) {
     bottle + hand + R(x, y, w, h, { fill: light }), { clip });
 }
 
-export function phone(c, x, y, w, h, o = {}) {
+function phone__raw(c, x, y, w, h, o = {}) {
   const r = w * 0.08, clip = clipRect(c, x, y, w, h, r);
   const pal = o.pal || ['#3A3F4A', '#1C1F26', '#C99A7A', '#2B2B2B', '#E2634A'];
   const bg = grad(c, [[0, pal[0]], [1, pal[1]]]);
@@ -167,7 +167,7 @@ export function phone(c, x, y, w, h, o = {}) {
     R(x, y, w, h, { r, stroke: C.line2, sw: 1.5 }), { op: o.op });
 }
 
-export function player(c, x, y, w, h, inner, o = {}) {
+function player__raw(c, x, y, w, h, inner, o = {}) {
   const clip = clipRect(c, x, y, w, h, o.r ?? 14);
   const shade = grad(c, [[0.75, '#000', 0], [1, '#000', 0.6]]);
   const p = o.prog ?? 0.35;
@@ -180,7 +180,7 @@ export function player(c, x, y, w, h, inner, o = {}) {
     R(x, y, w, h, { r: o.r ?? 14, stroke: C.line2, sw: 1.5 }));
 }
 
-export function chartCard(x, y, w, h, o = {}) {
+function chartCard__raw(x, y, w, h, o = {}) {
   const bars = [0.8, 0.75, 0.85, 0.7, 0.78, 0.46];
   let b = '';
   const bw = (w - 80) / bars.length;
@@ -189,7 +189,7 @@ export function chartCard(x, y, w, h, o = {}) {
     T(x + w - 24, y + 44, '−41%', { f: D, w: 700, size: 36, fill: C.coral, anchor: 'end' }) + b;
 }
 
-export function factCard(x, y, w, h, label, value, sub, o = {}) {
+function factCard__raw(x, y, w, h, label, value, sub, o = {}) {
   return G(`translate(${x} ${y}) rotate(${o.rot || 0})`,
     R(0, 0, w, h, { r: 14, fill: C.s1, stroke: o.stroke || C.line2, sw: 1.2 }) +
     ML(24, 38, label, { size: 12 }) +
@@ -198,7 +198,7 @@ export function factCard(x, y, w, h, label, value, sub, o = {}) {
     (o.ok ? check(w - 30, 32, 12) : ''), { op: o.op });
 }
 
-export function timeline(c, x, y, w, h, o = {}) {
+function timeline__raw(c, x, y, w, h, o = {}) {
   const rows = [['V2', 'gfx'], ['V1', 'vid'], ['A1', 'vo'], ['A2', 'mus']];
   const rh = (h - 60) / rows.length;
   let out = R(x, y, w, h, { r: 16, fill: C.s1, stroke: C.line2 });
@@ -225,7 +225,7 @@ export function timeline(c, x, y, w, h, o = {}) {
   return out;
 }
 
-export function videoCard(c, x, y, w, o = {}) {
+function videoCard__raw(c, x, y, w, o = {}) {
   const th = w * 9 / 16;
   return R(x, y, w, th + 150, { r: 18, fill: C.s1, stroke: C.line2 }) +
     G(null, panamaMap(c, x + 14, y + 14, w - 28, th - 28, { r: 10, quiet: true }) +
@@ -236,3 +236,19 @@ export function videoCard(c, x, y, w, o = {}) {
     T(x + 28, y + th + 76, 'Ready to upload · Day 3 · Two rounds of notes included', { f: S, size: 18, fill: C.t3 }) +
     tag(x + 28, y + th + 100, 'Delivered', C.green, true, 12) + tag(x + 150, y + th + 100, 'Reviewed by a person', C.green, false, 12);
 }
+
+// Named layers (data-layer) so the After Effects exporter can split frames into elements.
+export const loopCard = (...a) => LAYER(`Card · ${a[2]}`, loopCard__raw(...a));
+export const bubble = (...a) => LAYER(`Message · ${a[2]}`, bubble__raw(...a));
+export const fileChip = (...a) => LAYER(`File · ${a[2]}`, fileChip__raw(...a));
+export const badge = (...a) => LAYER('Badge', badge__raw(...a));
+export const panamaMap = (...a) => LAYER('Image · map', panamaMap__raw(...a));
+export const archivePhoto = (...a) => LAYER('Image · archive photo', archivePhoto__raw(...a));
+export const skyline = (...a) => LAYER('Image · stock skyline', skyline__raw(...a));
+export const serumShot = (...a) => LAYER('Image · serum shot', serumShot__raw(...a));
+export const phone = (...a) => LAYER(`Phone · ${(a[5] || {}).label || 'ad'}`, phone__raw(...a));
+export const player = (...a) => LAYER('Player', player__raw(...a));
+export const chartCard = (...a) => LAYER('Card · chart', chartCard__raw(...a));
+export const factCard = (...a) => LAYER(`Card · ${a[4]}`, factCard__raw(...a));
+export const timeline = (...a) => LAYER('Timeline', timeline__raw(...a));
+export const videoCard = (...a) => LAYER('Card · video', videoCard__raw(...a));
