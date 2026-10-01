@@ -5,6 +5,9 @@ image, the reference frames and the temp soundtrack packed inside. Run it on its
 images into `brew_v3_storyboard_assets/` next to itself and builds the full layered project below.
 (Flat backgrounds become native AE solids; soft glows are stored at 1/4 size and scaled 400%.)
 
+App windows are **flat and straight** in this export (shots 10 and 20 have no perspective/skew), so every UI
+element is a plain 2D layer. The MAIN timeline stacks **bottom to top**: shot 01 at the bottom, 34 at the top.
+
 The scripts below do the same from the loose files in this folder. All share the 93-second film v3
 timing, and none adds any animation.
 
@@ -22,10 +25,10 @@ timing, and none adds any animation.
 brew v3 storyboard (layered)/
   MAIN - brew v3 storyboard timeline   1920x1080 · 60 fps · 93 s
   Shots/              34 precomps, one per shot (double-click to see its layers)
-  Elements/           285 unique element PNGs, imported once and reused
+  Elements/           261 unique element PNGs, imported once and reused
   Reference frames/   the 34 flat frames
 ```
-- 401 element layers in total. `LAYERS.txt` lists every layer of every shot with its position and size.
+- 401 element layers in total (261 unique images). `LAYERS.txt` lists every layer of every shot with its position and size.
 - Each element is a tightly cropped transparent PNG, positioned with its anchor at its own centre,
   so it's ready to animate (scale/rotate from the middle of the card, not the comp).
 - Each precomp also has a hidden **REFERENCE** guide layer (the flat frame). Switch it on to check alignment.
@@ -39,4 +42,5 @@ brew v3 storyboard (layered)/
   editable AE text layers instead, ask and I'll generate them (needs Archivo, Bricolage Grotesque
   and IBM Plex Mono installed, all free on Google Fonts).
 - To change the frame rate, edit `var FPS = 60;` at the top of the script.
-- `export_layers.mjs` regenerates `layers/` + `layers.json` from the storyboard source.
+- Regenerate everything from the storyboard source: `export_frames.mjs` → `export_layers.mjs` →
+  `build_layered_script.mjs` + `build_single_script.mjs <soundtrack.mp3>`.

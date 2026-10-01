@@ -8,7 +8,8 @@ import { createRequire } from 'node:module';
 import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { ctx } from '../storyboard/lib.mjs';
-import { FRAMES } from '../storyboard/v3/frames.mjs';
+import { FRAMES, OPTS } from '../storyboard/v3/frames.mjs';
+OPTS.flatUI = true; // app windows flat and straight for After Effects
 
 const require = createRequire(import.meta.url);
 const { chromium } = require(process.env.PLAYWRIGHT || 'playwright');

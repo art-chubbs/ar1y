@@ -5,7 +5,9 @@ import { C, D, S, M, W, H, T, TS, R, Ln, Ci, P, G, ML, grad, rgrad, clipRect, ch
 import { panamaMap, archivePhoto, serumShot, phone } from '../art.mjs';
 import { thumb } from '../v2/ui.mjs';
 
-const tilt = (cx, cy, k = 1) => `translate(${cx} ${cy}) skewY(${-3.5 * k}) skewX(${9 * k}) scale(${1 - 0.05 * k} ${1 - 0.12 * k}) translate(${-cx} ${-cy})`;
+// OPTS.flatUI = true lays every app window flat and straight (used for the After Effects export).
+export const OPTS = { flatUI: false };
+const tilt = (cx, cy, k = 1) => OPTS.flatUI ? null : `translate(${cx} ${cy}) skewY(${-3.5 * k}) skewX(${9 * k}) scale(${1 - 0.05 * k} ${1 - 0.12 * k}) translate(${-cx} ${-cy})`;
 
 // The floating "mess" behind the hook — depth of field: near cards sharp, far cards blurred.
 const mess = (c, o = {}) => {

@@ -1,4 +1,5 @@
 brew v3 storyboard: every element layer per shot (top of the list = bottom of the AE stack)
+App windows are flat and straight (no perspective) in this export.
 
 01  Typed: "The same video."   [0s to 2s, 6 layers]
       Background · paper                                   at 0,0  1920x1080
@@ -103,30 +104,30 @@ brew v3 storyboard: every element layer per shot (top of the list = bottom of th
       Glow · green                                         at 16,506  1904x574
       Glow · teal                                          at 0,745  1072x335
       Glow · white                                         at 0,0  1849x875
-      Window · frame + shadow                              at 263,232  1402x784
-      Window · surface                                     at 282,241  1359x735
-      Window · title bar                                   at 282,241  1252x119
-      Window · sidebar (New video)                         at 286,342  347x634
-      Text · NEW VIDEO                                     at 567,374  72x11
-      Text · What should we make?                          at 572,383  341x42
-      Text · A finished script, or one line about the      at 580,418  340x32
-      Shape · rectangle #FBFBF9                            at 584,411  950x146
-      Text · Why the Panama Canal ran short of water       at 614,482  421x42
-      Shape · rectangle #3EAF75                            at 1037,473  8x26
-      Shape · rectangle #F7F7F5                            at 603,562  231x70
-      Text · LENGTH                                        at 619,588  40x9
-      Text · 10 min                                        at 623,609  46x12
-      Shape · rectangle #F7F7F5 2                          at 837,546  231x71
-      Text · STYLE                                         at 852,572  34x9
-      Text · Visual explainer                              at 855,589  114x16
-      Shape · rectangle #F7F7F5 3                          at 1070,530  232x71
-      Text · VOICE                                         at 1086,557  34x8
-      Text · Ours                                          at 1090,579  34x10
-      Shape · rectangle #F7F7F5 4                          at 1304,515  232x70
-      Text · LANGUAGES                                     at 1321,539  61x11
-      Text · 9                                             at 1324,564  9x10
-      Button · Send to brew  →                             at 1412,593  145x42
-      Text · First video free · up to ten minutes          at 619,654  261x24
+      Window · frame + shadow                              at 275,217  1370x822
+      Window · surface                                     at 300,230  1320x760
+      Window · title bar                                   at 300,230  1320x41
+      Window · sidebar (New video)                         at 300,270  251x720
+      Text · NEW VIDEO                                     at 590,314  79x8
+      Text · What should we make?                          at 590,343  361x26
+      Text · A finished script, or one line about the      at 590,387  351x14
+      Shape · rectangle #FBFBF9                            at 589,425  992x98
+      Text · Why the Panama Canal ran short of water       at 616,466  443x23
+      Shape · rectangle #3EAF75                            at 1064,460  3x30
+      Shape · rectangle #F7F7F5                            at 589,545  237x66
+      Text · LENGTH                                        at 605,563  45x7
+      Text · 10 min                                        at 605,586  47x13
+      Shape · rectangle #F7F7F5 2                          at 837,545  237x66
+      Text · STYLE                                         at 852,563  38x7
+      Text · Visual explainer                              at 852,586  117x15
+      Shape · rectangle #F7F7F5 3                          at 1084,545  237x66
+      Text · VOICE                                         at 1099,563  38x7
+      Text · Ours                                          at 1099,586  37x13
+      Shape · rectangle #F7F7F5 4                          at 1332,545  237x66
+      Text · LANGUAGES                                     at 1348,563  69x7
+      Text · 9                                             at 1347,586  9x13
+      Button · Send to brew  →                             at 1431,638  149x38
+      Text · First video free · up to ten minutes          at 591,655  251x11
       Text · For channels that                             at 1534,111  306x30
       Text · post every week                               at 1552,161  288x37
 
@@ -262,47 +263,47 @@ brew v3 storyboard: every element layer per shot (top of the list = bottom of th
       Glow · green                                         at 319,508  1601x572
       Glow · teal                                          at 0,747  1368x333
       Glow · white                                         at 0,0  1849x875
-      Window · frame + shadow                              at 188,152  1549x869
-      Window · surface                                     at 210,163  1502x813
-      Window · title bar                                   at 210,163  1445x82
-      Shape · rectangle #F8F8F6                            at 212,237  302x739
-      Shape · line                                         at 455,237  59x732
-      Text · brew                                          at 282,270  56x17
-      Shape · dot #D2D2CC                                  at 247,364  8x8
-      Text · New video                                     at 265,362  67x12
-      Shape · dot #D2D2CC 2                                at 250,402  8x8
-      Text · In production                                 at 268,399  83x15
-      Shape · dot #D2D2CC 3                                at 253,439  8x8
-      Text · Review                                        at 271,438  47x11
-      Shape · rectangle #3EAF75                            at 241,459  223x38
-      Shape · dot #3EAF75                                  at 255,477  9x8
-      Text · Library                                       at 274,476  48x13
-      Shape · dot #D2D2CC 4                                at 258,514  9x8
-      Text · Languages                                     at 277,514  72x13
-      Shape · dot #D2D2CC 5                                at 261,552  9x8
-      Text · AI b-roll                                     at 280,550  50x12
-      Shape · dot #D2D2CC 6                                at 264,589  9x8
-      Text · UGC ads                                       at 283,587  59x12
-      Text · LIBRARY · 11 DELIVERED                        at 487,250  197x14
-      Shape · rectangle                                    at 483,275  376x294
-      Thumbnail · map                                      at 490,282  355x195
-      Text · Why the Panama Canal Ran Short of Water       at 505,490  285x20
-      Chip · Delivered · Day 3                             at 508,520  145x27
-      Thumbnail · archive                                  at 869,270  357x196
-      Text · The 1919 Boston Molasses Tank                 at 886,479  219x17
-      Text · Delivered                                     at 888,510  54x11
-      Thumbnail · paper                                    at 1250,259  355x195
-      Text · Why You Still Get Goosebumps                  at 1266,469  213x18
-      Text · Delivered 2                                   at 1269,499  54x10
-      Thumbnail · cartoon                                  at 514,591  355x196
-      Text · Why Your Diet Starts on Monday                at 530,801  218x19
-      Text · Delivered 3                                   at 533,831  53x11
-      Thumbnail · archive 2                                at 894,580  356x195
-      Text · The 1904 Olympic Marathon                     at 910,790  189x16
-      Text · Delivered 4                                   at 913,820  54x10
-      Thumbnail · meme                                     at 1275,568  355x195
-      Text · Switzerland in meme format                    at 1291,779  186x15
-      Text · Delivered 5                                   at 1293,808  54x11
+      Window · frame + shadow                              at 195,147  1530x882
+      Window · surface                                     at 220,160  1480x820
+      Window · title bar                                   at 220,160  1480x41
+      Shape · rectangle #F8F8F6                            at 220,200  250x780
+      Shape · line                                         at 469,200  2x780
+      Text · brew                                          at 289,230  59x19
+      Shape · dot #D2D2CC                                  at 246,329  8x8
+      Text · New video                                     at 265,329  68x12
+      Shape · dot #D2D2CC 2                                at 246,369  8x8
+      Text · In production                                 at 265,369  86x14
+      Shape · dot #D2D2CC 3                                at 246,409  8x8
+      Text · Review                                        at 265,409  48x12
+      Shape · rectangle #3EAF75                            at 232,436  226x34
+      Shape · dot #3EAF75                                  at 246,449  8x8
+      Text · Library                                       at 265,449  47x14
+      Shape · dot #D2D2CC 4                                at 246,489  8x8
+      Text · Languages                                     at 265,489  71x14
+      Shape · dot #D2D2CC 5                                at 246,529  8x8
+      Text · AI b-roll                                     at 264,529  51x12
+      Shape · dot #D2D2CC 6                                at 246,569  8x8
+      Text · UGC ads                                       at 265,569  61x12
+      Text · LIBRARY · 11 DELIVERED                        at 501,222  195x8
+      Shape · rectangle                                    at 493,253  364x302
+      Thumbnail · map                                      at 500,260  350x197
+      Text · Why the Panama Canal Ran Short of Water       at 500,479  290x14
+      Chip · Delivered · Day 3                             at 500,508  148x23
+      Thumbnail · archive                                  at 890,260  350x197
+      Text · The 1919 Boston Molasses Tank                 at 890,479  224x12
+      Text · Delivered                                     at 891,506  54x11
+      Thumbnail · paper                                    at 1280,260  350x197
+      Text · Why You Still Get Goosebumps                  at 1280,479  215x14
+      Text · Delivered 2                                   at 1281,506  54x11
+      Thumbnail · cartoon                                  at 500,590  350x197
+      Text · Why Your Diet Starts on Monday                at 500,809  220x14
+      Text · Delivered 3                                   at 501,836  54x11
+      Thumbnail · archive 2                                at 890,590  350x197
+      Text · The 1904 Olympic Marathon                     at 890,809  194x14
+      Text · Delivered 4                                   at 891,836  54x11
+      Thumbnail · meme                                     at 1280,590  350x197
+      Text · Switzerland in meme format                    at 1280,809  190x12
+      Text · Delivered 5                                   at 1281,836  54x11
       Cursor                                               at 858,418  38x56
 
 21  "Delivered."   [47.5s to 49s, 5 layers]
