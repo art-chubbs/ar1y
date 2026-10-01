@@ -1,3 +1,8 @@
 motion/out/*
 !motion/out/ar1y-motion-web.mp4
 node_modules/
+# raw site captures (regenerable)
+brew/research/full.png
+brew/research/page.html
+brew/research/app.css
+brew/research/info.json
