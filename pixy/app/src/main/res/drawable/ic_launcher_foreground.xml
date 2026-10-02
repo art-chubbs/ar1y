@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Adaptive icon foreground: a black island pill with a green live dot. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp" android:height="108dp" android:viewportWidth="108" android:viewportHeight="108">
+    <path android:fillColor="#FF050505" android:pathData="M36,42h36a12,12 0,0 1,0 24H36a12,12 0,0 1,0 -24z" />
+    <path android:fillColor="#FF5BD68E" android:pathData="M38,48a6,6 0,1 0,0 12a6,6 0,1 0,0 -12z" />
+    <path android:fillColor="#FFFFFFFF" android:pathData="M52,51.5h18a2.5,2.5 0,0 1,0 5H52a2.5,2.5 0,0 1,0 -5z" />
+</vector>

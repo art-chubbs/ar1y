@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <!-- Deliberate: the target phone (Galaxy S21 FE, One UI 8) runs Android 16 = API 36.
+         Raise targetSdk only after testing on Android 17. compileSdk is already 37.2. -->
+    <issue id="OldTargetApi" severity="ignore" />
+    <!-- AAPT2 here does not resolve the adaptive icon from an unversioned mipmap-anydpi folder; keep -v26. -->
+    <issue id="ObsoleteSdkInt">
+        <ignore path="src/main/res/mipmap-anydpi-v26" />
+    </issue>
+</lint>

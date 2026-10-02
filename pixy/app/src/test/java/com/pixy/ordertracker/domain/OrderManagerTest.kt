@@ -1,0 +1,110 @@
+package com.pixy.ordertracker.domain
+
+import com.pixy.ordertracker.models.Eta
+import com.pixy.ordertracker.models.Order
+import com.pixy.ordertracker.models.OrderStatus.*
+import com.pixy.ordertracker.models.ParseResult
+import com.pixy.ordertracker.parsers.Apps
+import kotlinx.coroutines.test.runTest
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
+import org.junit.Assert.assertNull
+import org.junit.Assert.assertTrue
+import org.junit.Test
+
+class FakeStore : OrderStore {
+    val orders = mutableListOf<Order>()
+    private var next = 1L
+    override suspend fun activeOrders() = orders.filter { it.isActive }
+    override suspend fun insert(order: Order): Long { val o = order.copy(id = next++); orders += o; return o.id }
+    override suspend fun update(order: Order) { orders.replaceAll { if (it.id == order.id) order else it } }
+}
+
+class OrderManagerTest {
+    private var clock = 1_000_000L
+    private val store = FakeStore()
+    private val manager = OrderManager(store) { clock }
+
+    private fun r(status: com.pixy.ordertracker.models.OrderStatus, eta: Int? = null, merchant: String? = null, context: Boolean = true, adapter: String = "swiggy") =
+        ParseResult(adapter, true, status, eta?.let { Eta(it, clock + it * 60_000L) } ?: Eta(), merchantName = merchant, hasOrderContext = context)
+
+    @Test fun fullLifecycle() = runTest {
+        val a = manager.apply(Apps.SWIGGY, Apps.SWIGGY_PKG, "n1", r(CONFIRMED, merchant = "Paradise"))!!
+        assertEquals(OrderManager.Change.NEW, a.change)
+        clock += 60_000
+        assertEquals(PREPARING, manager.apply(Apps.SWIGGY, Apps.SWIGGY_PKG, "n1", r(PREPARING))!!.order.status)
+        clock += 60_000
+        val p = manager.apply(Apps.SWIGGY, Apps.SWIGGY_PKG, "n1", r(PICKED_UP, eta = 14))!!
+        assertEquals(OrderManager.Change.STATUS, p.change)
+        assertEquals(14, p.order.etaMinutes)
+        assertEquals("Paradise", p.order.merchantName)
+        clock += 60_000
+        val e = manager.apply(Apps.SWIGGY, Apps.SWIGGY_PKG, "n1", r(UNKNOWN, eta = 9))!!
+        assertEquals(OrderManager.Change.ETA, e.change)
+        assertEquals(PICKED_UP, e.order.status)
+        val d = manager.apply(Apps.SWIGGY, Apps.SWIGGY_PKG, "n1", r(DELIVERED))!!
+        assertEquals(DELIVERED, d.order.status)
+        assertFalse(d.order.isActive)
+        assertNull(d.order.estimatedDeliveryTime)
+        assertEquals(1, store.orders.size)
+    }
+
+    @Test fun statusNeverMovesBackwards() = runTest {
+        manager.apply(Apps.ZOMATO, Apps.ZOMATO_PKG, "z", r(OUT_FOR_DELIVERY, adapter = "zomato"))
+        val late = manager.apply(Apps.ZOMATO, Apps.ZOMATO_PKG, "z", r(PREPARING, adapter = "zomato"))!!
+        assertEquals(OUT_FOR_DELIVERY, late.order.status)
+        assertEquals(OrderManager.Change.NONE, late.change)
+    }
+
+    @Test fun finalStatusWithoutActiveOrderIsIgnored() = runTest {
+        assertNull(manager.apply(Apps.SWIGGY, Apps.SWIGGY_PKG, "x", r(DELIVERED)))
+        assertTrue(store.orders.isEmpty())
+    }
+
+    @Test fun weakContextDoesNotStartAnOrder() = runTest {
+        assertNull(manager.apply(Apps.SWIGGY, Apps.SWIGGY_PKG, "x", r(PREPARING, context = false)))
+    }
+
+    @Test fun unknownWithoutEtaDoesNotStartAnOrder() = runTest {
+        assertNull(manager.apply(Apps.SWIGGY, Apps.SWIGGY_PKG, "x", r(UNKNOWN)))
+        assertTrue(manager.apply(Apps.SWIGGY, Apps.SWIGGY_PKG, "x", r(UNKNOWN, eta = 20)) != null)
+    }
+
+    @Test fun ordersFromDifferentAppsAreSeparate() = runTest {
+        manager.apply(Apps.SWIGGY, Apps.SWIGGY_PKG, "s", r(PICKED_UP, eta = 12))
+        manager.apply(Apps.BLINKIT, Apps.BLINKIT_PKG, "b", r(PREPARING, eta = 24, adapter = "blinkit"))
+        assertEquals(2, store.activeOrders().size)
+        manager.apply(Apps.BLINKIT, Apps.BLINKIT_PKG, "b", r(DELIVERED, adapter = "blinkit"))
+        assertEquals(listOf("swiggy"), store.activeOrders().map { it.sourceApp })
+    }
+
+    @Test fun cancellationEndsFromAnyState() = runTest {
+        manager.apply(Apps.SWIGGY, Apps.SWIGGY_PKG, "s", r(CONFIRMED))
+        assertEquals(CANCELLED, manager.apply(Apps.SWIGGY, Apps.SWIGGY_PKG, "s", r(CANCELLED))!!.order.status)
+        assertTrue(store.activeOrders().isEmpty())
+    }
+
+    @Test fun secondOrderFromSameAppIsDetected() = runTest {
+        manager.apply(Apps.SWIGGY, Apps.SWIGGY_PKG, "first", r(PICKED_UP, merchant = "Paradise"))
+        clock += 15 * 60_000
+        val second = manager.apply(Apps.SWIGGY, Apps.SWIGGY_PKG, "second", r(CONFIRMED, merchant = "Meghana Foods"))!!
+        assertEquals(OrderManager.Change.NEW, second.change)
+        assertEquals(2, store.activeOrders().size)
+    }
+
+    @Test fun staleOrdersAreArchived() = runTest {
+        manager.apply(Apps.SWIGGY, Apps.SWIGGY_PKG, "s", r(PREPARING))
+        clock += 4 * OrderManager.HOUR
+        assertEquals(1, manager.archiveStale().size)
+        assertTrue(store.activeOrders().isEmpty())
+        assertEquals(PREPARING, store.orders.single().status)
+    }
+
+    @Test fun transitionTable() {
+        assertEquals(PICKED_UP, OrderManager.nextStatus(PREPARING, PICKED_UP))
+        assertEquals(PICKED_UP, OrderManager.nextStatus(PICKED_UP, CONFIRMED))
+        assertEquals(CANCELLED, OrderManager.nextStatus(ARRIVING, CANCELLED))
+        assertEquals(DELIVERED, OrderManager.nextStatus(DELIVERED, PREPARING))
+        assertEquals(CONFIRMED, OrderManager.nextStatus(UNKNOWN, CONFIRMED))
+    }
+}
