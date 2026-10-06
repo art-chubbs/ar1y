@@ -37,6 +37,10 @@ Then open **Test mode** (▶ on the home screen) and tap *Play a Swiggy order* o
 
 ## Using it
 
+- **Order not showing?** Home → *Not seeing your order? Check notifications* lists every delivery notification Pixy can
+  read right now and what it made of each one. Anything it didn't recognise has a **Track it** button (it keeps any ETA
+  the text states). If the list is empty, the app hasn't put a notification in the shade, and Pixy can't see inside apps.
+
 - Pill appears only while an order is active; it hides completely otherwise.
 - **Tap** to expand. **Tap an order** to open the delivery app (its own tracking deep link when available).
 - **Long-press** to open the order in Pixy. **Swipe up** to hide it until the next update (the order is kept).
@@ -86,13 +90,13 @@ rules, merchant patterns) and add it to `AdapterRegistry.defaultAdapters()`. Wit
 
 No INTERNET permission, no accounts, analytics, ads or servers. Room stores only parsed fields (app, store, status, ETA,
 rider first name, times), never notification text. Backups and device transfer are excluded. The Debug screen's raw text
-lives in memory only and is off by default in release builds; release builds also strip all `Log` calls.
+lives in memory only (last 60 delivery notifications, cleared when Pixy restarts; can be turned off in Settings); release builds also strip all `Log` calls.
 Settings → Privacy → *Clear stored orders*; Home → Recent orders → *Clear*.
 
 ## Honest limitations
 
 - **Not yet run on a real phone.** This was built in a cloud container without an Android emulator (no KVM). It is
-  verified by a clean build, Android Lint (0 issues), 88 JVM/Robolectric tests on the Android 16 framework
+  verified by a clean build, Android Lint (0 issues), 92 JVM/Robolectric tests on the Android 16 framework
   (parsers, ETA, state machine, Room, notification extraction, the full notification → pill pipeline, pill interactions)
   and rendered screenshots. Real-device checks still to do on the S21 FE: the exact wording each app uses today
   (use **Debug → Recent notifications**), the pill position on your screen, and Samsung's battery behaviour.

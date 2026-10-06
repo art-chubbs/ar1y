@@ -113,6 +113,15 @@ class PipelineTest {
         assertTrue(runBlocking { app.orders.activeOrders.first().isEmpty() })
     }
 
+    @Test fun trackItKeepsTheEtaFromUnrecognisedWording() {
+        val snap = NotificationSnapshot(Apps.SWIGGY_PKG, "odd", System.currentTimeMillis(), "Meghana Foods", "27 mins away")
+        assertFalse(app.parser.parse(snap).result.isOrderRelated)
+        app.engine.trackManually(com.pixy.ordertracker.domain.OrderEngine.Found(snap, null, "swiggy", "Swiggy", app.parser.parse(snap).result))
+        val o = waitFor("tracked") { app.orders.activeOrders.first().firstOrNull() }
+        assertEquals("odd", o.notificationKey)
+        assertEquals(27, o.etaMinutes)
+    }
+
     @Test fun noOverlayPermissionMeansNoWindow() {
         ShadowSettings.setCanDrawOverlays(false)
         post("Order confirmed!", "Your order from Meghana Foods has been confirmed", key = "swiggy-2")

@@ -167,4 +167,18 @@ class NotificationParserTest {
         val junk = "\u0000\uD83D".repeat(500) + "%%%".repeat(1000)
         assertFalse(parse(SWIGGY_PKG, junk, junk).isOrderRelated && false)
     }
+
+    // ---------- stage + ETA without "your order" ----------
+    @Test fun stageAndEtaWithoutOrderWordingStillTracks() {
+        val r = parse(ZOMATO_PKG, "Paradise Biryani", "Food is being prepared · arriving in 27 mins")
+        assertTrue(r.isOrderRelated)
+        assertTrue(r.hasOrderContext)
+        assertEquals(PREPARING, r.status)
+        assertEquals(27, r.eta.minutes)
+    }
+
+    @Test fun promoWithStageAndEtaIsStillIgnored() {
+        val r = parse(SWIGGY_PKG, "Hungry?", "Biryani prepared fresh, delivered in 30 mins. Get 50% off, order now!")
+        assertFalse(r.isOrderRelated)
+    }
 }

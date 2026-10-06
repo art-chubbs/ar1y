@@ -14,6 +14,7 @@ import com.pixy.ordertracker.utils.DebugLog
 class OrderListenerService : NotificationListenerService() {
 
     override fun onListenerConnected() {
+        connected = this
         app.engine.setListenerConnected(true)
         // Pick up trackers that were already showing (e.g. after a reboot or app update),
         // but not leftovers from hours ago that would resurrect a finished order.
@@ -22,6 +23,7 @@ class OrderListenerService : NotificationListenerService() {
     }
 
     override fun onListenerDisconnected() {
+        if (connected === this) connected = null
         app.engine.setListenerConnected(false)
         runCatching { requestRebind(ComponentName(this, OrderListenerService::class.java)) }
     }
@@ -39,7 +41,22 @@ class OrderListenerService : NotificationListenerService() {
         }
     }
 
-    private companion object { const val STALE_MS = 3 * 60 * 60 * 1000L }
+    override fun onDestroy() {
+        if (connected === this) connected = null
+        super.onDestroy()
+    }
+
+    /** Notifications from watched delivery apps currently in the shade, or null when the listener isn't connected. */
+    fun deliveryNotifications(): List<StatusBarNotification>? =
+        runCatching { activeNotifications }.getOrNull()
+            ?.filter { it.packageName != packageName && app.engine.watches(it.packageName) }
+
+    companion object {
+        private const val STALE_MS = 3 * 60 * 60 * 1000L
+        /** The listener instance Android has bound, used by "Check notifications" on the home screen. */
+        @Volatile var connected: OrderListenerService? = null
+            private set
+    }
 
     private fun handle(sbn: StatusBarNotification) {
         try {

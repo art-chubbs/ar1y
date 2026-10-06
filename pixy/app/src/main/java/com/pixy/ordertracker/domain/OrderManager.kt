@@ -27,21 +27,27 @@ class OrderManager(
     /**
      * @param postedAt when the delivery app posted the notification. Used as the order's update time, and to drop
      *   notifications that are older than what is already known (re-read from the shade after a restart).
+     * @param manual the user tapped "Track it" on a notification Pixy didn't recognise: start tracking even without order
+     *   wording or an ETA.
      */
-    suspend fun apply(app: SourceApp, sourcePackage: String, notificationKey: String?, result: ParseResult, postedAt: Long? = null): Update? = lock.withLock {
-        if (!result.isOrderRelated) return null
+    suspend fun apply(
+        app: SourceApp, sourcePackage: String, notificationKey: String?, result: ParseResult, postedAt: Long? = null, manual: Boolean = false,
+    ): Update? = lock.withLock {
+        if (!result.isOrderRelated && !manual) return null
         val t = now()
         val at = postedAt?.coerceAtMost(t) ?: t
         val sameApp = store.activeOrders().filter { it.sourceApp == app.id }
         val target = match(sameApp, notificationKey, result)
-        if (target != null && at < target.lastUpdatedAt) return null    // older than the last update we applied
+        if (target != null && at < target.lastUpdatedAt && !manual) return null    // older than the last update we applied
 
         if (target == null || startsNewOrder(target, notificationKey, result, at)) {
             if (result.status.isTerminal) return null                 // nothing active to complete
-            if (!result.hasOrderContext) return null                   // too weak to start tracking
-            if (result.status == OrderStatus.UNKNOWN && result.eta.isEmpty) return null
-            // Posted before this app's last order ended: a leftover of that order, not a new one.
-            store.lastFinished(app.id)?.completedAt?.let { if (at < it) return null }
+            if (!manual) {
+                if (!result.hasOrderContext) return null                   // too weak to start tracking
+                if (result.status == OrderStatus.UNKNOWN && result.eta.isEmpty) return null
+                // Posted before this app's last order ended: a leftover of that order, not a new one.
+                store.lastFinished(app.id)?.completedAt?.let { if (at < it) return null }
+            }
             val order = Order(
                 sourceApp = app.id, sourcePackage = sourcePackage,
                 merchantName = result.merchantName, orderTitle = result.orderTitle,

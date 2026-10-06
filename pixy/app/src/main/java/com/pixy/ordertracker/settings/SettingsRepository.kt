@@ -8,7 +8,6 @@ import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.core.stringSetPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
-import com.pixy.ordertracker.BuildConfig
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
@@ -40,7 +39,7 @@ class SettingsRepository(private val context: Context) {
             placement = p[K.placement]?.let { runCatching { PillPlacement.valueOf(it) }.getOrNull() } ?: d.placement,
             enabledApps = p[K.enabled] ?: d.enabledApps,
             customApps = (p[K.custom] ?: emptySet()).mapNotNull { e -> e.split('|', limit = 2).takeIf { it.size == 2 }?.let { it[0] to it[1] } }.toMap(),
-            debugCapture = p[K.debug] ?: BuildConfig.DEBUG,
+            debugCapture = p[K.debug] ?: d.debugCapture,
         )
     }
 

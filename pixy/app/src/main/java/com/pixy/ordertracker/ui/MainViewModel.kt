@@ -6,6 +6,7 @@ import android.content.pm.PackageManager
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.pixy.ordertracker.app
+import com.pixy.ordertracker.domain.OrderEngine
 import com.pixy.ordertracker.models.Order
 import com.pixy.ordertracker.parsers.Apps
 import com.pixy.ordertracker.settings.AnimationLevel
@@ -23,6 +24,13 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 data class InstalledApp(val packageName: String, val label: String)
+
+/** "Check notifications" on the home screen. */
+sealed interface ScanState {
+    data object Running : ScanState
+    data object NotConnected : ScanState
+    data class Done(val found: List<OrderEngine.Found>) : ScanState
+}
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {
     private val a = application.app
@@ -60,6 +68,20 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     fun clearTestOrders() = edit { a.orders.clearSimulated() }
     fun markDone(o: Order) { a.engine.markDone(o) }
     fun showTrackerAgain() { a.overlay.showAgain() }
+
+    private val _scan = MutableStateFlow<ScanState?>(null)
+    val scan: StateFlow<ScanState?> = _scan
+
+    fun checkNotifications() {
+        _scan.value = ScanState.Running
+        viewModelScope.launch {
+            val found = withContext(Dispatchers.IO) { a.engine.scanNow() }
+            _scan.value = found?.let { ScanState.Done(it) } ?: ScanState.NotConnected
+        }
+    }
+
+    fun trackIt(found: OrderEngine.Found) = a.engine.trackManually(found)
+    fun closeScan() { _scan.value = null }
 
     suspend fun installedApps(): List<InstalledApp> = withContext(Dispatchers.IO) {
         val pm = getApplication<Application>().packageManager

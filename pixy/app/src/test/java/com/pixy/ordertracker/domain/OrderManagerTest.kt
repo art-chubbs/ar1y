@@ -164,5 +164,15 @@ class OrderManagerTest {
         assertEquals(2, store.activeOrders().size)
     }
 
+    @Test fun manualTrackingStartsAnOrderFromUnrecognisedWording() = runTest {
+        val ignored = ParseResult.ignored("swiggy", "no order wording")
+        assertNull(manager.apply(Apps.SWIGGY, Apps.SWIGGY_PKG, "m", ignored))
+        val o = manager.apply(Apps.SWIGGY, Apps.SWIGGY_PKG, "m", ignored, manual = true)!!.order
+        assertEquals(UNKNOWN, o.status)
+        assertTrue(o.isActive)
+        // Still never starts from a final status.
+        assertNull(manager.apply(Apps.ZOMATO, Apps.ZOMATO_PKG, "z", r(DELIVERED, adapter = "zomato"), manual = true))
+    }
+
     private companion object { const val HOUR = 60 * 60_000L }
 }

@@ -53,14 +53,17 @@ abstract class RuleBasedAdapter : DeliveryAppAdapter {
         val status = resolveStatus(matched, eta)
         if (status.isTerminal) eta = Eta()   // "Delivered in 9 minutes" is not an ETA
 
-        val related = (status != OrderStatus.UNKNOWN || (!eta.isEmpty && hasContext) || (hasContext && !isPromo))
+        // A delivery stage plus an ETA from the delivery app itself ("Food is being prepared · 27 mins away") is about an
+        // order even without the words "your order". Promotions were already filtered out above.
+        val context = hasContext || (status.isActive && status != OrderStatus.UNKNOWN && !eta.isEmpty)
+        val related = (status != OrderStatus.UNKNOWN || (!eta.isEmpty && context) || (context && !isPromo))
         if (!related) return ParseResult.ignored(id, "no order wording")
 
         val why = buildString {
             append("status=").append(status)
             matched.firstOrNull { it.status == status }?.let { r -> append(" via \"").append(r.firstMatch(text)?.value).append('"') }
             if (eta.minutes != null) append(", eta=").append(eta.minutes).append(" min")
-            if (hasContext) append(", order context") else append(", weak context")
+            if (hasContext) append(", order context") else if (context) append(", stage + ETA") else append(", weak context")
         }
         return ParseResult(
             adapterId = id,
@@ -70,7 +73,7 @@ abstract class RuleBasedAdapter : DeliveryAppAdapter {
             merchantName = extractMerchant(original) ?: defaultMerchant,
             orderTitle = extractTitle(original),
             riderName = extractRider(original),
-            hasOrderContext = hasContext,
+            hasOrderContext = context,
             reason = why,
         )
     }

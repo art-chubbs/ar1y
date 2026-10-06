@@ -21,8 +21,8 @@ data class AppSettings(
     val enabledApps: Set<String> = Apps.builtIn.map { it.id }.toSet(),
     /** Extra apps added by the user: package name -> label. Parsed with the generic adapter. */
     val customApps: Map<String, String> = emptyMap(),
-    /** In-memory parser log for the debug screen. Never persisted. */
-    val debugCapture: Boolean = false,
+    /** In-memory parser log for the debug screen. Never persisted; on by default so wording problems can be diagnosed. */
+    val debugCapture: Boolean = true,
 ) {
     fun isAppEnabled(id: String) = id in enabledApps
 }

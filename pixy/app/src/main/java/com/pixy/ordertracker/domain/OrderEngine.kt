@@ -3,7 +3,13 @@ package com.pixy.ordertracker.domain
 import android.app.PendingIntent
 import com.pixy.ordertracker.PixyApp
 import com.pixy.ordertracker.models.NotificationSnapshot
+import com.pixy.ordertracker.models.Eta
 import com.pixy.ordertracker.models.Order
+import com.pixy.ordertracker.models.ParseResult
+import com.pixy.ordertracker.notifications.OrderListenerService
+import com.pixy.ordertracker.notifications.SnapshotExtractor
+import com.pixy.ordertracker.parsers.EtaParser
+import com.pixy.ordertracker.parsers.TextNormalizer
 import com.pixy.ordertracker.settings.AppSettings
 import com.pixy.ordertracker.utils.DebugEntry
 import com.pixy.ordertracker.utils.DebugLog
@@ -18,6 +24,9 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
+import java.time.Instant
+import java.time.ZoneId
+import java.time.ZonedDateTime
 import java.util.concurrent.ConcurrentHashMap
 
 /**
@@ -43,7 +52,7 @@ class OrderEngine(private val app: PixyApp) {
 
     /** Everything from the listener goes through one queue, so updates are applied in the order they were posted. */
     private sealed interface Event {
-        class Posted(val snapshot: NotificationSnapshot, val contentIntent: PendingIntent?, val simulated: Boolean) : Event
+        class Posted(val snapshot: NotificationSnapshot, val contentIntent: PendingIntent?, val simulated: Boolean, val manual: Boolean = false) : Event
         class Removed(val key: String, val at: Long) : Event
     }
     private val inbox = Channel<Event>(Channel.UNLIMITED)
@@ -53,7 +62,7 @@ class OrderEngine(private val app: PixyApp) {
             for (e in inbox) {
                 runCatching {
                     when (e) {
-                        is Event.Posted -> handlePosted(e.snapshot, e.contentIntent, e.simulated)
+                        is Event.Posted -> handlePosted(e.snapshot, e.contentIntent, e.simulated, e.manual)
                         is Event.Removed -> handleRemoved(e.key, e.at)
                     }
                 }.onFailure { DebugLog.w("engine", "event failed", it) }   // one bad notification never stops the queue
@@ -92,22 +101,53 @@ class OrderEngine(private val app: PixyApp) {
         inbox.trySend(Event.Removed(key, at))
     }
 
-    private suspend fun handlePosted(snapshot: NotificationSnapshot, contentIntent: PendingIntent?, simulated: Boolean) {
+    /** One delivery notification found by [scanNow], with what the parser made of it. */
+    class Found(val snapshot: NotificationSnapshot, val contentIntent: PendingIntent?, val appId: String?, val appName: String, val result: ParseResult)
+
+    /**
+     * Reads the delivery notifications currently in the shade, sends them through the tracker, and reports what the
+     * parser decided for each. Null when Android hasn't connected the listener. Call off the main thread.
+     */
+    fun scanNow(): List<Found>? {
+        val sbns = OrderListenerService.connected?.deliveryNotifications() ?: return null
+        return sbns.sortedByDescending { it.postTime }.map { sbn ->
+            val snap = SnapshotExtractor.from(sbn)
+            val outcome = app.parser.parse(snap)
+            val intent = sbn.notification.contentIntent
+            onSnapshot(snap, intent)
+            Found(snap, intent, outcome.adapter?.app?.id, outcome.adapter?.app?.displayName ?: snap.packageName, outcome.result)
+        }
+    }
+
+    /** The user asked to track a notification the parser did not recognise as an order. */
+    fun trackManually(found: Found) {
+        inbox.trySend(Event.Posted(found.snapshot, found.contentIntent, simulated = false, manual = true))
+    }
+
+    private suspend fun handlePosted(snapshot: NotificationSnapshot, contentIntent: PendingIntent?, simulated: Boolean, manual: Boolean = false) {
+        if (manual) muted -= snapshot.key
         if (!simulated && snapshot.key in muted) return
         val hash = snapshot.combinedText.hashCode()
         if (lastContent.size > 300) lastContent.clear()
-        if (!simulated && lastContent.put(snapshot.key, hash) == hash) return   // same text re-posted (progress ticks)
+        if (!simulated && !manual && lastContent.put(snapshot.key, hash) == hash) return   // same text re-posted (progress ticks)
         val outcome = app.parser.parse(snapshot)
-        val r = outcome.result
+        val r = if (manual && !outcome.result.isOrderRelated) manualResult(snapshot, outcome.result) else outcome.result
         if (settings.debugCapture) {
             DebugLog.add(DebugEntry(snapshot.postTime, snapshot.packageName, snapshot.title, snapshot.text ?: snapshot.bigText,
                 outcome.adapter?.app?.displayName ?: "none", r.status.name, r.eta.minutes, r.isOrderRelated, r.reason, simulated))
         }
         val adapter = outcome.adapter ?: return
-        val update = app.manager.apply(adapter.app, snapshot.packageName, snapshot.key, r, postedAt = snapshot.postTime) ?: return
+        val update = app.manager.apply(adapter.app, snapshot.packageName, snapshot.key, r, postedAt = snapshot.postTime, manual = manual) ?: return
         contentIntent?.let { contentIntents[update.order.id] = it }
         if (!update.order.isActive) contentIntents.remove(update.order.id)
         _events.emit(update)
+    }
+
+    /** For "Track it": keep whatever ETA the text states, even though the wording wasn't recognised as an order. */
+    private fun manualResult(snapshot: NotificationSnapshot, ignored: ParseResult): ParseResult {
+        val posted = ZonedDateTime.ofInstant(Instant.ofEpochMilli(minOf(snapshot.postTime, System.currentTimeMillis())), ZoneId.systemDefault())
+        val eta = runCatching { EtaParser.parse(TextNormalizer.forMatching(snapshot.combinedText), posted) }.getOrDefault(Eta())
+        return ignored.copy(isOrderRelated = true, hasOrderContext = true, eta = eta, reason = "tracked by you (${ignored.reason})")
     }
 
     private fun handleRemoved(key: String, at: Long) {

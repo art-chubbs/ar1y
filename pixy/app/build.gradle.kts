@@ -24,8 +24,8 @@ android {
         applicationId = "com.pixy.ordertracker"
         minSdk = 31          // Android 12; the S21 FE runs Android 16 (One UI 8)
         targetSdk = 36       // Android 16
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 2
+        versionName = "1.1"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
