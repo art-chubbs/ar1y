@@ -8,6 +8,7 @@ import com.pixy.ordertracker.settings.AppSettings
 import com.pixy.ordertracker.utils.DebugEntry
 import com.pixy.ordertracker.utils.DebugLog
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -40,7 +41,24 @@ class OrderEngine(private val app: PixyApp) {
     /** Notifications of orders the user chose to stop tracking (kept for the life of the process). */
     private val muted = ConcurrentHashMap.newKeySet<String>()
 
+    /** Everything from the listener goes through one queue, so updates are applied in the order they were posted. */
+    private sealed interface Event {
+        class Posted(val snapshot: NotificationSnapshot, val contentIntent: PendingIntent?, val simulated: Boolean) : Event
+        class Removed(val key: String, val at: Long) : Event
+    }
+    private val inbox = Channel<Event>(Channel.UNLIMITED)
+
     fun start() {
+        app.appScope.launch {
+            for (e in inbox) {
+                runCatching {
+                    when (e) {
+                        is Event.Posted -> handlePosted(e.snapshot, e.contentIntent, e.simulated)
+                        is Event.Removed -> handleRemoved(e.key, e.at)
+                    }
+                }.onFailure { DebugLog.w("engine", "event failed", it) }   // one bad notification never stops the queue
+            }
+        }
         app.appScope.launch {
             app.settings.settings.collect { s ->
                 settings = s
@@ -66,23 +84,38 @@ class OrderEngine(private val app: PixyApp) {
     fun watches(packageName: String) = app.registry.watches(packageName)
 
     fun onSnapshot(snapshot: NotificationSnapshot, contentIntent: PendingIntent?, simulated: Boolean = false) {
+        inbox.trySend(Event.Posted(snapshot, contentIntent, simulated))
+    }
+
+    /** A watched app cancelled one of its own ongoing notifications (not the user swiping it away). */
+    fun onTrackerRemoved(key: String, at: Long = System.currentTimeMillis()) {
+        inbox.trySend(Event.Removed(key, at))
+    }
+
+    private suspend fun handlePosted(snapshot: NotificationSnapshot, contentIntent: PendingIntent?, simulated: Boolean) {
+        if (!simulated && snapshot.key in muted) return
+        val hash = snapshot.combinedText.hashCode()
+        if (lastContent.size > 300) lastContent.clear()
+        if (!simulated && lastContent.put(snapshot.key, hash) == hash) return   // same text re-posted (progress ticks)
+        val outcome = app.parser.parse(snapshot)
+        val r = outcome.result
+        if (settings.debugCapture) {
+            DebugLog.add(DebugEntry(snapshot.postTime, snapshot.packageName, snapshot.title, snapshot.text ?: snapshot.bigText,
+                outcome.adapter?.app?.displayName ?: "none", r.status.name, r.eta.minutes, r.isOrderRelated, r.reason, simulated))
+        }
+        val adapter = outcome.adapter ?: return
+        val update = app.manager.apply(adapter.app, snapshot.packageName, snapshot.key, r, postedAt = snapshot.postTime) ?: return
+        contentIntent?.let { contentIntents[update.order.id] = it }
+        if (!update.order.isActive) contentIntents.remove(update.order.id)
+        _events.emit(update)
+    }
+
+    private fun handleRemoved(key: String, at: Long) {
+        lastContent.remove(key)
+        // Give the app a moment to post its "Delivered" message (often sent right after the tracker goes away).
         app.appScope.launch {
-            if (!simulated && snapshot.key in muted) return@launch
-            val hash = snapshot.combinedText.hashCode()
-            if (lastContent.size > 300) lastContent.clear()
-            if (!simulated && lastContent.put(snapshot.key, hash) == hash) return@launch   // same text re-posted (progress ticks)
-            val outcome = app.parser.parse(snapshot)
-            val r = outcome.result
-            if (settings.debugCapture) {
-                DebugLog.add(DebugEntry(snapshot.postTime, snapshot.packageName, snapshot.title, snapshot.text ?: snapshot.bigText,
-                    outcome.adapter?.app?.displayName ?: "none", r.status.name, r.eta.minutes, r.isOrderRelated, r.reason, simulated))
-            }
-            val adapter = outcome.adapter ?: return@launch
-            val update = runCatching { app.manager.apply(adapter.app, snapshot.packageName, snapshot.key, r) }
-                .onFailure { DebugLog.w("engine", "apply failed", it) }.getOrNull() ?: return@launch
-            contentIntent?.let { contentIntents[update.order.id] = it }
-            if (!update.order.isActive) contentIntents.remove(update.order.id)
-            _events.emit(update)
+            delay(TRACKER_GONE_GRACE_MS)
+            app.manager.trackerRemoved(key, at)?.let { contentIntents.remove(it.id) }
         }
     }
 
@@ -93,6 +126,8 @@ class OrderEngine(private val app: PixyApp) {
         contentIntents.remove(order.id)
         app.manager.markDone(order)
     }
+
+    companion object { const val TRACKER_GONE_GRACE_MS = 2 * 60_000L }
 
     private suspend fun archiveStale() {
         runCatching { app.manager.archiveStale() }.onFailure { DebugLog.w("engine", "stale check failed", it) }

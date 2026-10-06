@@ -18,6 +18,7 @@ class FakeStore : OrderStore {
     override suspend fun activeOrders() = orders.filter { it.isActive }
     override suspend fun insert(order: Order): Long { val o = order.copy(id = next++); orders += o; return o.id }
     override suspend fun update(order: Order) { orders.replaceAll { if (it.id == order.id) order else it } }
+    override suspend fun lastFinished(sourceApp: String) = orders.filter { !it.isActive && it.sourceApp == sourceApp }.maxByOrNull { it.completedAt ?: 0 }
 }
 
 class OrderManagerTest {
@@ -107,4 +108,61 @@ class OrderManagerTest {
         assertEquals(DELIVERED, OrderManager.nextStatus(DELIVERED, PREPARING))
         assertEquals(CONFIRMED, OrderManager.nextStatus(UNKNOWN, CONFIRMED))
     }
+
+    @Test fun leftoverNotificationFromAFinishedOrderDoesNotStartANewOne() = runTest {
+        val postedEarlier = clock
+        manager.apply(Apps.SWIGGY, Apps.SWIGGY_PKG, "n1", r(PICKED_UP, eta = 14), postedAt = clock)
+        clock += 20 * 60_000
+        manager.apply(Apps.SWIGGY, Apps.SWIGGY_PKG, "n2", r(DELIVERED), postedAt = clock)
+        clock += 60_000
+        // After a restart the listener re-reads the old "picked up" notification still in the shade.
+        assertNull(manager.apply(Apps.SWIGGY, Apps.SWIGGY_PKG, "n1", r(PICKED_UP, eta = 14), postedAt = postedEarlier))
+        assertTrue(store.activeOrders().isEmpty())
+        // A genuinely new order afterwards is still tracked.
+        clock += 60_000
+        assertEquals(OrderManager.Change.NEW, manager.apply(Apps.SWIGGY, Apps.SWIGGY_PKG, "n3", r(CONFIRMED), postedAt = clock)!!.change)
+    }
+
+    @Test fun notificationOlderThanTheLastUpdateIsIgnored() = runTest {
+        val first = clock
+        manager.apply(Apps.ZOMATO, Apps.ZOMATO_PKG, "z", r(PREPARING, eta = 30, adapter = "zomato"), postedAt = first)
+        clock += 5 * 60_000
+        manager.apply(Apps.ZOMATO, Apps.ZOMATO_PKG, "z", r(PICKED_UP, eta = 12, adapter = "zomato"), postedAt = clock)
+        val due = store.activeOrders().single().estimatedDeliveryTime
+        assertNull(manager.apply(Apps.ZOMATO, Apps.ZOMATO_PKG, "z", r(PREPARING, eta = 30, adapter = "zomato"), postedAt = first))
+        assertEquals(due, store.activeOrders().single().estimatedDeliveryTime)
+    }
+
+    @Test fun updateTimeIsWhenTheAppPostedIt() = runTest {
+        val posted = clock - 4 * 60_000
+        val o = manager.apply(Apps.SWIGGY, Apps.SWIGGY_PKG, "n", r(PICKED_UP), postedAt = posted)!!.order
+        assertEquals(posted, o.lastUpdatedAt)
+        // A post time in the future (clock skew) is capped at now.
+        val later = manager.apply(Apps.SWIGGY, Apps.SWIGGY_PKG, "n", r(ARRIVING), postedAt = clock + HOUR)!!.order
+        assertEquals(clock, later.lastUpdatedAt)
+    }
+
+    @Test fun appRemovingItsTrackerClosesALateStageOrderWithoutCallingItDelivered() = runTest {
+        manager.apply(Apps.SWIGGY, Apps.SWIGGY_PKG, "live", r(ARRIVING, eta = 2), postedAt = clock)
+        clock += 60_000
+        val closed = manager.trackerRemoved("live", removedAt = clock)!!
+        assertTrue(closed.archived)
+        assertEquals(ARRIVING, closed.status)
+        assertFalse(closed.isDelivered)
+        assertTrue(store.activeOrders().isEmpty())
+    }
+
+    @Test fun appRemovingItsTrackerEarlyOrBeforeANewerUpdateKeepsTheOrder() = runTest {
+        manager.apply(Apps.SWIGGY, Apps.SWIGGY_PKG, "early", r(PREPARING, eta = 30), postedAt = clock)
+        assertNull(manager.trackerRemoved("early", removedAt = clock + 1))           // not picked up yet: apps re-post later
+        manager.apply(Apps.BLINKIT, Apps.BLINKIT_PKG, "b", r(PICKED_UP, adapter = "blinkit"), postedAt = clock)
+        val removedAt = clock
+        clock += 30_000
+        manager.apply(Apps.BLINKIT, Apps.BLINKIT_PKG, "b", r(ARRIVING, adapter = "blinkit"), postedAt = clock)
+        assertNull(manager.trackerRemoved("b", removedAt))                            // an update arrived after the removal
+        assertNull(manager.trackerRemoved("unknown-key", clock))
+        assertEquals(2, store.activeOrders().size)
+    }
+
+    private companion object { const val HOUR = 60 * 60_000L }
 }

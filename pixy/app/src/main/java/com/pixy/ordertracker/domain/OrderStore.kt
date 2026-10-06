@@ -7,4 +7,6 @@ interface OrderStore {
     suspend fun activeOrders(): List<Order>
     suspend fun insert(order: Order): Long
     suspend fun update(order: Order)
+    /** The most recently finished order from [sourceApp], or null. */
+    suspend fun lastFinished(sourceApp: String): Order?
 }

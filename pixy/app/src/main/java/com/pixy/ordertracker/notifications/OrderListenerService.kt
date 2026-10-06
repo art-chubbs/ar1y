@@ -28,6 +28,17 @@ class OrderListenerService : NotificationListenerService() {
 
     override fun onNotificationPosted(sbn: StatusBarNotification) = handle(sbn)
 
+    override fun onNotificationRemoved(sbn: StatusBarNotification, rankingMap: RankingMap, reason: Int) {
+        try {
+            // Only the app itself withdrawing its live tracker is a signal; a user swipe or tap is not.
+            if (reason != REASON_APP_CANCEL && reason != REASON_APP_CANCEL_ALL) return
+            if (!sbn.isOngoing || !app.engine.watches(sbn.packageName)) return
+            app.engine.onTrackerRemoved(sbn.key)
+        } catch (t: Throwable) {
+            DebugLog.w("listener", "could not handle removal", t)
+        }
+    }
+
     private companion object { const val STALE_MS = 3 * 60 * 60 * 1000L }
 
     private fun handle(sbn: StatusBarNotification) {

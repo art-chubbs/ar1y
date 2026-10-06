@@ -102,6 +102,17 @@ class PipelineTest {
         waitFor("back") { app.overlay.ui.value.takeIf { it.visible } }
     }
 
+    @Test fun burstOfUpdatesIsAppliedInPostedOrder() {
+        // Posted back to back: before the queue, "delivered" could be applied first and the late "picked up" became a ghost order.
+        post("Order confirmed!", "Your order from Paradise Biryani has been confirmed", key = "burst")
+        post("Ramesh has picked up your order", "Arriving in 14 mins", key = "burst")
+        post("Order delivered", "Enjoy your meal!", key = "burst-2")
+        val done = waitFor("delivered") { runBlocking { app.orders.recentOrders().first().firstOrNull() } }
+        assertEquals(OrderStatus.DELIVERED, done.status)
+        Thread.sleep(200)
+        assertTrue(runBlocking { app.orders.activeOrders.first().isEmpty() })
+    }
+
     @Test fun noOverlayPermissionMeansNoWindow() {
         ShadowSettings.setCanDrawOverlays(false)
         post("Order confirmed!", "Your order from Meghana Foods has been confirmed", key = "swiggy-2")

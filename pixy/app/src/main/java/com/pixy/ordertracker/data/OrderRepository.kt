@@ -14,6 +14,7 @@ class OrderRepository(private val dao: OrderDao) : OrderStore {
     override suspend fun activeOrders(): List<Order> = dao.active().map { it.toModel() }
     override suspend fun insert(order: Order): Long = dao.insert(OrderEntity.from(order))
     override suspend fun update(order: Order) = dao.update(OrderEntity.from(order))
+    override suspend fun lastFinished(sourceApp: String): Order? = dao.lastFinished(sourceApp)?.toModel()
 
     suspend fun clearHistory() = dao.deleteHistory()
     suspend fun clearAll() = dao.deleteAll()

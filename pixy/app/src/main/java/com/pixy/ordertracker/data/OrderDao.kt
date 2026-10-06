@@ -20,6 +20,9 @@ interface OrderDao {
     @Query("SELECT * FROM orders WHERE isActive = 1")
     suspend fun active(): List<OrderEntity>
 
+    @Query("SELECT * FROM orders WHERE isActive = 0 AND sourceApp = :sourceApp ORDER BY completedAt DESC LIMIT 1")
+    suspend fun lastFinished(sourceApp: String): OrderEntity?
+
     @Insert
     suspend fun insert(order: OrderEntity): Long
 

@@ -24,24 +24,32 @@ class OrderManager(
 
     private val lock = Mutex()
 
-    suspend fun apply(app: SourceApp, sourcePackage: String, notificationKey: String?, result: ParseResult): Update? = lock.withLock {
+    /**
+     * @param postedAt when the delivery app posted the notification. Used as the order's update time, and to drop
+     *   notifications that are older than what is already known (re-read from the shade after a restart).
+     */
+    suspend fun apply(app: SourceApp, sourcePackage: String, notificationKey: String?, result: ParseResult, postedAt: Long? = null): Update? = lock.withLock {
         if (!result.isOrderRelated) return null
         val t = now()
+        val at = postedAt?.coerceAtMost(t) ?: t
         val sameApp = store.activeOrders().filter { it.sourceApp == app.id }
         val target = match(sameApp, notificationKey, result)
+        if (target != null && at < target.lastUpdatedAt) return null    // older than the last update we applied
 
-        if (target == null || startsNewOrder(target, notificationKey, result, t)) {
+        if (target == null || startsNewOrder(target, notificationKey, result, at)) {
             if (result.status.isTerminal) return null                 // nothing active to complete
             if (!result.hasOrderContext) return null                   // too weak to start tracking
             if (result.status == OrderStatus.UNKNOWN && result.eta.isEmpty) return null
+            // Posted before this app's last order ended: a leftover of that order, not a new one.
+            store.lastFinished(app.id)?.completedAt?.let { if (at < it) return null }
             val order = Order(
                 sourceApp = app.id, sourcePackage = sourcePackage,
                 merchantName = result.merchantName, orderTitle = result.orderTitle,
                 status = result.status, statusText = result.status.label,
-                etaMinutes = result.eta.minutes, etaCapturedAt = result.eta.minutes?.let { t },
+                etaMinutes = result.eta.minutes, etaCapturedAt = result.eta.minutes?.let { at },
                 estimatedDeliveryTime = result.eta.at, etaWindowStart = result.eta.windowStart,
                 riderName = result.riderName, notificationKey = notificationKey,
-                createdAt = t, lastUpdatedAt = t,
+                createdAt = at, lastUpdatedAt = at,
             )
             val id = store.insert(order)
             return Update(order.copy(id = id), Change.NEW, null)
@@ -58,11 +66,11 @@ class OrderManager(
             orderTitle = old.orderTitle ?: result.orderTitle,
             riderName = result.riderName ?: old.riderName,
             etaMinutes = if (terminal) null else if (hasEta) result.eta.minutes else old.etaMinutes,
-            etaCapturedAt = if (terminal) null else if (hasEta) t else old.etaCapturedAt,
+            etaCapturedAt = if (terminal) null else if (hasEta) at else old.etaCapturedAt,
             estimatedDeliveryTime = if (terminal) null else if (hasEta) result.eta.at else old.estimatedDeliveryTime,
             etaWindowStart = if (terminal) null else if (hasEta) result.eta.windowStart else old.etaWindowStart,
             notificationKey = notificationKey ?: old.notificationKey,
-            lastUpdatedAt = t,
+            lastUpdatedAt = at,
             completedAt = if (terminal) t else null,
         )
         store.update(updated)
@@ -84,6 +92,17 @@ class OrderManager(
     }
 
     suspend fun markDone(order: Order) = lock.withLock { store.update(order.copy(archived = true, completedAt = now())) }
+
+    /**
+     * The delivery app removed its own ongoing tracking notification ([notificationKey]) at [removedAt].
+     * Apps often do this when the order reaches the door. If the order was already picked up and nothing has arrived
+     * since, close it as "no further updates". It is not marked delivered: the app never said so.
+     */
+    suspend fun trackerRemoved(notificationKey: String, removedAt: Long): Order? = lock.withLock {
+        val o = store.activeOrders().firstOrNull { it.notificationKey == notificationKey } ?: return null
+        if (o.status.rank < OrderStatus.PICKED_UP.rank || o.lastUpdatedAt > removedAt) return null
+        o.copy(archived = true, completedAt = now()).also { store.update(it) }
+    }
 
     private fun match(candidates: List<Order>, key: String?, r: ParseResult): Order? {
         if (candidates.isEmpty()) return null

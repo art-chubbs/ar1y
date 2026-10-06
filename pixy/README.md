@@ -12,16 +12,18 @@ More renders in [`docs/screenshots`](docs/screenshots) (compact, two orders, sta
 
 ## Install on your phone
 
-**Easiest (no restrictions):** with USB debugging on,
+Build the APK (see [Build](#build)) or use a copy someone built for you. Then, **easiest (no restrictions):** with USB
+debugging on,
 ```
-adb install -r Pixy-1.0.apk
+adb install -r app-release.apk
 ```
-**Or** copy `Pixy-1.0.apk` to the phone and open it. Android 13+ then treats Pixy as "sideloaded" and greys out
+**Or** copy the APK to the phone and open it. Android 13+ then treats Pixy as "sideloaded" and greys out
 Notification access with *Restricted setting*. To unlock it: **Settings → Apps → Pixy → ⋮ (top right) → Allow restricted
 settings**, then turn on Notification access. The setup screen walks you through this.
 
-The APK in the release is signed with a local debug key. If you later build it yourself, uninstall this copy first
-(different signature).
+Without a `keystore.properties`, release builds are signed with the build machine's debug key. An APK from a different
+machine has a different signature, so uninstall the old copy before installing it (Android refuses the update otherwise).
+For painless updates, create your own key once and keep it (see [Build](#build)).
 
 ## First launch
 
@@ -40,6 +42,9 @@ Then open **Test mode** (▶ on the home screen) and tap *Play a Swiggy order* o
 - **Long-press** to open the order in Pixy. **Swipe up** to hide it until the next update (the order is kept).
 - New order: pill peeks wider with the status, then settles. Status change: content slides, pill pulses.
   Delivered: green check for ~4 s, then it disappears (setting).
+- If the delivery app silently removes its live tracking notification after pickup (many do at the door) and sends
+  nothing else for 2 minutes, the order closes as "No further updates". It is not marked delivered, because the app
+  never said so.
 - Multiple orders: the most recently updated / closest-to-the-door order leads; others show as small icons and as rows
   when expanded.
 
@@ -61,11 +66,15 @@ NotificationListenerService ─► NotificationParser ─► OrderManager ─►
 | `ui/` | Setup, Orders, Order detail, Settings, Add app, Debug, Test mode |
 | `settings/`, `utils/` | DataStore settings, permissions, launcher, formatters, in-memory debug log |
 
+**Ordering:** listener events go through a single queue, so updates are applied in the order the app posted them.
+Each update is stamped with the notification's post time; anything older than what is already known (for example
+notifications still in the shade that Pixy re-reads after a reboot or update) cannot move an order or start a new one.
+
 **Statuses:** `UNKNOWN, CONFIRMED, PREPARING, READY, PICKED_UP, OUT_FOR_DELIVERY, ARRIVING, DELIVERED, CANCELLED, FAILED`.
 Status only moves forward (a late "preparing" can't undo "picked up"); cancelled/failed/delivered end an order from any
 state. Promotions ("50% off… order now") never create orders, and nothing is created from a final status alone.
 
-**ETA:** taken only from the notification ("in 18 mins", "10–15 min", "1 hr 5 min", "at 11:25 PM", "between 7–9 PM").
+**ETA:** taken only from the notification, measured from when it was posted ("in 18 mins", "10–15 min", "1 hr 5 min", "at 11:25 PM", "between 7–9 PM").
 It counts down locally between notifications. If the app gave none, or it has passed, Pixy shows the status
 ("Order in progress") instead of inventing a time.
 
@@ -83,7 +92,7 @@ Settings → Privacy → *Clear stored orders*; Home → Recent orders → *Clea
 ## Honest limitations
 
 - **Not yet run on a real phone.** This was built in a cloud container without an Android emulator (no KVM). It is
-  verified by a clean build, Android Lint (0 issues), 82 JVM/Robolectric tests on the Android 16 framework
+  verified by a clean build, Android Lint (0 issues), 88 JVM/Robolectric tests on the Android 16 framework
   (parsers, ETA, state machine, Room, notification extraction, the full notification → pill pipeline, pill interactions)
   and rendered screenshots. Real-device checks still to do on the S21 FE: the exact wording each app uses today
   (use **Debug → Recent notifications**), the pill position on your screen, and Samsung's battery behaviour.
