@@ -36,6 +36,7 @@ CH_DIR = ROOT / "chapters"
 DIST = ROOT / "dist"
 
 MD_EXT = ["tables", "fenced_code", "attr_list", "sane_lists", "md_in_html"]
+WEB = "--web" in sys.argv
 
 
 def md(text):
@@ -290,10 +291,21 @@ class Book:
                     n = len(quiz_items) + 1
                     qid, aid = f"q-{cid}-{n}", f"a-{cid}-{n}"
                     quiz_items.append((qid, aid, n, md(a.strip())))
-                    lis.append(
-                        f'<li id="{qid}"><div class="qtext">{md(q.strip())}</div>'
-                        f'<a class="qlink" href="#{aid}">See answer &#8594;</a></li>'
-                    )
+                    if WEB:
+                        lis.append(
+                            f'<li id="{qid}" data-q="{qid}"><div class="qtext">{md(q.strip())}</div>'
+                            f'<details class="ans"><summary>Reveal answer</summary>'
+                            f'<div class="ans-body">{md(a.strip())}</div>'
+                            f'<div class="grade"><span>How did you do?</span>'
+                            f'<button type="button" data-grade="got">Got it</button>'
+                            f'<button type="button" data-grade="review">Review later</button></div>'
+                            f'</details></li>'
+                        )
+                    else:
+                        lis.append(
+                            f'<li id="{qid}"><div class="qtext">{md(q.strip())}</div>'
+                            f'<a class="qlink" href="#{aid}">See answer &#8594;</a></li>'
+                        )
                 return stash(
                     '<section class="quiz"><div class="quiz-head">Check your understanding</div>'
                     f'<ol>{"".join(lis)}</ol></section>'
@@ -339,6 +351,15 @@ class Book:
             label = '<div class="ch-num">Appendix</div>'
         else:
             label = f'<div class="ch-num">Chapter {num}</div>'
+        if WEB:
+            html_ = html_.replace("<table>", '<div class="tw"><table>').replace("</table>", "</table></div>")
+            html_ = html_.replace("<pre>", '<div class="pw"><pre>').replace("</pre>", "</pre></div>")
+            return (
+                f'<section class="chapter{" appendix" if appendix else ""}" id="{cid}" '
+                f'data-title="{esc(title)}" data-num="{num}">'
+                f'<header class="ch-head">{label}<h1>{esc(title)}</h1></header>'
+                f'{html_}</section>'
+            )
         return (
             f'<section class="chapter{" appendix" if appendix else ""}" id="{cid}">'
             f'<header class="ch-head">{label}<h1>{esc(title)}</h1>'
@@ -395,6 +416,18 @@ def main():
     body = []
     for f in sorted(CH_DIR.glob("*.md")):
         body.append(book.process_file(f))
+    if WEB:
+        nav = json.dumps([t for t in book.toc if t[0] != "section"])
+        page = (ROOT / "web" / "template.html").read_text()
+        page = (page.replace("/*CSS*/", (ROOT / "web" / "web.css").read_text())
+                    .replace("/*JS*/", (ROOT / "web" / "web.js").read_text())
+                    .replace("/*NAV*/", nav)
+                    .replace("<!--BODY-->", "\n".join(body)))
+        out = DIST / "web"
+        out.mkdir(parents=True, exist_ok=True)
+        (out / "system-design-book.html").write_text(page)
+        print(f"web: {book.ch} chapters, {len(page)//1024} KB")
+        return
     body.append(book.answer_key())
     css = (ROOT / "style.css").read_text()
     doc = (
