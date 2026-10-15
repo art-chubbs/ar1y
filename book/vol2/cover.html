@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Cover</title>
+<style>/*CSS*/
+@page { size: 7in 10in; margin: 0; }
+body { margin: 0; }
+.cover {
+  width: 7in; height: 10in; position: relative; overflow: hidden;
+  background: #0d1b26; color: #fff; font-family: var(--sans);
+}
+.cover svg.bg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.cover .top { position: absolute; left: 0.7in; top: 0.75in; right: 0.7in; }
+.cover .eyebrow { font-size: 9pt; letter-spacing: 0.32em; text-transform: uppercase; color: #7fd0e2; font-weight: 700; }
+.cover h1 { font-size: 46pt; line-height: 0.98; font-weight: 800; letter-spacing: -0.03em; margin: 0.25in 0 0.2in; color: #fff; }
+.cover .sub { font-size: 14pt; color: #c9d9e2; font-weight: 400; line-height: 1.35; max-width: 4.8in; }
+.cover .bottom { position: absolute; left: 0.7in; right: 0.7in; bottom: 0.7in; display: flex; justify-content: space-between; align-items: flex-end; }
+.cover .ed { font-size: 9pt; color: #8fa6b4; letter-spacing: 0.08em; line-height: 1.6; }
+.cover .mark { font-size: 9pt; color: #7fd0e2; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.inside { width: 7in; height: 10in; padding: 1.2in 0.9in; font-family: var(--serif); color: var(--ink); break-before: page; }
+.inside h2 { border: 0; font-size: 20pt; margin: 0 0 0.1in; }
+.inside .by { font-family: var(--sans); color: var(--muted); font-size: 10pt; margin-bottom: 0.6in; }
+.inside .how { font-size: 9.6pt; }
+.inside .how h3 { font-size: 10.5pt; margin-top: 0; }
+.legend { display: grid; grid-template-columns: 1fr 1fr; gap: 0.12in; margin-top: 0.2in; }
+.legend .callout { margin: 0; padding: 0.45em 0.7em 0.3em; font-size: 8.4pt; }
+.fine { position: absolute; bottom: 0.9in; font-family: var(--sans); font-size: 7.5pt; color: var(--muted); max-width: 5.2in; line-height: 1.5; }
+</style></head><body>
+<div class="cover">
+  <svg class="bg" viewBox="0 0 700 1000" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <radialGradient id="g1" cx="78%" cy="70%" r="65%">
+        <stop offset="0" stop-color="#13839f" stop-opacity="0.55"/>
+        <stop offset="1" stop-color="#0d1b26" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <rect width="700" height="1000" fill="url(#g1)"/>
+    <g stroke="#2b5a6c" stroke-width="1" fill="none" opacity="0.9">
+      <path d="M90 640 L250 560 L420 610 L560 520 L640 600"/>
+      <path d="M250 560 L300 760 L470 800 L560 520"/>
+      <path d="M90 640 L160 820 L300 760"/>
+      <path d="M420 610 L470 800 L610 860 L640 600"/>
+      <path d="M160 820 L330 920 L470 800"/>
+      <path d="M560 520 L520 400 L640 600"/>
+      <path d="M250 560 L330 450 L520 400"/>
+      <path d="M330 450 L420 610"/>
+    </g>
+    <g fill="#0d1b26" stroke="#7fd0e2" stroke-width="2">
+      <circle cx="90" cy="640" r="7"/><circle cx="250" cy="560" r="9"/>
+      <circle cx="420" cy="610" r="12"/><circle cx="560" cy="520" r="9"/>
+      <circle cx="640" cy="600" r="6"/><circle cx="300" cy="760" r="8"/>
+      <circle cx="470" cy="800" r="10"/><circle cx="160" cy="820" r="6"/>
+      <circle cx="610" cy="860" r="7"/><circle cx="330" cy="920" r="6"/>
+      <circle cx="520" cy="400" r="7"/><circle cx="330" cy="450" r="6"/>
+    </g>
+    <circle cx="420" cy="610" r="26" fill="none" stroke="#7fd0e2" stroke-opacity="0.35"/>
+    <circle cx="420" cy="610" r="44" fill="none" stroke="#7fd0e2" stroke-opacity="0.15"/>
+  </svg>
+  <div class="top">
+    <div class="eyebrow">Volume 2 &middot; Case studies</div>
+    <h1>Ten<br>Systems,<br>Designed</h1>
+    <div class="sub">Ten real-world systems designed end to end: requirements, numbers, architecture, deep dives and failure modes.</div>
+  </div>
+  <div class="bottom">
+    <div class="ed">FIRST EDITION &middot; 2026<br>10 case studies &middot; 1 synthesis chapter &middot; practice problem bank</div>
+    <div class="mark">Field Guide Series</div>
+  </div>
+</div>
+<div class="inside" style="position:relative">
+  <h2>How to use this book</h2>
+  <div class="by">Volume 1 teaches the building blocks. This volume puts them to work.</div>
+  <div class="how">
+    <h3>This PDF is interactive</h3>
+    <p>Everything in the <strong>Contents</strong> is a link. Your PDF viewer&rsquo;s <strong>bookmarks / outline panel</strong> shows the full structure for quick jumps. Every chapter has a <strong>&#8617; Contents</strong> button. Every quiz question has a <strong>See answer &rarr;</strong> button that jumps to the Answer Key, and every answer has a button that jumps back.</p>
+    <h3>Each chapter follows the same rhythm</h3>
+    <p>Requirements &rarr; estimates &rarr; API &rarr; data model &rarr; architecture &rarr; deep dives &rarr; failure modes &rarr; quiz. Try each problem on a blank page before reading it. The boxes mean:</p>
+    <div class="legend">
+      <aside class="callout c-key"><div class="c-tag">Key idea</div>The one thing to remember from a section.</aside>
+      <aside class="callout c-tradeoff"><div class="c-tag">Trade-off</div>What you give up when you choose this.</aside>
+      <aside class="callout c-example"><div class="c-tag">Worked example</div>Numbers, step by step.</aside>
+      <aside class="callout c-tip"><div class="c-tag">Interview tip</div>How to say it under pressure.</aside>
+      <aside class="callout c-pitfall"><div class="c-tag">Common pitfall</div>Where real systems go wrong.</aside>
+      <aside class="callout c-deep"><div class="c-tag">Going deeper</div>Optional detail for the curious.</aside>
+    </div>
+  </div>
+  <div class="fine">All text and diagrams in this volume are original. Chapter references such as &ldquo;Vol. 1, Ch. 12&rdquo; point to System Design: From First Principles to Planet Scale.</div>
+</div>
+</body></html>

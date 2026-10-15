@@ -10,18 +10,22 @@ try { pw = require("playwright"); } catch { pw = require("/opt/node22/lib/node_m
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const [bodyOut, coverOut] = process.argv.slice(2);
+const vol = process.env.BOOK_VOL || "1";
+const distDir = vol === "1" ? "dist" : `dist/vol${vol}`;
+const footerTitle = vol === "1" ? "SYSTEM DESIGN &middot; FROM FIRST PRINCIPLES TO PLANET SCALE"
+                                : "SYSTEM DESIGN &middot; VOLUME 2 &middot; TEN CASE STUDIES";
 
 const footer = `
 <div style="width:100%;font-family:Inter,Arial,sans-serif;font-size:7px;color:#6b7280;
             padding:0 0.75in;display:flex;justify-content:space-between;letter-spacing:0.06em;">
-  <span>SYSTEM DESIGN &middot; FROM FIRST PRINCIPLES TO PLANET SCALE</span>
+  <span>${footerTitle}</span>
   <span style="font-weight:700;color:#1b1f27;"><span class="pageNumber"></span></span>
 </div>`;
 
 const browser = await pw.chromium.launch();
 const page = await browser.newPage();
 
-await page.goto("file://" + path.join(here, "dist/book.html"), { waitUntil: "load" });
+await page.goto("file://" + path.join(here, distDir, "book.html"), { waitUntil: "load" });
 await page.evaluate(() => document.fonts.ready);
 await page.pdf({
   path: bodyOut,
@@ -36,7 +40,7 @@ await page.pdf({
   tagged: true,
 });
 
-await page.goto("file://" + path.join(here, "dist/cover.html"), { waitUntil: "load" });
+await page.goto("file://" + path.join(here, distDir, "cover.html"), { waitUntil: "load" });
 await page.evaluate(() => document.fonts.ready);
 await page.pdf({ path: coverOut, width: "7in", height: "10in", printBackground: true, preferCSSPageSize: true });
 

@@ -1,6 +1,6 @@
 (function () {
   "use strict";
-  var KEY = "sdfg-progress-v1";
+  var KEY = (window.BOOK && window.BOOK.key) || "sdfg-progress-v1";
   var state = { done: {}, grades: {}, last: null, theme: null };
   try {
     var saved = JSON.parse(localStorage.getItem(KEY) || "null");
@@ -78,21 +78,22 @@
     var numbered = chapters.filter(function (r) { return r[2]; }).length;
     var lastRow = state.last && chapters.filter(function (r) { return r[1] === state.last; })[0];
     var startId = "ch-1";
-    var h = '<div class="home-hero"><div class="eyebrow">A complete course in one volume</div>' +
-      "<h1>System Design <span>from first principles to planet scale</span></h1>" +
-      "<p>The concepts, patterns and trade-offs behind systems that serve millions of people. Every chapter goes from problem to mechanism to diagram to trade-offs, and ends with a quiz.</p>" +
+    var B = window.BOOK || {};
+    var stats = (B.stats || [[numbered - 4, "chapters"], [4, "case studies"]])
+      .concat([[figs, "diagrams"], [qs, "quiz questions"]]);
+    var h = '<div class="home-hero"><div class="eyebrow">' + (B.eyebrow || "A complete course in one volume") + "</div>" +
+      "<h1>" + (B.h1 || "System Design <span>from first principles to planet scale</span>") + "</h1>" +
+      "<p>" + (B.lead || "The concepts, patterns and trade-offs behind systems that serve millions of people. Every chapter goes from problem to mechanism to diagram to trade-offs, and ends with a quiz.") + "</p>" +
       '<div class="hero-actions">' +
       (lastRow ? '<a class="btn btn-primary" href="#' + lastRow[1] + '">Continue: ' + esc(label(lastRow)) + " →</a>" +
                  '<a class="btn btn-ghost" href="#' + startId + '">Start from Chapter 1</a>'
                : '<a class="btn btn-primary" href="#' + startId + '">Start reading →</a>' +
                  '<a class="btn btn-ghost" href="#ap-preface">Read the preface</a>') +
       "</div>" +
-      '<div class="stats">' +
-      '<div class="stat"><b>' + (numbered - 4) + "</b><span>chapters</span></div>" +
-      '<div class="stat"><b>4</b><span>case studies</span></div>' +
-      '<div class="stat"><b>' + figs + "</b><span>diagrams</span></div>" +
-      '<div class="stat"><b>' + qs + "</b><span>quiz questions</span></div></div></div>" +
-      '<h2 class="sec">The eight parts</h2><div class="parts-grid">';
+      '<div class="stats">' + stats.map(function (st) {
+        return '<div class="stat"><b>' + st[0] + "</b><span>" + st[1] + "</span></div>";
+      }).join("") + "</div></div>" +
+      '<h2 class="sec">' + (B.partsHeading || "The eight parts") + '</h2><div class="parts-grid">';
     groups.forEach(function (g) {
       if (!g.part) return;
       var sec = byId[g.part[1]];

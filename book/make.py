@@ -2,6 +2,7 @@
 """Two-pass build: render once to learn where every TOC target lands, inject
 page numbers into the contents, render again, then prepend the cover."""
 import json
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -9,8 +10,12 @@ from pathlib import Path
 from pypdf import PdfReader, PdfWriter
 
 ROOT = Path(__file__).parent
-DIST = ROOT / "dist"
-OUT = ROOT / "System-Design-From-First-Principles.pdf"
+VOL = os.environ.get("BOOK_VOL", "1")
+DIST = ROOT / "dist" if VOL == "1" else ROOT / "dist" / f"vol{VOL}"
+OUT = ROOT / ("System-Design-From-First-Principles.pdf" if VOL == "1"
+              else f"System-Design-Vol{VOL}-Case-Studies.pdf")
+TITLE = ("System Design: From First Principles to Planet Scale" if VOL == "1"
+         else "System Design, Volume 2: Ten Case Studies")
 
 
 def run(*cmd):
@@ -48,7 +53,7 @@ def main():
     w.append(str(cover), import_outline=False)
     w.append(str(body))
     w.add_metadata({
-        "/Title": "System Design: From First Principles to Planet Scale",
+        "/Title": TITLE,
         "/Subject": "A complete course on designing large-scale systems",
         "/Keywords": "system design, distributed systems, scalability, architecture",
     })

@@ -23,6 +23,7 @@ Markdown extensions on top of standard Markdown:
 """
 import html
 import json
+import os
 import math
 import re
 import shlex
@@ -32,8 +33,18 @@ from pathlib import Path
 import markdown
 
 ROOT = Path(__file__).parent
-CH_DIR = ROOT / "chapters"
-DIST = ROOT / "dist"
+VOL = os.environ.get("BOOK_VOL", "1")
+VOLUMES = {
+    "1": dict(src=ROOT, dist=ROOT / "dist",
+              title="System Design: From First Principles to Planet Scale",
+              web="system-design-book.html"),
+    "2": dict(src=ROOT / "vol2", dist=ROOT / "dist" / "vol2",
+              title="System Design, Volume 2: Ten Case Studies",
+              web="system-design-case-studies.html"),
+}
+CFG = VOLUMES[VOL]
+CH_DIR = CFG["src"] / "chapters"
+DIST = CFG["dist"]
 
 MD_EXT = ["tables", "fenced_code", "attr_list", "sane_lists", "md_in_html"]
 WEB = "--web" in sys.argv
@@ -411,33 +422,34 @@ def main():
     pf = DIST / "pages.json"
     if "--with-pages" in sys.argv and pf.exists():
         pages = json.loads(pf.read_text())
-    DIST.mkdir(exist_ok=True)
+    DIST.mkdir(parents=True, exist_ok=True)
     book = Book()
     body = []
     for f in sorted(CH_DIR.glob("*.md")):
         body.append(book.process_file(f))
     if WEB:
         nav = json.dumps([t for t in book.toc if t[0] != "section"])
-        page = (ROOT / "web" / "template.html").read_text()
+        tpl = CFG["src"] / "web-template.html"
+        page = (tpl if tpl.exists() else ROOT / "web" / "template.html").read_text()
         page = (page.replace("/*CSS*/", (ROOT / "web" / "web.css").read_text())
                     .replace("/*JS*/", (ROOT / "web" / "web.js").read_text())
                     .replace("/*NAV*/", nav)
                     .replace("<!--BODY-->", "\n".join(body)))
         out = DIST / "web"
         out.mkdir(parents=True, exist_ok=True)
-        (out / "system-design-book.html").write_text(page)
+        (out / CFG["web"]).write_text(page)
         print(f"web: {book.ch} chapters, {len(page)//1024} KB")
         return
     body.append(book.answer_key())
     css = (ROOT / "style.css").read_text()
     doc = (
         '<!doctype html><html lang="en"><head><meta charset="utf-8">'
-        '<title>System Design: From First Principles to Planet Scale</title>'
+        f'<title>{CFG["title"]}</title>'
         f"<style>{css}</style></head><body>"
         + book.toc_html(pages) + "\n".join(body) + "</body></html>"
     )
     (DIST / "book.html").write_text(doc)
-    cover = (ROOT / "cover.html").read_text().replace("/*CSS*/", css)
+    cover = (CFG["src"] / "cover.html").read_text().replace("/*CSS*/", css)
     (DIST / "cover.html").write_text(cover)
     ids = [t[1] for t in book.toc]
     (DIST / "toc-ids.json").write_text(json.dumps(ids))
